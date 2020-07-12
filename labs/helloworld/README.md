@@ -1,3 +1,7 @@
+## Introduction To Make
+
+[Make: Interactive Lab](https://lab.cs50.io/ackirby88/CS107/master/labs/helloworld/) You can follow along with these instructions and build this C++ source code. We will be using Harvard's CS50 Lab for the interactive environment. CS50 Lab requires you to be logged into github and allowed access to your account.
+
 ## Compiling Programs
 
 Before we can execute the program must *compile* it with a *compiler* (e.g., `g++`), translating it from *source code* into *machine code* (i.e., zeroes and ones). Execute the command below to do just that:
@@ -6,7 +10,7 @@ Before we can execute the program must *compile* it with a *compiler* (e.g., `g+
 g++ hello.cpp
 ```
 
-And then execute this one again:
+And then execute:
 
 ```
 ls
