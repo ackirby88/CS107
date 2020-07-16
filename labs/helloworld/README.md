@@ -1,21 +1,17 @@
-## Introduction To Make
+## Hello World Lab
+[Interactive Lab](https://lab.cs50.io/ackirby88/CS107/master/labs/helloworld/)  
+You can follow along with these instructions and build this C++ source code within the CS50 Lab, which requires you to be logged into your github account.
 
-[Make: Interactive Lab](https://lab.cs50.io/ackirby88/CS107/master/labs/helloworld/) You can follow along with these instructions and build this C++ source code. We will be using Harvard's CS50 Lab for the interactive environment. CS50 Lab requires you to be logged into github and allowed access to your account.
-
-## Compiling Programs
-
+### Compiling Programs
 Before we can execute the program must *compile* it with a *compiler* (e.g., `g++`), translating it from *source code* into *machine code* (i.e., zeroes and ones). Execute the command below to do just that:
 
 ```
 g++ hello.cpp
-```
-
-And then execute:
-
+```  
+And then execute  
 ```
 ls
-```
-
+```  
 You should see not only `hello.cpp` but `a.out` listed as well. That's because `g++` has translated the source code in `hello.cpp` into machine code in `a.out`, which happens to stand for "assembler output".
 
 Now run the program by executing the below.
