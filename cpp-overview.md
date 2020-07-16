@@ -9,7 +9,7 @@ tags: C++
 This track assumes basic programming knowledge at the level covered in [Harvard's CS50](https://cs50.harvard.edu/college/2019/fall/).  
 Our goal will be to build up your C++ experience and introduce system development techniques for Computational Science & Engineering.
 
-```
+```C++
 class CppTrack: public CS107 {
   public:
     void displayTrack(char advanced) {
@@ -49,7 +49,7 @@ class CppTrack: public CS107 {
 [C++ Tutorial](http://www.cplusplus.com/doc/tutorial/): Reference tutorial for C++.   
 [Deepnote](https://harvard-iacs.github.io/2020-CS107/pages/deepnote.com): Excercises will be hosted in Deepnote as done with the python track.  
 [CS50 IDE](https://ide.cs50.io/): Easy collaboration space for C++ and python. Documentation found [here](https://cs50.readthedocs.io/lab/).  
-[CS50 Sandbox](https://sandbox.cs50.io/): Some of the lecture content may hosted in a CS50 Sandbox. You just need your Github account to access the material.  
+[CS50 Sandbox](https://sandbox.cs50.io/): Some of the lecture content may hosted in a CS50 Sandbox.
 [IDEAS Project](https://ideas-productivity.org/events/hpc-best-practices-webinars/): Best Practices for `HPC` Software Developers.  
 
 ---
