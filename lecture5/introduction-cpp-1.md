@@ -71,17 +71,15 @@ Luckily for us, the C preprocessor replaces the `#include "hello_1.h"` line with
 We will learn more about `#include` and the C prepocessor shortly.
 
 ---
-
-
----
-## C Preprocessor 
+## C Preprocessor (cpp)
 The C preprocessor is a *macro processor* which allows you to define macros (abbreviations).  
 It is used **automatically** by the C compiler to transform your program before actual compilation.  
 
 The C preprocessor can perform multiple functions:
-- Include header files
-- Define macro expansions
-- Conditional compilation
+- Include header files - files of declarations that can be substituted into your program
+- Define macro expansions - abbreviations that are expanded with their definition in line
+- Conditional compilation - include or exclude specific definitions using conditionals
+- Line control - inform the compiler of where source lines originated from when a program to used to combine or rearrange source files into an intermediate file which is then compiled
 
 
 ### `#include`:  
