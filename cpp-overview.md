@@ -33,6 +33,8 @@ class CppTrack: public CS107 {
   - Classes/Objects: methods, constructors, access, operator overloading
   - Inheritence: (pure) virtual functions
   - Templating
+  - Namespaces
+  - Type Casting
 
 - Tools and Documentation [Lectures 13-14]
   - Project Organization
