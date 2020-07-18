@@ -4,24 +4,27 @@
 (*We will have more on this topic later in the semester.*)  
 
 Within this track, we will need to compile our codes.  
-C and C++ are compiled languages contrasting Python which is an interpreted programming language.  
-Compiled languages are usually *much faster* than interpreted languages.  
-**Compiled code** means we pass the source code to a compiler which translates it to machine code that the processor executes.  
+C and C++ are compiled programming languages contrasting Python which is an interpreted language.  
+Compiled languages are usually *much faster* than interpreted languages.
+
+**Compiled code** means we pass the source code to a compiler which translates it to machine code which processor can execute directly.
 **Interpreted code** is passed to a seperate program called an *interpreter* which reads each line of code and executes it on the processor.  
 
+Let's take a look at the canonial **Hello, World!** to learn the basics of compiling programs from source files.  
 #### Example 0: hello.c
 ```C
 #include <stdio.h>
 
 int main(void) {
-    printf("Hello, World!\n");
-    return 0;
+  printf("Hello, World!\n");
+  return 0;
 }
 ```  
 #### Compiling on the command line:  
 ```C
 gcc -o hello hello.c
 ```
+Here, `gcc` is the GNU C compiler, `-o hello` tells the compiler to *output* a program named `hello`, and we provide the **hello.c** source file as the input.  
 We can also compile the single file using **make**: `make hello`
 
 #### Executing on the command line:
@@ -40,7 +43,9 @@ We will write our C++ code to source files which have the file extension of `.cp
 C files have the file extension of `.c`.
 
 ## Header Files
-Header files usually contain function declarations but can sometimes also contain functions implementations (e.g. inlined functions).  
+Header files usually contain function declarations but can sometimes also contain functions implementations, e.g. inlined functions.  
+Header files can be used used to share these declarations and macro expansions across multiple files.  
+
 Here we can see a function declaration for the function `print_hello_world()`:
 #### Example 1: hello_1.h
 ```C
@@ -66,23 +71,37 @@ void print_hello_world(void){
   printf("Hello, world!\n");
 }
 ```  
-If we don't include the header file `hello_1.h` containing the function declaration `print_hello_world()` at the top of the source file, then the function `print_hello_world()` would not be known by the `main` function. This is because programs are compiled top-down.  
-Luckily for us, the C preprocessor replaces the `#include "hello_1.h"` line with all of the code found in **hello_1.h**.  
-We will learn more about `#include` and the C prepocessor shortly.
+If we don't include the header file `hello_1.h` containing the function declaration `print_hello_world()` at the top of the source file, then the function `print_hello_world()` would not be known by the `main` function. This is because programs compiled with gcc are parsed *top-down*.  
+Luckily for us, the C Preprocessor replaces the `#include "hello_1.h"` line with all of the code found in **hello_1.h**.
 
 ---
 ## C Preprocessor (cpp)
-The C preprocessor is a *macro processor* which allows you to define macros (abbreviations).  
+The C Preprocessor is a *macro processor* which allows you to define macros (abbreviations).  
 It is used **automatically** by the C compiler to transform your program before actual compilation.  
 
-The C preprocessor can perform multiple functions:
+The C Preprocessor can perform multiple functions:
 - Include header files - files of declarations that can be substituted into your program
 - Define macro expansions - abbreviations that are expanded with their definition in line
 - Conditional compilation - include or exclude specific definitions using conditionals
 - Line control - inform the compiler of where source lines originated from when a program to used to combine or rearrange source files into an intermediate file which is then compiled
 
+### Preprocessor Directives
+Preprocessor directives are lines starting with the character `#`, e.g. `#define FOO 107`.  
+Whitespace is also allowed before and after the `#`, and directives can expand over multiple lines by using the character `\`.  
+```C
+#define cubeThreads              \
+  for (int k = 0; k < 4; ++k)    \
+    for (int j = 0; j < 3; ++j)  \
+      for (int i = 0; i < 6; ++i)
+```  
+Example Usage:  
+```C
+cubeThreads {
+  my_array[k][j][i] = 2*i + j + 3*k;
+}
+```
 
-### `#include`:  
+#### `#include`:  
 Both user and system header files are included using the preprocessing directive `#include`. It has three variants:  
 `#include <file>`  
 `#include "file"`  
