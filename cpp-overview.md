@@ -30,7 +30,7 @@ class CppTrack: public CS107 {
   - Function Pointers
 
 - C++ Object-Oriented Programming [Lectures 7-8]
-  - Classes/Objects: methods, constructors, access
+  - Classes/Objects: methods, constructors, access, operator overloading
   - Inheritence: (pure) virtual functions
   - Templating
 
