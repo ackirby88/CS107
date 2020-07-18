@@ -7,8 +7,8 @@ Within this track, we will need to compile our codes.
 C and C++ are compiled programming languages contrasting Python which is an interpreted language.  
 Compiled languages are usually *much faster* than interpreted languages.
 
-**Compiled code** means we pass the source code to a compiler which translates it to machine code which processor can execute directly.
-**Interpreted code** is passed to a seperate program called an *interpreter* which reads each line of code and executes it on the processor.  
+**Compiled** languages pass the source code to a compiler, which is translated directly to machine code.  
+**Interpreted** languages pass the source code to a separate program called an *interpreter*, which reads each line of code and then executes it on the processor. 
 
 Let's take a look at the canonial **Hello, World!** to learn the basics of compiling programs from source files.  
 #### Example 0: hello.c
@@ -106,6 +106,20 @@ Both user and system header files are included using the preprocessing directive
 - `#include <file>`: include system header files  
 The preprocessor searches for a file named *file* in a list of directories specified by you, then in a standard list of system directories. 
 You specify directories to search for header files with the command option `-I'.  
+To see which directories the C Preprocessor searches, we can execute `cpp -v`. We can test this in the sandbox:
+```bash
+$ cpp -v
+...
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/7/include
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+```
+
 
 - `#include "file"`: include header files of your own program  
 The preprocessor searches for a file named *file* first in the current directory, then in the same directories used for system header files.  
