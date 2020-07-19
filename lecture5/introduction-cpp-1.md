@@ -49,13 +49,7 @@ Header files can be used used to share these declarations and macro expansions a
 Here we can see a function declaration for the function `print_hello_world()`:
 #### Example 1: hello_1.h
 ```C
-#ifndef HELLO_H
-#define HELLO_H
-
 void print_hello_world(void);
-
-#endif /* HELLO_H */
-
 ```
 #### Example 1: hello_1.c
 ```C
@@ -72,7 +66,8 @@ void print_hello_world(void){
 }
 ```  
 If we don't include the header file `hello_1.h` containing the function declaration `print_hello_world()` at the top of the source file, then the function `print_hello_world()` would not be known by the `main` function. This is because programs compiled with gcc are parsed *top-down*.  
-Luckily for us, the C Preprocessor replaces the `#include "hello_1.h"` line with all of the code found in **hello_1.h**.
+Luckily for us, the C Preprocessor replaces the `#include "hello_1.h"` line with all of the code found in **hello_1.h**.  
+Sandbox Demo: [FIXME Hello World with header files!](...)
 
 ---
 ## C Preprocessor (cpp)
@@ -103,7 +98,7 @@ cubeThreads {
 
 ### **`#include`**
 Both user and system header files are included using the preprocessing directive `#include`.
-- [x] `#include <file>`: **include system header files**
+- [x] `#include <file>`: **include system header files**  
 The preprocessor searches for a file named *file* in a list of directories specified by you, then in a standard list of system directories. 
 You specify directories to search for header files with the command option `-I`.  
 To see which directories the C Preprocessor searches, we can execute `cpp -v`.  
@@ -126,15 +121,47 @@ The preprocessor searches for a file named *file* first in the current directory
 - [x] `#include`*`anything else`*:   
 This is known as a *computed #include* directive where *anything else* can be other macros, which are expanded. After the expansion, it must conform one of the first two variants: `<file>` or `"file"`.
 
+#### How `#include` Works Example
+Looking at **Example 1**, the C Proprocessor generates the following from **hello_1.h**:
+**hello_1.c**  
+```C
+#include <stdio.h>
+void print_hello_world(void);
+
+int main(void){
+  print_hello_world();
+  return 0;
+}
+
+void print_hello_world(void){
+  printf("Hello, world!\n");
+}
+```  
+Note that the C Preprocessor would also replace `#include <stdio.h>` accordingly.  
+
+#### Include Guards: Once-Only Include Files
+You will most likely include a header file multiple times in a project. This may lead to compiling errors if the header file contains defined data types.
+To fix this, we normally add *Include Guards* in the header file:  
+```C
+#ifndef HELLO_H
+#define HELLO_H
+void print_hello_world(void);
+#endif /* HELLO_H */
+```
+Notice that the macro `HELLO_H` indicates that the file has been included once already. If a subsequent `#include` specifies the same file, and the macro in the `#ifndef` is already defined, then the file contents within the directives are skipped completely.  
+
+You may see `#pragma once` which is a non-standard but widely used directive designed to cause the current source file to be included only once in a single compilation. **However, `#pragma once` is now obsolete and should not be used at all.**  
+Demo: [FIXME Header File Collision Lab]()
+
+**NOTE**: In a **user** header file, the macro name should **not** begin with `_`; this is due to avoiding collisions with system header files which normally begin with `__`. It is good practice to make the macro contain the name of the file and possibly additional text to avoid conflicts with other header files.
+
+## Simple Macros
 ### **`#define`/`#undef`**
 `#define VAR value`: sets `VAR` to `value`  
 `#undef VAR`: unsets `VAR`  
 
-
 ### **`#ifdef`/`#ifndef`**
 `#ifdef VAR` **or** `#if defined VAR`: check of `<VAR>` is defined  
-
-### **`#pragma once`**
 
 ---
 Before we dive into C++, let's first review some concepts from the C programming language.
