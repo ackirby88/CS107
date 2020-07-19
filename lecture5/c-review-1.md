@@ -234,10 +234,10 @@ The open-parenthesis must follow the macro name immediately, with no space in be
 
 For example, here is a macro that computes the minimum of two numeric values, as it is defined in many C programs:
 ```C
-#define min(X, Y)  ((X) < (Y) ? (X) : (Y))
+#define MIN(X, Y)  ((X) < (Y) ? (X) : (Y))
 ```
-An example usage could be `min(2,3)` resulting in the expected value `2`.   
-We can even do `min(cs + 107, *p)` which expands to `((cs + 107) < (*p) ? (cs + 107) : (*p))`
+An example usage could be `MIN(2,3)` resulting in the expected value `2`.   
+We can even do `MIN(cs + 107, *p)` which expands to `((cs + 107) < (*p) ? (cs + 107) : (*p))`
 
 :red_circle: **WARNING**: We could have unintended side effects using macros for function-like expressions.  
 For example, if we defined a MAX function as  
