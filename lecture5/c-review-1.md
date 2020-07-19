@@ -242,7 +242,7 @@ We can even do `min(cs + 107, *p)` which expands to `((cs + 107) < (*p) ? (cs + 
 :red_circle: **WARNING**: We could have unintended side effects using macros for function-like expressions.  
 For example, if we defined a MAX function as  
 ```C
-#define MAX(a,b) a>b?a:b
+#define MAX(a,b) a > b ? a : b
 ```
 and the code
 ```C
@@ -251,8 +251,8 @@ j = MAX(3,2)+5;
 ```
 Then the expansion gives
 ```C
-i = 2>3?2:3+5;
-j = 3>2?3:2+5;
+i = 2 > 3 ? 2 : 3+5;
+j = 3 > 2 ? 3 : 2+5;
 ```
 Thus, after execution **`i=8`** and **`j=3`** instead of **`i=j=8`**!  
 So be sure to use extra parenthesis for these scenarios.
