@@ -195,6 +195,25 @@ results in the expanded version
 course = 104
 num = CS
 ```
+## Conditional Macros
+A conditional in the C preprocessor begins with a conditional directive: `#if`, `#ifdef` or `#ifndef`.  
+These conditional macros need to be closed with the directive `#endif`.
+- [x] `#if` Directive: Basic conditionals paired with`#endif`.
+- [x] `#else` Directive: Including some text if the condition fails.
+- [x] `#elif` Directive: Testing several alternative possibilities.
+
+Example:  
+```C
+#if X == 1
+...
+#else /* X != 1 */
+#  if X == 2
+...
+#  else /* X != 2 */
+...
+#  endif
+#endif
+```
 
 ### **`#ifdef`**
 We can check if a variable has been defined using two directives:
@@ -204,6 +223,9 @@ We can check if a variable has been defined using two directives:
 ### **`#ifndef`**
 We can also check if a variable had not been defined:
 - [x] `#ifndef VAR`
+
+### **`else`**/**`elif`**
+- [x] `#else` Directive: 
 
 ## Macros With Arguments
 Macros can be more flexible when they accept arguments. Arguments are fragments of code that you supply each time the macro is used.  
@@ -239,11 +261,12 @@ Thus, after execution **`i=8`** and **`j=3`** instead of `i=j=8`!
 So be sure to use extra parenthesis for these scenarios.
 Exercise: [Max Define Bug]()
 
-## C Preprocessor Exercise
-If caution is taken appropriately, macros with arguments can be combined to make useful programming options.  
-Let's suppose that we want to build a program that depends on physical space dimensions: 2D or 3D. We would like to have our functions take additional arguments without having to make a new function (recall that C programming does **not** allow function overloading.
+## C Preprocessor Exercises
+:large_blue_diamond: Build a program that uses `float` when the macro `SINGLE_PRECISION` is defined, otherwise uses `double` as the floating pointing representation by defining a macro.
 
-:large_blue_diamond: Build a function named `add_dimensions` such that when the macro `3D` is defined, it adds three integers, otherwise adds two integers, and returns the sum.
+If caution is taken, macros with arguments can be combined to make useful programming options.  
+Let's suppose that we want to build a program that depends on physical space dimensions: 2D or 3D. We would like to have our functions take additional arguments without having to make a new function (recall that C programming does **not** allow function overloading).  
+:large_orange_diamond: [3D Function Arguments](https://bit.ly/3e6HLD2)
 
 ---
 Before we dive into C++, let's first review some concepts from the C programming language.
