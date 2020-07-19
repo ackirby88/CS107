@@ -121,7 +121,7 @@ The preprocessor searches for a file named *file* first in the current directory
 - [x] `#include`*`anything else`*:   
 This is known as a *computed #include* directive where *anything else* can be other macros, which are expanded. After the expansion, it must conform one of the first two variants: `<file>` or `"file"`.
 
-#### How `#include` Works Example
+#### How `#include` Works
 Looking at **Example 1**, the C Proprocessor generates the following from **hello_1.h** to **hello_1.c**:  
 ```C
 #include <stdio.h>
@@ -206,6 +206,44 @@ We can also check if a variable had not been defined:
 - [x] `#ifndef VAR`
 
 ## Macros With Arguments
+Macros can be more flexible when they accept arguments. Arguments are fragments of code that you supply each time the macro is used.  
+These fragments are included in the expansion of the macro according to the directions in the macro definition.  
+A macro that accepts arguments is called a *function-like* macro because the syntax for using it looks like a function call.
+
+To define a macro that uses arguments, you write a `#define` directive with a list of argument names in parentheses after the name of the macro.  
+The open-parenthesis must follow the macro name immediately, with no space in between.
+
+For example, here is a macro that computes the minimum of two numeric values, as it is defined in many C programs:
+```C
+#define min(X, Y)  ((X) < (Y) ? (X) : (Y))
+```
+An example usage could be `min(2,3)` resulting in the expected value `2`.   
+We can even do `min(cs + 107, *p)` which expands to `((cs + 107) < (*p) ? (cs + 107) : (*p))`
+
+:red_circle: **WARNING**: We could have unintended side effects using macros for function-like expressions.  
+For example, if we defined a MAX function as  
+```C
+#define MAX(a,b) a>b?a:b
+```
+and the code
+```C
+i = MAX(2,3)+5;
+j = MAX(3,2)+5;
+```
+Then the expansion gives
+```C
+i = 2>3?2:3+5;
+j = 3>2?3:2+5;
+```
+Thus, after execution **`i=8`** and **`j=3`** instead of `i=j=8`!  
+So be sure to use extra parenthesis for these scenarios.
+Exercise: [Max Define Bug]()
+
+## C Preprocessor Exercise
+If caution is taken appropriately, macros with arguments can be combined to make useful programming options.  
+Let's suppose that we want to build a program that depends on physical space dimensions: 2D or 3D. We would like to have our functions take additional arguments without having to make a new function (recall that C programming does **not** allow function overloading.
+
+:large_blue_diamond: Build a function named `add_dimensions` such that when the macro `3D` is defined, it adds three integers, otherwise adds two integers, and returns the sum.
 
 ---
 Before we dive into C++, let's first review some concepts from the C programming language.
