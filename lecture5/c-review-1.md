@@ -1,5 +1,3 @@
-# C Programming Basics
-
 ## Compilation Basics
 (*We will have more on this topic later in the semester.*)  
 
