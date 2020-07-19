@@ -103,29 +103,28 @@ cubeThreads {
 
 #### `#include`  
 Both user and system header files are included using the preprocessing directive `#include`.
-- `#include <file>`: include system header files  
+- `#include <file>`: **include system header files**  
 The preprocessor searches for a file named *file* in a list of directories specified by you, then in a standard list of system directories. 
 You specify directories to search for header files with the command option `-I`.  
 To see which directories the C Preprocessor searches, we can execute `cpp -v`.  
-```bash
-$ cpp -v
-...
-#include "..." search starts here:
-#include <...> search starts here:
- /usr/lib/gcc/x86_64-linux-gnu/7/include
- /usr/local/include
- /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed
- /usr/include/x86_64-linux-gnu
- /usr/include
-End of search list.
-```
+> ```bash
+> $ cpp -v
+> ...
+> #include "..." search starts here:
+> #include <...> search starts here:
+> /usr/lib/gcc/x86_64-linux-gnu/7/include
+> /usr/local/include
+> /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed
+>  /usr/include/x86_64-linux-gnu
+>  /usr/include
+> End of search list.
+> ```
 
-
-- `#include "file"`: include header files of your own program  
+- `#include "file"`: **include header files of your own program**  
 The preprocessor searches for a file named *file* first in the current directory, then in the same directories used for system header files.  
 
-- `#include`*`anything else`*: known as a *computed #include* directive where *anything else* can be other macros  
-
+- `#include`*`anything else`*:   
+This is known as a *computed #include* directive where *anything else* can be other macros, which are expanded. After the expansion, it must conform one of the first two variants: `<file>` or `"file"`.
 
 #### `#define`/`#undef`
 `#define VAR value`: sets `VAR` to `value`  
