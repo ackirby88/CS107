@@ -122,8 +122,7 @@ The preprocessor searches for a file named *file* first in the current directory
 This is known as a *computed #include* directive where *anything else* can be other macros, which are expanded. After the expansion, it must conform one of the first two variants: `<file>` or `"file"`.
 
 #### How `#include` Works Example
-Looking at **Example 1**, the C Proprocessor generates the following from **hello_1.h**:
-**hello_1.c**  
+Looking at **Example 1**, the C Proprocessor generates the following from **hello_1.h** to **hello_1.c**:  
 ```C
 #include <stdio.h>
 void print_hello_world(void);
@@ -156,12 +155,57 @@ Demo: [FIXME Header File Collision Lab]()
 **NOTE**: In a **user** header file, the macro name should **not** begin with `_`; this is due to avoiding collisions with system header files which normally begin with `__`. It is good practice to make the macro contain the name of the file and possibly additional text to avoid conflicts with other header files.
 
 ## Simple Macros
-### **`#define`/`#undef`**
-`#define VAR value`: sets `VAR` to `value`  
-`#undef VAR`: unsets `VAR`  
 
-### **`#ifdef`/`#ifndef`**
-`#ifdef VAR` **or** `#if defined VAR`: check of `<VAR>` is defined  
+### **`#define`**:  
+As we have seen, we can make a macro that serves as a substitution or abbreviation. Before we can use the macro, it must first be defined with the `#define` directive.  
+- [x] `#define VAR value`: sets `VAR` to `value`  
+Example:
+```C
+#define BUFFER 128
+char *str = (char *) malloc(BUFFER);
+```
+results in the expanded version  
+```C
+char *str = (char *) malloc(128);
+```
+Note that the C preprocessor is sequential top-down. So given the following as input to the C Preprocessor 
+```C
+course = CS
+#define CS 107
+num = CS
+``` 
+results in the expanded version
+```C
+course = CS
+num = 107
+``` 
+
+### **`#undef`**
+We can also undefine a variable as follows:
+- [x] `#undef VAR`: unsets `VAR`  
+Example:
+```C
+#define CS 107
+course = CS
+#undef
+num = CS
+``` 
+results in the expanded version
+```C
+course = 104
+num = CS
+```
+
+### **`#ifdef`**
+We can check if a variable has been defined using two directives:
+- [x] `#ifdef VAR`
+- [x] `#if defined VAR`
+
+### **`#ifndef`**
+We can also check if a variable had not been defined:
+- [x] `#ifndef VAR`
+
+## Macros With Arguments
 
 ---
 Before we dive into C++, let's first review some concepts from the C programming language.
