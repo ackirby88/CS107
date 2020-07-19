@@ -254,7 +254,7 @@ Then the expansion gives
 i = 2>3?2:3+5;
 j = 3>2?3:2+5;
 ```
-Thus, after execution **`i=8`** and **`j=3`** instead of `i=j=8`!  
+Thus, after execution **`i=8`** and **`j=3`** instead of **`i=j=8`**!  
 So be sure to use extra parenthesis for these scenarios.
 
 :large_orange_diamond: **Example**: [3D Function Arguments](https://bit.ly/3e6HLD2)  
@@ -266,18 +266,5 @@ Let's suppose that we want to build a program that depends on physical space dim
 :large_blue_diamond: Exercise: [Fix Max Define Bug](...)  
 :large_blue_diamond: Build a program that uses `float` when the macro `SINGLE_PRECISION` is defined, otherwise uses `double` as the floating pointing representation by defining a macro.
 
-
 ---
-Before we dive into C++, let's first review some concepts from the C programming language.
-
----
-### Primitive, Derived, and User-Defined Data Types
-
----
-### Operators, Loops, Functions
-
----
-### Memory, Pointers, References 
-
----
-### Function Pointers
+[Next: C Language Specifics](https://github.com/ackirby88/CS107/edit/master/lecture5/introduction-cpp-2.md)
