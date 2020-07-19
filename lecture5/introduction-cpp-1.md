@@ -101,9 +101,9 @@ cubeThreads {
 }
 ```
 
-#### `#include`  
+### **`#include`**
 Both user and system header files are included using the preprocessing directive `#include`.
-- `#include <file>`: **include system header files**  
+- [x] `#include <file>`: **include system header files**
 The preprocessor searches for a file named *file* in a list of directories specified by you, then in a standard list of system directories. 
 You specify directories to search for header files with the command option `-I`.  
 To see which directories the C Preprocessor searches, we can execute `cpp -v`.  
@@ -120,20 +120,21 @@ To see which directories the C Preprocessor searches, we can execute `cpp -v`.
 > End of search list.
 > ```
 
-- `#include "file"`: **include header files of your own program**  
+- [x] `#include "file"`: **include header files of your own program**  
 The preprocessor searches for a file named *file* first in the current directory, then in the same directories used for system header files.  
 
-- `#include`*`anything else`*:   
+- [x] `#include`*`anything else`*:   
 This is known as a *computed #include* directive where *anything else* can be other macros, which are expanded. After the expansion, it must conform one of the first two variants: `<file>` or `"file"`.
 
-#### `#define`/`#undef`
+### **`#define`/`#undef`**
 `#define VAR value`: sets `VAR` to `value`  
 `#undef VAR`: unsets `VAR`  
 
-#### `#ifdef`/`#ifndef`
+
+### **`#ifdef`/`#ifndef`**
 `#ifdef VAR` **or** `#if defined VAR`: check of `<VAR>` is defined  
 
-#### `#pragma once`
+### **`#pragma once`**
 
 ---
 Before we dive into C++, let's first review some concepts from the C programming language.
