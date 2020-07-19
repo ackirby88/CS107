@@ -149,8 +149,9 @@ void print_hello_world(void);
 ```
 Notice that the macro `HELLO_H` indicates that the file has been included once already. If a subsequent `#include` specifies the same file, and the macro in the `#ifndef` is already defined, then the file contents within the directives are skipped completely.  
 
-You may see `#pragma once` which is a non-standard but widely used directive designed to cause the current source file to be included only once in a single compilation. **However, `#pragma once` is now obsolete and should not be used at all.**  
-Demo: [FIXME Header File Collision Lab]()
+You may see `#pragma once` which is a non-standard but widely used directive designed to cause the current source file to be included only once in a single compilation. **However, `#pragma once` is now obsolete and should not be used.**  
+
+:large_orange_diamond: Guided Example: [FIXME Header File Collision Lab]()
 
 :arrow_right: **NOTE**: In a **user** header file, the macro name should **not** begin with `_`; this is due to avoiding collisions with system header files which normally begin with `__`. It is good practice to make the macro contain the name of the file and possibly additional text to avoid conflicts with other header files.
 
