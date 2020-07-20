@@ -22,8 +22,8 @@ class CppTrack: public CS107 {
 ## C++ Track Outline
 - C Basics [Lectures 5-6]
   - Source and Header Files
-  - C-preprocessor
   - Compilation Basics
+  - C-preprocessor
   - Primitive, Derived, and User-Defined Data Types
   - Operators, Loops, Functions
   - Memory, Pointers, References 
