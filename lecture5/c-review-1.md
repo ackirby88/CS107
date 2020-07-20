@@ -37,7 +37,7 @@ We can also compile the single file using **make**: `make hello`
 
 ---
 ## Source Files
-We will write our C++ code to source files which have the file extension of `.cpp`, `.C`, or `.cxx`.  
+We will write our C++ code to source files which have the file extension of `.cpp`, `.cc`, `.C`, or `.cxx`.  
 C files have the file extension of `.c`.
 
 ## Header Files
@@ -260,6 +260,13 @@ So be sure to use extra parenthesis for these scenarios.
 If caution is taken, macros with arguments can be combined to make useful programming options. 
 Let's suppose that we want to build a program that depends on physical space dimensions: 2D or 3D. We would like to have our functions take additional arguments without having to make a new function (recall that C programming does **not** allow function overloading).  
 
+## Some Useful Macros
+- `__FILE__` The name of the current file, as a string literal
+- `__LINE__` Current line of the source file, as a numeric literal
+- `__DATE__` Current system date, as a string
+- `__TIME__` Current system time, as a string
+- `__cplusplus` Undefined for C code compiled by a C compiler; `199711L` C code is compiled by a C++ compiler (98 C++ standard)
+- `__func__` Current function name of the source file, as a string (part of C99)
 
 ## C Preprocessor Exercises
 :large_blue_diamond: Exercise: [Fix Max Define Bug](...)  
