@@ -5,7 +5,68 @@
 - `char`: stores a single character and requires a single byte of memory
 - `float`: stores floating point numbers with **single** precision
 - `double`: stores floating point numbers with **double** precision
+- `void`: the absence of type
 
+#### Integer Literals
+Within C/C++, there are four literal types: `decima`, `binary`, `octal`, and `hexadecimal`.  
+```C
+int b = 0b101;     // binary
+int d = 42;        // decimal
+int o = 023;       // octal
+int h = 0xC05FEFE; // hexadecimal
+```
+:red_circle: Be careful with leading zeros! [Literals Sandbox](https://bit.ly/2ZJ0Ffg)
+
+## Derived Types
+- `Function`:  a function that returns a value of a specified type
+- `Pointer`: a value that represents the address of an object of a stated type
+- `Array`: a data structure that can store a fixed-size sequential collection of elements of the same type
+- `Structure`: a data structure that can store data items of different types
+- `Union`: a data structure that can store different data types in the same memory location
+
+### 1. Function Type
+A function type describes a function that returns a value of a specified type.  
+If the function returns no value, it should be declared as "function returning void " as follows:  
+```C
+void function1();
+```
+In the following example, the data type for the function is "function returning int ":
+```C
+int uppercase(int lc){
+  int uc = lc + 0X20;
+  return uc;
+}
+```
+
+### 2. Pointer Type
+A pointer type describes a value that represents the *address* of an object of a stated type.  
+A pointer is stored as an integral value that references the address of the target object.  
+Pointer types are derived from other types, called the referenced type of the pointer.  
+For example:
+```C
+int *p;          /*  p is a pointer to an int type */
+double *q();     /*  q is a function returning a pointer to an object of type double */
+int (*r)[5];     /*  r is a pointer to an array of five elements */
+                 /*  (r holds the address to the first element of the array) */
+const char s[6]; /*  s is a const-qualified array of 6 elements */
+
+int *prt = (int *) malloc(10*sizeof(int));
+```
+The construction `void *` designates a generic *pointer to void* type.  
+The `void *` construction can be used to point to an object of any type, and it is most useful when a pointer is needed to point to the address of objects with different or unknown types (such as in a function prototype). A pointer to `void` can also be converted to or from a pointer of any other type, and has the same representation and alignment requirements as a pointer to a character type.  
+```C
+int MPI_Send(const void *buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm);
+```
+
+### 3. Array Type
+
+### 4. Structure Type
+
+### 5. Union Type
+
+## User-Defined Types
+
+---
 ## Modifiers
 - `signed` (int/char): target type will have signed representation (this is the default if omitted)
 - `unsigned` (int/char): target type will have unsigned representation
@@ -18,7 +79,7 @@ These change the range and size that the variable can represent, e.g. `unsigned 
 long long int a;   // 8 bytes
 unsigned short b;  // 2 bytes, [0,65535]
 ```
-
+---
 ## Qualifiers
 - `const`: object cannot be modified; attempt to do so directly is a compile-time error
 - `volatile`: tells compiler value may change at any time code not seen by the compiler
@@ -184,6 +245,7 @@ void updatePtrs(size_t *restrict ptrA, size_t *restrict ptrB, size_t *restrict v
 }
 ```
 
+---
 ## Declaration and Assignment
 To use variables in C/C++, they first must be declared.  
 ```C
@@ -202,7 +264,7 @@ int* c_ptr, c; // c_ptr is a pointer to an integer address, c is actually an int
 ````
 My personal preference is to place the `*` next to the variable rather than next to the type (but either is okay).
 
-### C++ Assignment
+### C++ Initialization
 In C++, we can initialize variables using a *constructor initialization* by enclosing the initial value between parenntheses `()`.
 ```C++
 #include <iostream>
@@ -221,7 +283,7 @@ int main ()
   return 0;
 }
 ```
-
+---
 ## Scope
 The scope of local variables is limited to the block enclosed in braces (`{}`) where they are declared. 
 ```C
@@ -250,62 +312,3 @@ This will return the **number of bytes**.
 sizeof(var)
 sizeof var
 ```
-
----
-## Derived Types
-There are five derived types: `Function`, `Pointer`, `Array`, `Structure`, and `Union`.
-
-#### Function Type
-A function type describes a function that returns a value of a specified type.  
-If the function returns no value, it should be declared as "function returning void " as follows:  
-```C
-void function1 ();
-```
-In the following example, the data type for the function is "function returning int ":
-```C
-int uppercase(int lc){
-  int uc = lc + 0X20;
-  return uc;
-}
-```
-
-#### Pointer Type
-A pointer type describes a value that represents the *address* of an object of a stated type.  
-A pointer is stored as an integral value that references the address of the target object.  
-Pointer types are derived from other types, called the referenced type of the pointer.  
-For example:
-```C
-int *p;          /*  p is a pointer to an int type */
-double *q();     /*  q is a function returning a pointer to an object of type double */
-int (*r)[5];     /*  r is a pointer to an array of five elements */
-                 /*  (r holds the address to the first element of the array) */
-const char s[6]; /*  s is a const-qualified array of 6 elements */
-```
-The construction `void *` designates a generic *pointer to void* type.  
-The `void *` construction can be used to point to an object of any type, and it is most useful when a pointer is needed to point to the address of objects with different or unknown types (such as in a function prototype). A pointer to `void` can also be converted to or from a pointer of any other type, and has the same representation and alignment requirements as a pointer to a character type.  
-```C
-int MPI_Send(const void *buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm);
-```
-
-
-#### 
-
-### User-Defined Types
-
----
-## Operators
-### Unary Operators
-- minus `-`, plus `+`
-- logical negation `!`
-- prefix increment `++` and decrement `--`
-- address operator `&` and indirection `*`
-- bitwise negation `~`
-- cast operator
-- `sizeof` operator
-
-## Loops
-
-## Functions
-
----
-## Memory, Pointers, References
