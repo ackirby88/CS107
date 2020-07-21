@@ -1,3 +1,8 @@
+:large_orange_diamond: - **Code Example**  
+:large_blue_diamond: - **Code Exercise**  
+:red_circle: - **Code WARNING**  
+
+
 ## Compilation Basics
 (*We will have more on this topic later in the semester.*)  
 
@@ -65,7 +70,7 @@ void print_hello_world(void){
 ```  
 If we don't include the header file `hello_1.h` containing the function declaration `print_hello_world()` at the top of the source file, then the function `print_hello_world()` would not be known by the `main` function. This is because programs compiled with gcc are parsed *top-down*.  
 Luckily for us, the C Preprocessor replaces the `#include "hello_1.h"` line with all of the code found in **hello_1.h**.  
-:large_orange_diamond: Sandbox Example: [FIXME Hello World with header files!](...)
+:large_orange_diamond: [FIXME Hello World with header files!](...)
 
 ---
 ## C Preprocessor (cpp)
@@ -149,7 +154,7 @@ Notice that the macro `HELLO_H` indicates that the file has been included once a
 
 You may see `#pragma once` which is a non-standard but widely used directive designed to cause the current source file to be included only once in a single compilation. **However, `#pragma once` is now obsolete and should not be used.**  
 
-:large_orange_diamond: Guided Example: [FIXME Header File Collision Lab]()
+:large_orange_diamond: [FIXME Header File Collision Lab]()
 
 :arrow_right: **NOTE**: In a **user** header file, the macro name should **not** begin with `_`; this is due to avoiding collisions with system header files which normally begin with `__`. It is good practice to make the macro contain the name of the file and possibly additional text to avoid conflicts with other header files.
 
@@ -238,7 +243,7 @@ For example, here is a macro that computes the minimum of two numeric values, as
 An example usage could be `MIN(2,3)` resulting in the expected value `2`.   
 We can even do `MIN(cs + 107, *p)` which expands to `((cs + 107) < (*p) ? (cs + 107) : (*p))`
 
-:red_circle: **WARNING**: We could have unintended side effects using macros for function-like expressions.  
+:red_circle: We could have unintended side effects using macros for function-like expressions.  
 For example, if we defined a MAX function as  
 ```C
 #define MAX(a,b) a > b ? a : b
@@ -256,7 +261,7 @@ j = 3 > 2 ? 3 : 2+5;
 Thus, after execution **`i=8`** and **`j=3`** instead of **`i=j=8`**!  
 So be sure to use extra parenthesis for these scenarios.
 
-:large_orange_diamond: **Example**: [3D Function Arguments](https://bit.ly/3e6HLD2)  
+:large_orange_diamond: [3D Function Arguments](https://bit.ly/3e6HLD2)  
 If caution is taken, macros with arguments can be combined to make useful programming options. 
 Let's suppose that we want to build a program that depends on physical space dimensions: 2D or 3D. We would like to have our functions take additional arguments without having to make a new function (recall that C programming does **not** allow function overloading).  
 
@@ -269,7 +274,7 @@ Let's suppose that we want to build a program that depends on physical space dim
 - `__func__` Current function name of the source file, as a string (part of C99)
 
 ## C Preprocessor Exercises
-:large_blue_diamond: Exercise: [Fix Max Define Bug](...)  
+:large_blue_diamond: [Fix Max Define Bug](...)  
 :large_blue_diamond: Build a program that uses `float` when the macro `SINGLE_PRECISION` is defined, otherwise uses `double` as the floating pointing representation by defining a macro.
 
 ---
