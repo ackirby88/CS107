@@ -108,13 +108,12 @@ A structure type is a sequentially allocated nonempty set of objects, called mem
 Unlike arrays, the elements of a structure need not be of the same data type. Also, elements of a structure are accessed by name, not by subscript. 
 ```C
 struct [structure tag] {
-   member definition;
-   member definition;
-   ...
-   member definition;
+  member definition;
+  member definition;
+  ...
+  member definition;
 } [one or more structure variables];  
 ```
-
 **Example:**
 ```C
 struct student {
@@ -122,7 +121,7 @@ struct student {
   int age;
 };
 
-struct andrew, ed, mary;
+struct student andrew, ed, mary;
 
 // access member
 andrew.age = 21;
@@ -131,7 +130,23 @@ andrew.age = 21;
 Sandbox Example: [Structs - Pass-by-Value/Address/Reference](https://bit.ly/3fMX05R)
 
 ### 5. Union Type
-
+A **union** is a special data type available in C that allows to store different data types in the same memory location. You can define a union with many members, but only one member can contain a value at any given time. Unions provide an efficient way of using the same memory location for multiple-purpose.
+```C
+union [union tag] {
+   member definition;
+   member definition;
+   ...
+   member definition;
+} [one or more union variables];  
+```
+**Example:**
+```C
+union Data {
+   int i;
+   float f;
+   char str[20];
+} data;
+```
 
 ## User-Defined Types
 
