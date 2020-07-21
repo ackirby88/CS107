@@ -168,6 +168,8 @@ unsigned short b;  // 2 bytes, [0,65535]
 - `const`: object cannot be modified; attempt to do so directly is a compile-time error
 - `volatile`: tells compiler value may change at any time code not seen by the compiler
 - `restrict`: **(C only)** tells compiler that assigned pointer is the only way to access the object pointed by it
+- `static`: value remains in memory for duration of program life
+- `extern`: t provides the compiler with sufficient information to access a variable declared in another file
 
 ### 1. `const`
 The qualifier `const` can be applied to the declaration of any variable to specify that its value will not be changed.
@@ -328,6 +330,33 @@ void updatePtrs(size_t *restrict ptrA, size_t *restrict ptrB, size_t *restrict v
   *ptrB += *val;
 }
 ```
+
+### 4. `static`
+Static variables have a property of preserving their value even after they are out of their scope! Hence, static variables preserve their previous value in their previous scope and are not initialized again in the new scope.
+```C
+#include<stdio.h>
+int fun(){
+  static int count = 0;
+  count++;
+
+  return count;
+}
+
+int main(void){
+  printf("Count = %d", fun());
+  printf("Count = %d", fun());
+  return 0;
+}
+```
+**Output:**
+```
+Count = 1
+Count = 2
+```
+
+### 5. `extern`
+An object declaration outside of a function is called an **external declaration**. If the file does not include the file 
+provides the compiler with sufficient information to access a variable declared in another file. Later in the semester when we build libraries, we will see be utilized to prevent *name mangling* with `extern "C"{...}`.
 
 ---
 ## Declaration and Assignment
