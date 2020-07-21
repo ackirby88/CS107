@@ -59,8 +59,79 @@ int MPI_Send(const void *buf, int count, MPI_Datatype datatype, int dest, int ta
 ```
 
 ### 3. Array Type
+An array is a data structure that can store a fixed-size sequential collection of elements of the same type.
+Arrays cannot be of void or function type, since the void type cannot be completed and function types are not object types requiring storage.
+```C
+int nvec = 107;
+
+/* allocate memory */
+double *vec = (double *) malloc(nvec*sizeof(double));
+
+vec[0] = 1.1234534631246;
+for (int i = 1 ; i < nvec; ++i) {
+  vec[i] = 2.0*vec[i-1];
+}
+
+/* deallocate memory */
+free(vec); vec = NULL;
+```
+
+Each of the elements has the size of a double object, 8 bytes (64 bits). The size of the array is determined by its initialization; in the previous example, the array has `nvec = 107` explicit elements.
+
+An array is allocated contiguously in memory, and cannot be empty (that is, have no members).  
+An array can have only one dimension. To create an array of "two dimensions," declare an array of arrays, and so on.
+```C
+/* allocate first dimension */
+int **two_dim = (int **) malloc(10 * sizeof(int *));
+
+/* allocate second dimension */
+for (int j = 0; j < 10; ++j) {
+  two_dim[j] = (int *) malloc(25*sizeof(int));
+}
+
+/* fill array of arrays: i-index is contiguous in memory */
+for (int j = 0; j < 10; ++j) {
+  for (int i = 0; i < 25; ++i) {
+    two_dim[j][i] = 2*j + i;
+  }
+}
+
+/* deallocate memory */
+for (int j = 0; j < 10; ++j) {
+  free(two_dim[j]); two_dim[j] = NULL;
+}
+free(two_dim); two_dim = NULL;
+```
 
 ### 4. Structure Type
+A structure type is a sequentially allocated nonempty set of objects, called members. Structures let you group heterogeneous data. They are much like records in Pascal. Unlike arrays, the elements of a structure need not be of the same data type. Also, elements of a structure are accessed by name, not by subscript. The following example declares a structure employee , with two structure variables (ed and mary ) of the structure type employee :
+
+struct employee { char name[30]; int age; int empnumber; };
+struct employee ed, mary;
+Structure members can have any type except an incomplete type, such as the void type or a function type. Structures can contain pointers to objects of their own type, but they cannot contain an object of their own type as a member; such an object would have an incomplete type. For example:
+
+struct employee {
+  char name[30];
+  struct employee div1;       /*  This is invalid. */
+  int *f();
+};
+The following example, however, is valid:
+
+struct employee {
+  char name[30];
+  struct employee *div1;/*  Member can contain pointer to employee
+                            structure.                             */
+  int (*f)();           /*  Pointer to a function returning int    */
+};
+The name of a declared structure member must be unique within the structure, but it can be used in another nested or unnested structure or name spaces to refer to a different object. For example:
+
+struct {
+  int a;
+  struct {
+    int a;  /* This 'a' refers to a different object
+               than the previous 'a'               */
+  };
+};
 
 ### 5. Union Type
 
