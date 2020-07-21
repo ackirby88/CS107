@@ -104,36 +104,34 @@ free(two_dim); two_dim = NULL;
 ```
 
 ### 4. Structure Type
-A structure type is a sequentially allocated nonempty set of objects, called members. Structures let you group heterogeneous data. They are much like records in Pascal. Unlike arrays, the elements of a structure need not be of the same data type. Also, elements of a structure are accessed by name, not by subscript. The following example declares a structure employee , with two structure variables (ed and mary ) of the structure type employee :
+A structure type is a sequentially allocated nonempty set of objects, called members, allowing grouping of heterogeneous data. 
+Unlike arrays, the elements of a structure need not be of the same data type. Also, elements of a structure are accessed by name, not by subscript. 
+```C
+struct [structure tag] {
+   member definition;
+   member definition;
+   ...
+   member definition;
+} [one or more structure variables];  
+```
 
-struct employee { char name[30]; int age; int empnumber; };
-struct employee ed, mary;
-Structure members can have any type except an incomplete type, such as the void type or a function type. Structures can contain pointers to objects of their own type, but they cannot contain an object of their own type as a member; such an object would have an incomplete type. For example:
-
-struct employee {
+**Example:**
+```C
+struct student {
   char name[30];
-  struct employee div1;       /*  This is invalid. */
-  int *f();
+  int age;
 };
-The following example, however, is valid:
 
-struct employee {
-  char name[30];
-  struct employee *div1;/*  Member can contain pointer to employee
-                            structure.                             */
-  int (*f)();           /*  Pointer to a function returning int    */
-};
-The name of a declared structure member must be unique within the structure, but it can be used in another nested or unnested structure or name spaces to refer to a different object. For example:
+struct andrew, ed, mary;
 
-struct {
-  int a;
-  struct {
-    int a;  /* This 'a' refers to a different object
-               than the previous 'a'               */
-  };
-};
+// access member
+andrew.age = 21;
+```
+
+Sandbox Example: [Structs - Pass-by-Value/Address/Reference](https://bit.ly/3fMX05R)
 
 ### 5. Union Type
+
 
 ## User-Defined Types
 
