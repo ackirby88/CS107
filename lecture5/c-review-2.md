@@ -1,20 +1,29 @@
 # C Data Types
 
 ## Primitive Types
-There are four basic data types: `int`, `char`, `float`, and `double`.
 - `int`: stores an integer
 - `char`: stores a single character and requires a single byte of memory
 - `float`: stores floating point numbers with **single** precision
 - `double`: stores floating point numbers with **double** precision
 
-## Modifiers: `signed`, `unsigned`, `short`, and `long`
+## Modifiers
+- `signed` (int/char): target type will have signed representation (this is the default if omitted)
+- `unsigned` (int/char): target type will have unsigned representation
+- `short`: target type will be optimized for space and will have width of at least 16 bits
+- `long`: target type will have width of at least 32 bits
+- `long long`: target type will have width of at least 64 bits  
+
 These change the range and size that the variable can represent, e.g. `unsigned char` values range at least [0,255].
 ```C
 long long int a;   // 8 bytes
 unsigned short b;  // 2 bytes, [0,65535]
 ```
 
-## Qualifiers: `const`, `volatile`, `restrict`
+## Qualifiers
+- `const`:
+- `volitile`:
+-`restrict`:
+
 ### 1. `const`
 The qualifier `const` can be applied to the declaration of any variable to specify that its value will not be changed.
 ```C
@@ -121,7 +130,7 @@ int main(void){
 error: assignment of read-only variable ‘ptr’
 ```
 
-- **Constant pointer to constant**: `int *const`
+- **Constant pointer to constant**: `const int *const`
 ```C
 const int *const ptr; 
 ```
@@ -150,9 +159,20 @@ error: assignment of read-only variable ‘ptr’
 error: assignment of read-only location ‘*ptr’
 ```
 
-### 2. `volatile`
+---
+**Summary**  
+`int const*` is pointer to constant integer  
+`int *const` is a constant pointer to integer  
+`const int* const` is a constant pointer to constant integer
 
-### 3. `restrict` (only for pointers)
+---
+
+### 2. `volatile`
+The `volatile` qualifier tells the compiler that the **value of the variable may change at any time, without any action being taken by the code** the compiler finds nearby. Volatile accesses cannot be optimized out or reordered with another visible side effect that is sequenced-before or sequenced-after the volatile access. 
+This qualifier is used primarily in embedded programming of devices, e.g.  mobile phones, washing machines, and digital cameras.
+
+### 3. `restrict`
+
 
 ## Declaration and Assignment
 To use variables in C/C++, they first must be declared.  
