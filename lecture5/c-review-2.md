@@ -20,9 +20,9 @@ unsigned short b;  // 2 bytes, [0,65535]
 ```
 
 ## Qualifiers
-- `const`:
-- `volitile`:
--`restrict`:
+- `const`: object cannot be modified; attempt to do so directly is a compile-time error
+- `volatile`: tells compiler value may change at any time code not seen by the compiler
+- `restrict`: **(C only)** tells compiler that assigned pointer is the only way to access the object pointed by it
 
 ### 1. `const`
 The qualifier `const` can be applied to the declaration of any variable to specify that its value will not be changed.
@@ -171,8 +171,18 @@ error: assignment of read-only location ‘*ptr’
 The `volatile` qualifier tells the compiler that the **value of the variable may change at any time, without any action being taken by the code** the compiler finds nearby. Volatile accesses cannot be optimized out or reordered with another visible side effect that is sequenced-before or sequenced-after the volatile access. 
 This qualifier is used primarily in embedded programming of devices, e.g.  mobile phones, washing machines, and digital cameras.
 
-### 3. `restrict`
+### 3. `restrict` (C only)
+In the C programming language, `restrict` is a keyword that can be used in pointer declarations. By adding this type qualifier, a programmer hints to the compiler that for the lifetime of the pointer, only the pointer itself or a value directly derived from it (such as pointer + 1) will be used to access the object to which it points.
 
+`restrict` limits the effects of pointer aliasing, aiding optimizations. If the declaration of intent is not followed and the object is accessed by an independent pointer, this will result in undefined behavior.
+
+If the compiler knows that there is only one pointer to a memory block, it can produce better optimized code. For instance:
+```C
+void updatePtrs(size_t *restrict ptrA, size_t *restrict ptrB, size_t *restrict val){
+  *ptrA += *val;
+  *ptrB += *val;
+}
+```
 
 ## Declaration and Assignment
 To use variables in C/C++, they first must be declared.  
