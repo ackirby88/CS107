@@ -1,8 +1,12 @@
+
+---
 **Key:** 
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
+[Previous: C Preprocessor](https://github.com/ackirby88/CS107/blob/master/lecture5/CPP-2-Prepocessor.md)
 
+---
 # C Data Types
 
 ## Primitive Types
@@ -430,3 +434,6 @@ This will return the **number of bytes**.
 sizeof(var)
 sizeof var
 ```
+
+---
+[Next: Operators, Loops, Functions](https://github.com/ackirby88/CS107/blob/master/lecture5/CPP-4-OpsLoopsFunctions.md)
