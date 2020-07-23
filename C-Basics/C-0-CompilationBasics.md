@@ -7,7 +7,7 @@
 [Previous: C++ Track Overview](https://github.com/ackirby88/CS107/blob/master/cpp-overview.md)
 
 ---
-## Compilation Basics
+# Compilation Basics
 (*We will have more on this topic later in the semester.*)  
 
 Within this track, we will need to compile our codes.  
@@ -27,14 +27,14 @@ int main(void) {
   return 0;
 }
 ```  
-#### Compiling on the command line:  
+## Compiling on the command line:  
 ```C
 gcc -o hello hello.c
 ```
 Here, `gcc` is the GNU C compiler, `-o hello` tells the compiler to *output* a program named `hello`, and we provide the **hello.c** source file as the input.  
 We can also compile the single file using **make**: `make hello`
 
-#### Executing on the command line:
+## Executing on the command line:
 ```C
 ./hello
 >>> Hello, World!
