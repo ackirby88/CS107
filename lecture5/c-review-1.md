@@ -1,7 +1,7 @@
-:large_orange_diamond: - **Code Example**  
-:large_blue_diamond: - **Code Exercise**  
+**Key:**  
+:large_orange_diamond: - **Code Example** 
+:large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-
 
 ## Compilation Basics
 (*We will have more on this topic later in the semester.*)  
