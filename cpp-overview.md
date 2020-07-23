@@ -22,7 +22,7 @@ class CppTrack: public CS107 {
 ## C++ Track Outline
 - C Basics [Lectures 5-6]
   - [Compilation Basics](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-0-CompilationBasics.md)
-  - [Source and Header Files](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-1-SourceHeaderFiles.md)
+  - [Source & Header Files](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-1-SourceHeaderFiles.md)
   - [C-Preprocessor](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-2-Prepocessor.md)
   - [C Data Types](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-3-CDataTypes.md)
   - [Operators, Loops, Functions](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-4-OpsLoopsFunctions.md)
@@ -55,5 +55,5 @@ class CppTrack: public CS107 {
 [IDEAS Project](https://ideas-productivity.org/events/hpc-best-practices-webinars/): Best Practices for `Computational Science` Software Developers.  
 
 ---
-[Next: Introduction to C++]({filename}CPP-0-CompilationBasics.md)
+[Next: Compilation Basics]({filename}CPP-0-CompilationBasics.md)
 
