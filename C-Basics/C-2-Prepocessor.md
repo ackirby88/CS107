@@ -4,7 +4,7 @@
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[Previous: Source & Header Files](https://github.com/ackirby88/CS107/blob/master/lecture5/CPP-1-SourceHeaderFiles.md)
+[Previous: Source & Header Files](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-1-SourceHeaderFiles.md)
 
 ---
 ## C Preprocessor (cpp)
@@ -212,4 +212,4 @@ Let's suppose that we want to build a program that depends on physical space dim
 :large_blue_diamond: Build a program that uses `float` when the macro `SINGLE_PRECISION` is defined, otherwise uses `double` as the floating pointing representation by defining a macro.
 
 ---
-[Next: C Data Types](https://github.com/ackirby88/CS107/blob/master/lecture5/CPP-3-CDataTypes.md)
+[Next: C Data Types](https://github.com/ackirby88/CS107/blob/master/B-Basics/C-3-CDataTypes.md)
