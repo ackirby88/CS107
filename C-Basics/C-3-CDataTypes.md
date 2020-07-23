@@ -16,7 +16,7 @@
 - `double`: stores floating point numbers with **double** precision
 - `void`: the absence of type
 
-#### Integer Literals
+### Integer Literals
 Within C/C++, there are four literal types: `decima`, `binary`, `octal`, and `hexadecimal`.  
 ```C
 int b = 0b101;     // binary
@@ -137,7 +137,7 @@ struct student andrew, ed, mary;
 andrew.age = 21;
 ```
 
-Sandbox Example: [Structs - Pass-by-Value/Address/Reference](https://bit.ly/3fMX05R)
+:large_orange_diamond: Sandbox Example: [Structs - Pass-by-Value/Address/Reference](https://bit.ly/3fMX05R)
 
 ### 5. Union Type
 A **union** is a special data type available in C that allows to store different data types in the same memory location. You can define a union with many members, but only one member can contain a value at any given time. Unions provide an efficient way of using the same memory location for multiple-purpose.
@@ -158,10 +158,10 @@ union Data {
 } data;
 ```
 
+---
 ## User-Defined Types
 
----
-## Modifiers
+### Modifiers
 - `signed` (int/char): target type will have signed representation (this is the default if omitted)
 - `unsigned` (int/char): target type will have unsigned representation
 - `short`: target type will be optimized for space and will have width of at least 16 bits
@@ -174,14 +174,14 @@ long long int a;   // 8 bytes
 unsigned short b;  // 2 bytes, [0,65535]
 ```
 ---
-## Qualifiers
+### Qualifiers
 - `const`: object cannot be modified; attempt to do so directly is a compile-time error
 - `volatile`: tells compiler value may change at any time code not seen by the compiler
 - `restrict`: **(C only)** tells compiler that assigned pointer is the only way to access the object pointed by it
 - `static`: value remains in memory for duration of program life
 - `extern`: t provides the compiler with sufficient information to access a variable declared in another file
 
-### 1. `const`
+#### 1. `const`
 The qualifier `const` can be applied to the declaration of any variable to specify that its value will not be changed.
 ```C
 const int a = 7;
@@ -324,11 +324,11 @@ error: assignment of read-only location ‘*ptr’
 
 ---
 
-### 2. `volatile`
+#### 2. `volatile`
 The `volatile` qualifier tells the compiler that the **value of the variable may change at any time, without any action being taken by the code** the compiler finds nearby. Volatile accesses cannot be optimized out or reordered with another visible side effect that is sequenced-before or sequenced-after the volatile access. 
 This qualifier is used primarily in embedded programming of devices, e.g.  mobile phones, washing machines, and digital cameras.
 
-### 3. `restrict` (C only)
+#### 3. `restrict` (C only)
 In the C programming language, `restrict` is a keyword that can be used in pointer declarations. By adding this type qualifier, a programmer hints to the compiler that for the lifetime of the pointer, only the pointer itself or a value directly derived from it (such as pointer + 1) will be used to access the object to which it points.
 
 `restrict` limits the effects of pointer aliasing, aiding optimizations. If the declaration of intent is not followed and the object is accessed by an independent pointer, this will result in undefined behavior.
@@ -341,7 +341,7 @@ void updatePtrs(size_t *restrict ptrA, size_t *restrict ptrB, size_t *restrict v
 }
 ```
 
-### 4. `static`
+#### 4. `static`
 Static variables have a property of preserving their value even after they are out of their scope! Hence, static variables preserve their previous value in their previous scope and are not initialized again in the new scope.
 ```C
 #include<stdio.h>
@@ -364,7 +364,7 @@ Count = 1
 Count = 2
 ```
 
-### 5. `extern`
+#### 5. `extern`
 An object declaration outside of a function is called an **external declaration**. If the file does not include the file 
 provides the compiler with sufficient information to access a variable declared in another file. Later in the semester when we build libraries, we will see be utilized to prevent *name mangling* with `extern "C"{...}`.
 
@@ -406,6 +406,7 @@ int main ()
   return 0;
 }
 ```
+
 ---
 ## Scope
 The scope of local variables is limited to the block enclosed in braces (`{}`) where they are declared. 
