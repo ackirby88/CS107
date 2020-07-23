@@ -177,7 +177,7 @@ For example, here is a macro that computes the minimum of two numeric values, as
 An example usage could be `MIN(2,3)` resulting in the expected value `2`.   
 We can even do `MIN(cs + 107, *p)` which expands to `((cs + 107) < (*p) ? (cs + 107) : (*p))`
 
-:red_circle: We could have unintended side effects using macros for function-like expressions.  
+:red_circle: We could have unintended side effects using macros for function-like expressions. :red_circle:  
 For example, if we defined a MAX function as  
 ```C
 #define MAX(a,b) a > b ? a : b
