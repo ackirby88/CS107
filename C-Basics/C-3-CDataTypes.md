@@ -24,7 +24,7 @@ int d = 42;        // decimal
 int o = 023;       // octal
 int h = 0xC05FEFE; // hexadecimal
 ```
-:red_circle: Be careful with leading zeros! Leading zeros indicate octal numbers.  
+:red_circle: Be careful with leading zeros! Leading zeros indicate octal numbers. :red_circle:  
 :large_orange_diamond: [Literals Sandbox](https://bit.ly/2ZJ0Ffg)
 
 ## Derived Types
