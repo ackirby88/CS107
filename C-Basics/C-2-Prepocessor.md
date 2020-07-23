@@ -7,7 +7,7 @@
 [Previous: Source & Header Files](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-1-SourceHeaderFiles.md)
 
 ---
-## C Preprocessor (cpp)
+# C Preprocessor (cpp)
 The C Preprocessor is a *macro processor* which allows you to define macros (abbreviations).  
 It is used **automatically** by the C compiler to transform your program before actual compilation.  
 
@@ -17,7 +17,7 @@ The C Preprocessor can perform multiple functions:
 - Conditional compilation - include or exclude specific definitions using conditionals
 - Line control - inform the compiler of where source lines originated from when a program to used to combine or rearrange source files into an intermediate file which is then compiled
 
-### Preprocessor Directives
+## Preprocessor Directives
 Preprocessor directives are lines starting with the character `#`, e.g. `#define FOO 107`.  
 Whitespace is also allowed before and after the `#`, and directives can expand over multiple lines by using the character `\`.  
 ```C
