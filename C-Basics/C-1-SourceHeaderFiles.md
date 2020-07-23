@@ -7,20 +7,20 @@
 [Previous: Compilation Basics](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-0-CompilationBasics.md)
 
 ---
-## Source Files
+# Source Files
 We will write our C++ code to source files which have the file extension of `.cpp`, `.cc`, `.C`, or `.cxx`.  
 C files have the file extension of `.c`.
 
-## Header Files
+# Header Files
 Header files usually contain function declarations but can sometimes also contain functions implementations, e.g. inlined functions.  
 Header files can be used used to share these declarations and macro expansions across multiple files.  
 
 Here we can see a function declaration for the function `print_hello_world()`:
-#### Example 1: hello_1.h
+## Example 1: hello_1.h
 ```C
 void print_hello_world(void);
 ```
-#### Example 1: hello_1.c
+## Example 1: hello_1.c
 ```C
 #include <stdio.h>
 #include "hello_1.h"
