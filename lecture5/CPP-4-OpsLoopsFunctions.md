@@ -1,8 +1,12 @@
+
+---
 **Key:** 
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
+[Previous: C Data Types](https://github.com/ackirby88/CS107/blob/master/lecture5/CPP-3-CDataTypes.md)
 
+---
 # Operators
 ## Unary Operators
 - minus `-`, plus `+`
@@ -31,3 +35,6 @@ int a = (x < y) ? x : y; // a = min(x, y)
 # Loops
 
 # Functions
+
+---
+[Next: Memory, Pointers, References](https://github.com/ackirby88/CS107/blob/master/lecture5/CPP-5-Memory.md)
