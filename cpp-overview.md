@@ -21,13 +21,13 @@ class CppTrack: public CS107 {
 ---
 ## C++ Track Outline
 - C Basics [Lectures 5-6]
-  - [Compilation Basics](https://github.com/ackirby88/CS107/blob/master/lecture5/CPP-0-CompilationBasics.md)
-  - [Source and Header Files](https://github.com/ackirby88/CS107/blob/master/lecture5/CPP-1-SourceHeaderFiles.md)
-  - [C-Preprocessor](https://github.com/ackirby88/CS107/blob/master/lecture5/c-prepocessor.md)
-  - Primitive, Derived, and User-Defined Data Types
-  - Operators, Loops, Functions
-  - Memory, Pointers, References 
-  - Function Pointers
+  - [Compilation Basics](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-0-CompilationBasics.md)
+  - [Source and Header Files](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-1-SourceHeaderFiles.md)
+  - [C-Preprocessor](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-2-Prepocessor.md)
+  - [C Data Types](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-3-CDataTypes.md)
+  - [Operators, Loops, Functions](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-4-OpsLoopsFunctions.md)
+  - [Memory, Pointers, References](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-5-Memory.md)
+  - [Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)
 
 - C++ Object-Oriented Programming [Lectures 7-8]
   - Classes/Objects: methods, constructors, access, operator overloading
