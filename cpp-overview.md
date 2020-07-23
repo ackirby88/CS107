@@ -7,7 +7,7 @@ tags: C++
 
 ## Background
 This track assumes basic programming knowledge at the level covered in [Harvard's CS50](https://cs50.harvard.edu/college/2019/fall/).  
-Our goal will be to build up your C++ experience and introduce system development techniques for Computational Science & Engineering.
+Our goal is to build up your C++ experience and introduce system development techniques for Computational Science & Engineering.
 
 ```C++
 class CppTrack: public CS107 {
@@ -21,9 +21,9 @@ class CppTrack: public CS107 {
 ---
 ## C++ Track Outline
 - C Basics [Lectures 5-6]
-  - Source and Header Files
-  - Compilation Basics
-  - C-preprocessor
+  - [Compilation Basics](https://github.com/ackirby88/CS107/blob/master/lecture5/CPP-0-CompilationBasics.md)
+  - [Source and Header Files](https://github.com/ackirby88/CS107/blob/master/lecture5/CPP-1-SourceHeaderFiles.md)
+  - [C-Preprocessor](https://github.com/ackirby88/CS107/blob/master/lecture5/c-prepocessor.md)
   - Primitive, Derived, and User-Defined Data Types
   - Operators, Loops, Functions
   - Memory, Pointers, References 
@@ -55,5 +55,5 @@ class CppTrack: public CS107 {
 [IDEAS Project](https://ideas-productivity.org/events/hpc-best-practices-webinars/): Best Practices for `Computational Science` Software Developers.  
 
 ---
-[Next: Introduction to C++]({filename}intro-C++.md)
+[Next: Introduction to C++]({filename}CPP-0-CompilationBasics.md)
 
