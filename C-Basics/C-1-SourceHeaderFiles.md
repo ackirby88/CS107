@@ -4,7 +4,7 @@
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[Previous: Compilation Basics](CPP-0-CompilationBasics.md)
+[Previous: Compilation Basics](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-0-CompilationBasics.md)
 
 ---
 ## Source Files
@@ -39,4 +39,4 @@ Luckily for us, the C Preprocessor replaces the `#include "hello_1.h"` line with
 :large_orange_diamond: [FIXME Hello World with header files!](...)
 
 ---
-[Next: C-Preprocessor](https://github.com/ackirby88/CS107/blob/master/lecture5/c-prepocessor.md)
+[Next: C-Preprocessor](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-2-Prepocessor.md)
