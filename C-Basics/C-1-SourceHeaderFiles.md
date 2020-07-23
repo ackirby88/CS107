@@ -39,4 +39,4 @@ Luckily for us, the C Preprocessor replaces the `#include "hello_1.h"` line with
 :large_orange_diamond: [FIXME Hello World with header files!](...)
 
 ---
-[Next: C-Preprocessor](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-2-Prepocessor.md)
+[Next: C Preprocessor](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-2-Prepocessor.md)
