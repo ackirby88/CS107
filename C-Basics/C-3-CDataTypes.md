@@ -24,7 +24,8 @@ int d = 42;        // decimal
 int o = 023;       // octal
 int h = 0xC05FEFE; // hexadecimal
 ```
-:red_circle: Be careful with leading zeros! [Literals Sandbox](https://bit.ly/2ZJ0Ffg)
+:red_circle: Be careful with leading zeros! Leading zeros indicate octal numbers.  
+:large_orange_diamond: [Literals Sandbox](https://bit.ly/2ZJ0Ffg)
 
 ## Derived Types
 - `Function`:  a function that returns a value of a specified type
@@ -379,7 +380,7 @@ We can also declare variables in a single line:
 ```C
 int a, b, c;
 ```
-:red_circle: But be careful with assigning pointers on a single line! The `*` needs to be placed on **each** variable.
+:red_circle: But be careful with assigning pointers on a single line! The `*` needs to be placed on **each** variable. :red_circle:
 ```C
 int *a_ptr, *b_ptr;
 int* c_ptr, c; // c_ptr is a pointer to an integer address, c is actually an integer!
