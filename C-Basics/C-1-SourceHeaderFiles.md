@@ -12,15 +12,19 @@ We will write our C++ code to source files which have the file extension of `.cp
 C files have the file extension of `.c`.
 
 # Header Files
-Header files usually contain function declarations but can sometimes also contain functions implementations, e.g. inlined functions.  
+Header files will have the file extension `.h` or `.hpp`.  
+These files usually contain function declarations but can sometimes also contain functions implementations, e.g. inlined functions.  
+
 Header files can be used used to share these declarations and macro expansions across multiple files.  
 
 Here we can see a function declaration for the function `print_hello_world()`:
-## Example 1: hello_1.h
+## Example 1: Hello World Header Files!
+:large_blue_diamond: **hello_1.h**
 ```C
 void print_hello_world(void);
 ```
-## Example 1: hello_1.c
+
+:large_blue_diamond: **hello_1.c**
 ```C
 #include <stdio.h>
 #include "hello_1.h"
