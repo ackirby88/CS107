@@ -54,6 +54,8 @@ int a = (x < y) ? x : y; // a = min(x, y)
 
 ### `while`
 
+### `do`
+
 ### `continue`, `break`
 
 # Functions
