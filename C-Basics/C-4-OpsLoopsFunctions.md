@@ -175,7 +175,44 @@ int main(void){
 }
 ```
 
-### `continue`, `break`
+# Jump Statements
+## The `break` Statement
+Using `break` we can leave a loop even if the condition for its end is not fulfilled.  
+It can be used to end an infinite loop, or to force it to end before its natural end.  
+```C++
+#include <iostream>
+using namespace std;
+
+int main(void){
+  for (int n = 10; n > 0; n--) {
+    cout << n << ", ";
+    if (n == 3){
+      cout << "countdown aborted!";
+      break;
+    }
+  }
+  return 0;
+}
+```
+Result: `10, 9, 8, 7, 6, 5, 4, 3, countdown aborted!`  
+
+## The `continue` Statement
+The `continue` statement causes the program to skip the rest of the loop in the current iteration as if the end of the statement block had been reached, causing it to jump to the start of the following iteration.
+```C++
+// continue loop example
+#include <iostream>
+using namespace std;
+
+int main(void){
+  for (int n = 10; n > 0; n--) {
+    if (n == 5) continue;
+    cout << n << ", ";
+  }
+  cout << "FIRE!\n";
+  return 0;
+}
+```
+Result: `10, 9, 8, 7, 6, 4, 3, 2, 1, FIRE!`  
 
 # Functions
 ## Variadic Functions
