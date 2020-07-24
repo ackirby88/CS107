@@ -29,6 +29,18 @@
 ## Conditional (Ternary) Operator
 The conditional operator `(expression) ? (val1):(val2)` takes three operands. It tests the result of the first operand and then evaluates one of the other two operands based on the result of the first.
 ```C
+if (expression == true) {
+  ret = (val1);
+} else {
+  ret = (val2);
+}
+
+// ternary operator
+ret = (expression) ? (val1):(val2) ;
+```
+
+Example:
+```C
 int a = (x < y) ? x : y; // a = min(x, y)
 ```
 
