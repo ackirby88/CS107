@@ -221,6 +221,7 @@ int main(void){
 ```
  error: assignment of read-only location ‘*ptr’
 ```
+:large_orange_diamond: [Pointer To Constant Bug](https://bit.ly/3hpxTq2)
 
 Following is another example where variable `i` itself is constant.  
 **Example:**
