@@ -44,9 +44,20 @@ Example:
 int a = (x < y) ? x : y; // a = min(x, y)
 ```
 
+# Logic
+### `if/elseif/else`
+### `switch`
+#### Fall-through
+
 # Loops
+### `for`
+
+### `while`
+
+### `continue`, `break`
 
 # Functions
+## Variadic Functions
 
 ---
 [Next: Memory, Pointers, References](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-5-Memory.md)
