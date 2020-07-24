@@ -199,7 +199,8 @@ The pointer is stored in the read-write area (stack in the present case).
 The object pointed may be in the read-only or read-write area. Let's look at some examples.  
 **Example:**
 ```C
-#include <stdio.h> 
+#include <stdio.h>
+
 int main(void){
   int i = 10;
   int j = 20;
