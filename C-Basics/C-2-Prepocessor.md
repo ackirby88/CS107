@@ -90,8 +90,6 @@ You may see `#pragma once` which is a non-standard but widely used directive des
 
 :large_orange_diamond: [Header File Collision](https://bit.ly/32NDaUr)
 
-:arrow_right: **NOTE**: In a **user** header file, the macro name should **not** begin with `_`; this is due to avoiding collisions with system header files which normally begin with `__`. It is good practice to make the macro contain the name of the file and possibly additional text to avoid conflicts with other header files.
-
 ## Simple Macros
 
 ### **`#define`**:  
@@ -133,6 +131,9 @@ results in the expanded version
 course = 107
 num = CS
 ```
+
+:arrow_right: **NOTE**: In a **user** header file, the macro name should **not** begin with `_`; this is due to avoiding collisions with system header files which normally begin with `__`. It is good practice to make the macro contain the name of the file and possibly additional text to avoid conflicts with other header files.
+
 ## Conditional Macros
 A conditional in the C preprocessor begins with a conditional directive: `#if`, `#ifdef` or `#ifndef`.  
 These conditional macros need to be closed with the directive `#endif`.
@@ -207,8 +208,10 @@ Let's suppose that we want to build a program that depends on physical space dim
 - `__cplusplus` Undefined for C code compiled by a C compiler; `199711L` C code is compiled by a C++ compiler (98 C++ standard)
 - `__func__` Current function name of the source file, as a string (part of C99)
 
+:large_orange_diamond: [Macro Example](https://bit.ly/3hpti7g)
+
 ## C Preprocessor Exercises
-:large_blue_diamond: [Fix Max Define Bug](...)  
+:large_blue_diamond: [Fix Max Define Bug](https://bit.ly/2BpdkL2)  
 :large_blue_diamond: Build a program that uses `float` when the macro `SINGLE_PRECISION` is defined, otherwise uses `double` as the floating pointing representation by defining a macro.
 
 ---
