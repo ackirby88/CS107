@@ -130,7 +130,7 @@ num = CS
 ``` 
 results in the expanded version
 ```C
-course = 104
+course = 107
 num = CS
 ```
 ## Conditional Macros
