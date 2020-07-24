@@ -158,11 +158,24 @@ union [union tag] {
 **Example:**
 ```C
 union Data {
-   int i;
-   float f;
+   int i[6];
+   double f[2];
    char str[20];
 } data;
 ```
+:question: **Question** :question: : How many bytes is data?
+<details><summary>Answer</summary>
+<p>
+  
+#### 24 bytes  
+```
+  int i[6]: (4 bytes per int) * (6 ints) = 24 bytes  
+  double f[2]: (8 bytes per double) * (2 doubles) = 16 bytes  
+  char str[20]: (1 byte per char) * (20 chars) = 20 bytes
+  ```
+  
+</p>
+</details>
 
 ---
 ## User-Defined Types
