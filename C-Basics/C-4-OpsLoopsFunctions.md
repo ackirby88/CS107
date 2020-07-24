@@ -110,14 +110,70 @@ switch (x) {
 If `x = 1`, then the statements for `case 1` **and** `case 2` are executed.  
 :large_orange_diamond:[Switch Case Demo](https://bit.ly/2OWazEm)
 
-#### Fall-through
-
 # Loops
-### `for`
+## The `for` Loop
+Format:
+```C
+for (initialization; condition; increase) statement;
+```
+Example:
+```C++
+for (int i = 0; i < 100; ++i) {
+  i *= 10;
+}
+```
 
-### `while`
+Optionally, we can add more arguments inside the `for` loop arguments:
+```C
+for (n = 0, i = 100; n != i; n++, i--) {
+   // whatever here...
+}
+```
 
-### `do`
+## The `while` Loop
+Format:
+```C
+while (expression) statement
+```
+Example:
+```C++
+#include <iostream>
+using namespace std;
+
+int main(void){
+  int n;
+  cout << "Enter the starting number > ";
+  cin >> n;
+
+  while (n>0) {
+    cout << n << ", ";
+    --n;
+  }
+
+  cout << "FIRE!\n";
+  return 0;
+}
+```
+## The `do-while` Loop
+Format:
+```C
+do statement while (condition);
+```
+Example:
+```C++
+#include <iostream>
+using namespace std;
+
+int main(void){
+  unsigned long n;
+  do {
+    cout << "Enter number (0 to end): ";
+    cin >> n;
+    cout << "You entered: " << n << "\n";
+  } while (n != 0);
+  return 0;
+}
+```
 
 ### `continue`, `break`
 
