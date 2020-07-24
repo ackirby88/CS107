@@ -368,7 +368,8 @@ Count = 2
 
 #### 5. `extern`
 An object declaration outside of a function is called an **external declaration**. If the file does not include the file 
-provides the compiler with sufficient information to access a variable declared in another file. Later in the semester when we build libraries, we will see be utilized to prevent *name mangling* with `extern "C"{...}`.
+provides the compiler with sufficient information to access a variable declared in another file. Later in the semester when we build libraries, we will see be utilized to prevent *name mangling* with `extern "C"{...}`.  
+:large_orange_diamond: [Name Mangling (Header File Example)](https://bit.ly/2WPu1XD)
 
 ---
 ## Declaration and Assignment
