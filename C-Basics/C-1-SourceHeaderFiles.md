@@ -4,7 +4,8 @@
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[Previous: Compilation Basics](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-0-CompilationBasics.md)
+[**Previous**: Compilation Basics](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-0-CompilationBasics.md)  
+[**Next**: C Preprocessor](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-2-Prepocessor.md)
 
 ---
 # Source Files
@@ -44,4 +45,4 @@ Luckily for us, the C Preprocessor replaces the `#include "hello_1.h"` line with
 :large_orange_diamond: [Hello World Header Files!](https://bit.ly/2WPu1XD) This example also introduces *name mangling* which we will learn more later in the semester.
 
 ---
-[Next: C Preprocessor](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-2-Prepocessor.md)
+[**Next**: C Preprocessor](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-2-Prepocessor.md)
