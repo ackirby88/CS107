@@ -28,7 +28,7 @@ int h = 0xC05FEFE; // hexadecimal
 :red_circle: Be careful with leading zeros! Leading zeros indicate octal numbers. :red_circle:  
 :large_orange_diamond: [Literals Sandbox](https://bit.ly/2ZJ0Ffg)
 
-### Some C/C++ Standard Types (`#include <stdint.h>`)
+### Some C/C++ Standard Types (C: `#include <stdint.h>`, C++: `#include <cstdlib>`)
 - `size_t`: unsigned integer type of at least 16 bits  
 - ` int8_t`,` int16_t`,` int32_t`, ` int64_t`: 8/16/3/64 bit signed integers  
 - `uint8_t`,`uint16_t`,`uint32_t`, `uint64_t`: 8/16/3/64 bit unsigned integers  
