@@ -4,7 +4,8 @@
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[Previous: C++ Track Overview](https://github.com/ackirby88/CS107/blob/master/cpp-overview.md)
+[**Previous**: C++ Track Overview](https://github.com/ackirby88/CS107/blob/master/cpp-overview.md)  
+[**Next**: Source & Header Files](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-1-SourceHeaderFiles.md)
 
 ---
 # Compilation Basics
@@ -45,4 +46,4 @@ We can also compile the single file using **make**: `make hello`
 ([Github markdown](https://github.com/ackirby88/CS107/blob/master/labs/helloworld/README.md))
 
 ---
-[Next: Source & Header Files](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-1-SourceHeaderFiles.md)
+[**Next**: Source & Header Files](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-1-SourceHeaderFiles.md)
