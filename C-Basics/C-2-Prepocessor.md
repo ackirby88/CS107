@@ -88,7 +88,7 @@ Notice that the macro `HELLO_H` indicates that the file has been included once a
 
 You may see `#pragma once` which is a non-standard but widely used directive designed to cause the current source file to be included only once in a single compilation. **However, `#pragma once` is now obsolete and should not be used.**  
 
-:large_orange_diamond: [FIXME Header File Collision Lab]()
+:large_orange_diamond: [Header File Collision](https://bit.ly/32NDaUr)
 
 :arrow_right: **NOTE**: In a **user** header file, the macro name should **not** begin with `_`; this is due to avoiding collisions with system header files which normally begin with `__`. It is good practice to make the macro contain the name of the file and possibly additional text to avoid conflicts with other header files.
 
