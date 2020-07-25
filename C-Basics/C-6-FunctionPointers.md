@@ -101,6 +101,7 @@ int main(void){
 
 ```
 :large_orange_diamond: [Callback Functions Demo](https://bit.ly/3g0XlBP)
+:large_orange_diamond: [Callback Functions Shared Library Demo](https://bit.ly/2ZXsZuG)
 
 ## Building a *Class* in C - *Sort Of*
 Structs allow various data members of different types to be stored. However, structs don't actually have **methods**. But we can trick it!  
