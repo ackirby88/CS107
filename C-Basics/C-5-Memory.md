@@ -8,7 +8,7 @@
 [**Next**: Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)
 
 ---
-# Memory, Pointers, References
+# Memory, Array, Pointers, References
 
 ---
 [**Next**: Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)
