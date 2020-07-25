@@ -9,6 +9,13 @@
 
 ---
 # Function Pointers
+A function pointer is a variable that stores the *address of a function* which can be used within in a program, including as a function argument.
+
+## Syntax
+
+## Functions as Arguments to Other Functions
+
+## Callback Functions
 
 ## Function Pointers *in the wild*
 C has a built-in sort function:
