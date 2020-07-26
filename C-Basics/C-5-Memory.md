@@ -75,7 +75,7 @@ int b = data[2];
 ```C
 int data[4] = {0, 0, 0, 0};
 
-printf("data[4] = %d\n",data[12]); // index 4 is out of bounds
+printf("data[4] = %d\n",data[4]); // index 4 is out of bounds
 >>> data[4] = -585229896
 ```
 
