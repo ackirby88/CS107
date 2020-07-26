@@ -15,7 +15,9 @@ Recall, an array is a variable which stores multiple values of the same type con
 ```C
 int data[12];
 ```
-![](array.png)
+<p align="center">
+  <img src="array.png">
+</p>
 
 
 ---
