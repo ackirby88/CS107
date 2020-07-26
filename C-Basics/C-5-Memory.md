@@ -25,6 +25,7 @@ int data[12];
 dataType arrayName[arraySize];
 ```
 Note that `arraySize` must be a fixed constant known at **compile time**.  
+The compiler *automatically* allocates and deallocates the array memory.  
 :large_orange_diamond: [Array Memory Demo](https://bit.ly/2CFIYEY): We can check to see if the memory is actually contiguous.
 ```C
 #include <stdio.h>
@@ -92,7 +93,7 @@ Arrays are allocated on the memory **stack** which is the area in the computer's
 The *actual* size limit of the stack depends on how much space your CPU thread has allocated, e.g 2 megabytes. 
 
 ## Memory
-As we saw above, arrays size's must be known at compile time and the maximum number of elements is limited by the stack size (and the amount of stack already occupied). To get around these limitations, we introduce **Dynamic Memory Allocation**.
+As we saw above, the array size's must be known at compile time and the maximum number of elements is limited by the stack size (and the amount of stack already occupied). To get around these limitations, we introduce **Dynamic Memory Allocation**.
 
 
 
