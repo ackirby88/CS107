@@ -5,7 +5,7 @@
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
 [**Previous**: C Data Types](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-3-CDataTypes.md)  
-[**Next**: Memory, Arrays, Pointers, References](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-5-Memory.md)
+[**Next**: Arrays, Memory, Pointers, References](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-5-Memory.md)
 
 ---
 # Operators
@@ -255,4 +255,4 @@ int main(void){
 ```
 
 ---
-[**Next**: Memory, Pointers, References](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-5-Memory.md)
+[**Next**: Arrays, Memory, Pointers, References](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-5-Memory.md)
