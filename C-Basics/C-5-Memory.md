@@ -41,7 +41,7 @@ int main(void){
 ```
 <details><summary><b>Result</b></summary>
 <p>
-  
+
 ```
 data[ 0] address 0x7ffc29e1fbe0
 data[ 1] address 0x7ffc29e1fbe4
@@ -66,6 +66,18 @@ int arr1[4] = {4, 234, 22, -1};
 int arr2[]  = {45, 107, 207, 4, 0};
 ```
 
+#### Array Access
+We can simply access arrays by using `[]`. For example, 
+```C
+int b = data[2];
+```
+:red_circle: **Be careful when accessing data elements!** The compiler won't stop you from accessing elements out-of-bounds. We can accidently access elements beyond our allocated memory.
+```C
+int data[4] = {0, 0, 0, 0};
+
+printf("data[4] = %d\n",data[12]); // index 4 is out of bounds
+>>> data[4] = -585229896
+```
 
 ---
 [**Next**: Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)
