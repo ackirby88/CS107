@@ -59,6 +59,12 @@ data[11] address 0x7ffc29e1fc0c
 </p>
 </details>
 
+#### Array Initialization
+We can initialize arrays during the declaration:
+```C
+int arr1[4] = {4, 234, 22, -1};
+int arr2[]  = {45, 107, 207, 4, 0};
+```
 
 
 ---
