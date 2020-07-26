@@ -9,6 +9,14 @@
 
 ---
 # Arrays, Memory, Pointers, References
+We touched a little bit on arrays in the data structures section, but, let's look at statically and dynamically allocated arrays in detail.  
+
+Recall, an array is a variable which stores multiple values of the same type contiguously in memory.
+```C
+int data[12];
+```
+![](array.png)
+
 
 ---
 [**Next**: Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)
