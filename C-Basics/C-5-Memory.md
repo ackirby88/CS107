@@ -39,8 +39,9 @@ int main(void){
     return 0;
 }
 ```
-
-**Result:**
+<details><summary><b>Result</b></summary>
+<p>
+  
 ```
 data[ 0] address 0x7ffc29e1fbe0
 data[ 1] address 0x7ffc29e1fbe4
@@ -54,7 +55,10 @@ data[ 8] address 0x7ffc29e1fc00
 data[ 9] address 0x7ffc29e1fc04
 data[10] address 0x7ffc29e1fc08
 data[11] address 0x7ffc29e1fc0c
-```
+```  
+</p>
+</details>
+
 
 
 ---
