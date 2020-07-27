@@ -90,11 +90,10 @@ int dim3d[10][3][44];
 ### Array Memory Location and Limitations
 Static arrays have limitations on how many elements can be allocated.  
 Arrays are allocated on the memory **stack** which is the area in the computer's memory stores temporary variables created by a function.  
-The *actual* size limit of the stack depends on how much space your CPU thread has allocated, e.g 2 megabytes. 
+The *actual* size limit of the stack depends on how much space your CPU thread has allocated, e.g. 2 megabytes. 
 
 ## Memory
 As we saw above, the array size's must be known at compile time and the maximum number of elements is limited by the stack size (and the amount of stack already occupied). To get around these limitations, we introduce **Dynamic Memory Allocation**.
-
 
 
 ---
