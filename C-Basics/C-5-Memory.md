@@ -8,7 +8,7 @@
 [**Next**: Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)
 
 ---
-# Arrays, Memory, Pointers, References
+# Arrays, Pointers, Memory, References
 We touched a little bit on arrays in the data structures section, but, let's look at statically and dynamically allocated arrays in detail.  
 
 ## Arrays
@@ -92,9 +92,12 @@ Static arrays have limitations on how many elements can be allocated.
 Arrays are allocated on the memory **stack** which is the area in the computer's memory stores temporary variables created by a function.  
 The *actual* size limit of the stack depends on how much space your CPU thread has allocated, e.g. 2 megabytes. 
 
-## Memory
-As we saw above, the array size's must be known at compile time and the maximum number of elements is limited by the stack size (and the amount of stack already occupied). To get around these limitations, we introduce **Dynamic Memory Allocation**.
+## Pointers
 
+## Memory
+As we saw above, the array sizes must be known at compile time and the maximum number of elements is limited system-assigned stack size (and the amount of stack already occupied). To get around these limitations, we introduce **Dynamic Memory Allocation**.
+
+## References
 
 ---
 [**Next**: Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)
