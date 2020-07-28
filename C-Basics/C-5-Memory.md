@@ -249,7 +249,11 @@ In the previous example, we saw that using data structures containing pointers o
 This may result in very poor performance if we are trying to perform matrix-based calculations.  
 
 Suppose we wish to perform a matrix-vector product:  
-![](matrix-vector.png)  
+
+<p align="center">
+  <img src="matrix-vector.png">
+</p>
+
 where `i` and `j` represent the indexes into the matrix and vector.  
 We need to allocate and access the memory in a contiguous manner. To do so, we will **allocate a single block of contiguous memory** and perform the calculation as follows:
 ```C
