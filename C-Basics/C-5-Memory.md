@@ -242,9 +242,7 @@ for (int i = 0; i < 9) {
 //free pointer of pointers
 free(pp); pp = NULL;
 ```
-<p align="center">
-  <img src="doublepointer.png">
-</p>
+![](doublepointer.png)
 
 ## Pass by Value, Pointer, Reference (C++)
 Now that we have command of pointers, we can examine how to pass variables to functions by three approaches.
