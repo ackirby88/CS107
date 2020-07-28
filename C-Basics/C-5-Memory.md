@@ -216,6 +216,36 @@ int main(void){
 }
 ```
 
+#### Double, Triple, and Beyond Pointers
+Recall that we call have double (pointers containing pointers), triple pointers, or more. Note that when do allocate pointers containing pointers, the data is only contiguous within their individual memory blocks and the momory block containing the pointer addresses.
+**Example:**
+```C
+// allocate pointer of pointers memory
+int **pp = (int **) malloc(9*sizeof(int *));
+
+// allocate each block
+pp[0] = (int *) malloc(10*sizeof(int));
+pp[1] = (int *) malloc(11*sizeof(int));
+pp[2] = (int *) malloc( 5*sizeof(int));
+pp[3] = (int *) malloc(12*sizeof(int));
+pp[4] = (int *) malloc(11*sizeof(int));
+pp[5] = (int *) malloc( 8*sizeof(int));
+pp[6] = (int *) malloc( 9*sizeof(int));
+pp[7] = (int *) malloc(11*sizeof(int));
+pp[8] = (int *) malloc( 7*sizeof(int));
+...
+// free each block
+for (int i = 0; i < 9) {
+  free(pp[i]); pp[i] = NULL;
+}
+
+//free pointer of pointers
+free(pp); pp = NULL;
+```
+<p align="center">
+  <img src="doublepointer.png">
+</p>
+
 ## Pass by Value, Pointer, Reference (C++)
 Now that we have command of pointers, we can examine how to pass variables to functions by three approaches.
 
