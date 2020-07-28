@@ -44,7 +44,7 @@ int main(void){
 void *(*bar_func)(int *);
 ```
 To understand this function, start reading inside out: `(*bar_foo)` - pointer to the function.  
-The leading `void *` is simply a pointer to a void type, and ,lastly, the function takes in an integer pointer as an argument.
+The leading `void *` is simply a pointer to a void type, and, lastly, the function takes in an integer pointer as an argument.
 
 ## Functions as Arguments to Other Functions
 You can pass functions as arguments to other functions which can be executed within the function.  
