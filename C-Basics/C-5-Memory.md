@@ -244,6 +244,49 @@ free(pp); pp = NULL;
 ```
 ![](doublepointer.png)
 
+#### Recommended Array Arithmetic
+In the previous example, we saw that using data structures containing pointers of pointers made the memory space discontiguous.  
+This may result in very poor performance if we are trying to perform matrix-based calculations.  
+
+Suppose we wish to perform a matrix-vector product:  
+![](matrix-vector.png)  
+where `i` and `j` represent the indexes into the matrix and vector.  
+We need to allocate and access the memory in a contiguous manner. To do so, we will **allocate a single block of contiguous memory** and perform the calculation as follows:
+```C
+// Naive Matrix-Vector Multiplication
+const int M = 32;
+const int N = 64;
+
+double *A = (double *) malloc(M*N*sizeof(double));
+double *b = (double *) malloc(  N*sizeof(double));
+double *x = (double *) malloc(M  *sizeof(double));
+
+... // fill in A and b
+... // zero out x
+
+// version 0
+for (int j = 0; j < N; ++j) {
+  for (int i = 0; i < M; ++i) {
+      x[i] += A[j*M + i] * b[j];
+  }
+}
+
+... // zero out x 
+// version 1
+for (int j = 0; j < N; ++j) {
+  const double *Aj = A[j*M];
+  const double bj = b[j];
+  for (int i = 0; i < M; ++i) {
+      x[i] += Aj[i] * bj;
+  }
+}
+
+// free memory
+free(A); A = NULL;
+free(b); b = NULL;
+free(x); x = NULL;
+```
+
 ## Pass by Value, Pointer, Reference (C++)
 Now that we have command of pointers, we can examine how to pass variables to functions by three approaches.
 
