@@ -93,6 +93,60 @@ Arrays are allocated on the memory **stack** which is the area in the computer's
 The *actual* size limit of the stack depends on how much space your CPU thread has allocated, e.g. 2 megabytes. 
 
 ## Pointers
+As we saw above, we can obtain the **memory address** of a variable and store it in a **pointer** variable.  
+If we have a variable `var`, then we can access its address in memory by `&var`.  
+To print the address in the C language, we use the format `%p`:
+```C
+int var;
+printf("var's address: %p\n",&var);
+```
+
+We can assign a **pointer** to the address in memory: `int *pvar = &var`.  
+The declaration of pointers is flexible in terms of the `*` placement relative to spaces. 
+```C
+int *p1;
+int* p2;
+int * p3;
+```
+My preference in the first one: `int *p1;`. By placing `*` next to the variable name, it helps provide an implicit local assignment.
+```C
+int *p1, v1;  // p1 is an integer pointer, v1 is an integer
+int* p2, v2;  // p2 is an integer pointer, v2 is an integer (NOT a pointer)
+int *p3, *p4; // p3 is an integer pointer, p4 in an integer pointer
+```
+
+### Getting the Address and Value
+If we wish to assign the address to a variable or *pass the variable by address*, we use the `&` operator.  
+To get the value from a pointer, we can either *dereference* the value by using `*pvar` or `var[0]`.
+
+```C
+/* assign pointer */
+int v1;
+int *p1 = &v1;  // assign address of v1 to p1
+int v2 = *p1;   // assign v2 to the value pointed by p1
+int v3 = p1[0]; // assign v3 to the value pointed at the 0-index pointed by p1
+```
+
+```C
+void my_function(int *ad){
+  int v0 = *ad; // access the value stored at ad
+  ad[0] = 46; // set the value
+  *ad = 46; // or equivalently
+}
+
+void main(void){
+  int var = 6;  
+  my_function(&var);  // pass by address
+}
+```
+
+#### Pointer Arithmetic
+Pointers simply point to memory address. Nothing is stopping us from actually using arithmetic on the pointer itself to access other elements stored beyond the base pointer.
+```C
+int array[2] = {212, 1054};
+int ind2 = *(array + 1); // := array[1] = 1054
+```
+:large_orange_diamond: [Pointer Arithmetic Demo](https://bit.ly/3g6UJTg)
 
 ## Memory
 As we saw above, the array sizes must be known at compile time and the maximum number of elements is limited system-assigned stack size (and the amount of stack already occupied). To get around these limitations, we introduce **Dynamic Memory Allocation**.
