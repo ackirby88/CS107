@@ -140,6 +140,31 @@ void main(void){
 }
 ```
 
+#### Working Example
+```C
+#include <stdio.h>
+int main(){
+   int *pc, c;
+   
+   c = 22;
+   printf("Address of c: %p\n", &c);
+   printf("Value of c: %d\n\n", c);  // 22
+   
+   pc = &c;
+   printf("Address of pointer pc: %p\n", pc);
+   printf("Content of pointer pc: %d\n\n", *pc); // 22
+   
+   c = 11;
+   printf("Address of pointer pc: %p\n", pc);
+   printf("Content of pointer pc: %d\n\n", *pc); // 11
+   
+   *pc = 2;
+   printf("Address of c: %p\n", &c);
+   printf("Value of c: %d\n\n", c); // 2
+   return 0;
+}
+```
+
 #### Pointer Arithmetic
 Pointers simply point to memory address. Nothing is stopping us from actually using arithmetic on the pointer itself to access other elements stored beyond the base pointer.
 ```C
@@ -151,7 +176,112 @@ int ind2 = *(array + 1); // := array[1] = 1054
 ## Memory
 As we saw above, the array sizes must be known at compile time and the maximum number of elements is limited system-assigned stack size (and the amount of stack already occupied). To get around these limitations, we introduce **Dynamic Memory Allocation**.
 
-## References
+### C Dynamic Allocation and Deallocation
+Dynamic memory allocation in C is achieved by `malloc` and `calloc`.
+
+#### `malloc`
+The `malloc()` function stands for memory allocation. It is a function which is used to allocate a block of memory dynamically.  
+It reserves memory space of specified size and returns the null pointer pointing to the memory location.  
+The pointer returned is usually of type void which means that we can assign malloc function to any pointer.
+**Syntax:**
+```C
+ void *malloc(byte_size);
+```
+Example:
+```C
+int main(void){
+  int *my_ints = (int *) malloc(16 * size(int)); // allocate a block of memory the size of 16 integers (64 bytes)
+  if(my_ints != NULL) free(my_ints);             // deallocate the block of memory
+  my_ints = NULL;
+  
+  return 0;
+}
+```
+The values found within the the allocated memory is *garbage* until you fill in the values.
+
+#### `calloc`
+Similarly, the function `calloc` declared in `<stdlib.h>` allocates memory dynamically but also initializes the bits to `0`.  
+**Syntax:**
+```C
+void *calloc(size_t nelements, size_t element_size);
+```
+**Example:**
+```C
+int main(void){
+  int *my_ints = (int *) calloc(16, size(int));  // allocate a block of memory the size of 16 integers (64 bytes) and initialize to 0
+  if(my_ints != NULL) free(my_ints);             // deallocate the block of memory
+  my_ints = NULL;
+  
+  return 0;
+}
+```
+
+## Pass by Value, Pointer, Reference (C++)
+Now that we have command of pointers, we can examine how to pass variables to functions by three approaches.
+
+#### Pass by Value: Variable *Copied*
+In *pass by value*, the value that is passed as a function argument is **copied** into a temporary variable on the stack by the compiler.  
+Therefore, we cannot actually modify the value of the variable passed into the function are an argument. Second, if we are passing a `struct` or an object, this can be very slow.
+```C
+#include <stdio.h>
+
+void try_resetting(int a){
+  a = 0;
+}
+
+int main(void){
+  int b = 10;
+  try_resetting(b); // pass by value -- copy of b passed to function
+  
+  printf("Value of b = %d\n",b); // value of b = 10
+  return 0;
+}
+````
+
+#### Pass by Pointer
+If we wish to modify the value inside the function or send an object, e.g. struct or class, we can *pass by pointer* which means we will pass the address of the variable as the fucntion argument.
+```C
+#include <stdio.h>
+
+void try_resetting(int *a){
+  *a = 0;
+}
+
+int main(void){
+  int b = 10;
+  try_resetting(&b); // pass by pointer -- send address of b to function
+  
+  printf("Value of b = %d\n",b); // value of b = 0
+  return 0;
+}
+````
+
+#### Pass by Reference (C++ only)
+C++ introduced *pass by reference* which looks like passing by value but it the value is modified, the original object will reflect those changes.
+```C++
+#include <stdio.h>
+
+void try_resetting(int &a){
+  a = 0;
+}
+
+int main(void){
+  int b = 10;
+  try_resetting(b); // pass by pointer -- send address of b to function
+  
+  printf("Value of b = %d\n",b); // value of b = 0
+  return 0;
+}
+```
+
+If we want pass by reference but make sure we do not modify the value or object, we use the `const` modifier.
+```C++
+void try_resetting(const int &a);
+```
+
+---
+Let's look at all three approaches when a struct is the object passed to a function.  
+:large_orange_diamond: [Passing Structs By Value, Pointer, and Reference](https://bit.ly/3fMX05R)
 
 ---
 [**Next**: Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)
