@@ -168,12 +168,11 @@ union Data {
 <p>
   
 #### 24 bytes  
-```
+```c
   int i[6]: (4 bytes per int) * (6 ints) = 24 bytes  
   double f[2]: (8 bytes per double) * (2 doubles) = 16 bytes  
   char str[20]: (1 byte per char) * (20 chars) = 20 bytes
-  ```
-  
+```  
 </p>
 </details>
 
