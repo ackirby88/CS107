@@ -9,7 +9,7 @@ tags: C++
 This track assumes basic programming knowledge at the level covered in [Harvard's CS50](https://cs50.harvard.edu/college/2019/fall/).  
 Our goal is to build up your C++ experience and introduce system development techniques for Computational Science & Engineering.
 
-```C++
+```cpp
 class CppTrack: public CS107 {
   public:
     void displayTrack(char advanced) {
