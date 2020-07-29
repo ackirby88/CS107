@@ -18,7 +18,7 @@
 - `void`: the absence of type
 
 ### Integer Literals
-Within C/C++, there are four literal types: `decima`, `binary`, `octal`, and `hexadecimal`.  
+Within C/C++, there are four literal types: `decimal`, `binary`, `octal`, and `hexadecimal`.  
 ```C
 int b = 0b101;     // binary
 int d = 42;        // decimal
