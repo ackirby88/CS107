@@ -18,7 +18,7 @@ Compiled languages are usually *much faster* than interpreted languages.
 **Compiled** languages pass the source code to a compiler, which is translated directly to machine code.  
 **Interpreted** languages pass the source code to a separate program called an *interpreter*, which reads each line of code and then executes it on the processor. 
 
-Let's take a look at the canonial **Hello, World!** to learn the basics of compiling programs from source files.  
+Let's take a look at the canonical **Hello, World!** to learn the basics of compiling programs from source files.  
 #### Example 0: hello.c
 ```C
 #include <stdio.h>
