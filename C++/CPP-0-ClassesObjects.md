@@ -41,8 +41,56 @@ double average(double a, double b, double c){
 The functions declaration must differ in type or number of input arguments.
 
 # C++ Classes
+A **class** is in C++ is similar to a `struct` in that they can contain data members, but they can also contain functions as members, which we will call *methods*.
 
-# C++ Objects
+## Creating a C++ Class
+To construct a class, we use the keyword `class` followed by the name of the class.  
+The body of the class is contained between curly brackets `{}` and is terminated by a semicolon `;`.
+```C++
+class className {
+  // data members
+  // function members (i.e. methods)
+};
+```
+**Example:**
+```C++
+class Rectangle{
+  public: 
+    double length;
+    double width;
+    double height;
+    
+    double surfaceArea(){
+      return 2.0*length*width + 2.0*length*height + 2.0*width*height;
+    }
+    
+    double volume(){
+      return length*width*height;
+    }
+};
+```
+Here, the **data members** are `length`, `width`, and `height`, and the **methods** are `surfaceArea` and `volume`.  
+To use the data members and methods defined in the calss, we need to create objects. 
+
+# C++ Objects 
+An **object** is an instance of a **class**.  
+To create an object from the example class `Rectangle`, we specify the class name, followed by the object name, e.g. `Rectangle rec0`.  
+
+We can create multiple objects from our class as usual:  
+```C++
+int main(void){
+  Rectangle rec0, rec1;
+  return 0;
+}
+```
+We can also create an array of objects using `new`:
+```C++
+int main(void){
+  Rectangle my_rectangles = new Rectangle[5]; // creates 5 rectangle objects
+  delete [] my_rectangles; // free the array
+  return 0;
+}
+```
 
 ---
 [**Next**: C++ Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Inheritence.md)
