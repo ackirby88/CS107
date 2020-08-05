@@ -91,6 +91,25 @@ int main(void){
   return 0;
 }
 ```
+## Accessing Data Members and Member Functions
+We can access the data members and methods using the `.` operator (when the members are public):
+```C++
+Rectangle rect0;
+
+rect0.length = 3.0;
+rect0.width  = 1.2;
+rect0.height = 5.4;
+
+double surf_area = rect0.surfaceArea();
+double volume = rect0.volume();
+```
+
+## Access Specifiers
+Classes have *access specifiers* which is one of the three keywords: `private`, `public`, or `protected`.  
+These specifiers modify the access rights for the members as follows:  
+ - `private`: accessible only from within other members of the same class (or from their `friends`).
+ - `protected`: accessible from other members of the same class (or from `friends`), and from members of their derived classes.
+ - `public`: accessible from anywhere where the object is visible.
 
 ---
 [**Next**: C++ Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Inheritence.md)
