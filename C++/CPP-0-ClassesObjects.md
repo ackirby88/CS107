@@ -123,6 +123,8 @@ class Rectangle2D {
 ```
 It is recommended that you be explicit with access specifiers, e.g. putting `private:` as needed.
 
+## Scope Operator (::)
+
 
 ---
 [**Next**: C++ Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Inheritence.md)
