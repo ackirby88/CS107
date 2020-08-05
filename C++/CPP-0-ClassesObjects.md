@@ -111,5 +111,18 @@ These specifiers modify the access rights for the members as follows:
  - `protected`: accessible from other members of the same class (or from `friends`), and from members of their derived classes.
  - `public`: accessible from anywhere where the object is visible.
 
+The default access specifier is `private` within a class. 
+For example, 
+```C++
+class Rectangle2D {
+    int width, height; // private data members
+  public:
+    void setValues(int w,int h);
+    int area(void);
+};
+```
+
+
+
 ---
 [**Next**: C++ Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Inheritence.md)
