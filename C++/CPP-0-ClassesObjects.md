@@ -38,7 +38,7 @@ double average(double a, double b, double c){
   return (a + b + c) / 3.0;
 }
 ```
-The functions declaration must differ in type or number of input arguments.
+The functions declaration must differ in type or number of *input arguments*.
 
 # C++ Classes
 A **class** is in C++ is similar to a `struct` in that they can contain data members, but they can also contain functions as members, which we will call *methods*.
