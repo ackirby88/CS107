@@ -121,7 +121,7 @@ class Rectangle2D {
     int area(void);
 };
 ```
-
+It is recommended that you be explicit with access specifiers, e.g. putting `private:` as needed.
 
 
 ---
