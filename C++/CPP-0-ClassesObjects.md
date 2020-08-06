@@ -246,5 +246,28 @@ int main() {
 | `(*x).y`       | member y of object pointed to by x |
 | `x[0]`         | first object pointed to by x |
 
+## Operator Overloading
+The C++ language was designed to define new types via calsses that are operate like the fundamental types: `int`, `double`, etc.  
+To enable this behavior, we can define and implement operations such as add `+` or `<` even though it may not be obvious.  
+For example, 
+```C++
+class apple {
+  string color;
+  float price;
+} a, b, c;
+
+a = b + c; // not obvious how to add apple objects...
+```
+C++ enables developers to overload most operators so that the behavior is well defined.  
+Here is a list of all of the operators that can be overloaded:
+| Overloadable Operators |
+|------------------------|
+| `+`  `-`  `*`  `/` `=`  `<`  `>`  `+=` `-=` `*=` `/=` `<<` `>>` |
+| `<<=` `>>=`  `==`  `!=` `<=` `>=` `++` `--` `%`  `&`  `^`  `!`  `\|` |
+| ` ~`  `&=`   `^=`  `\|=` `&&` `\|\|` `%=` `[]` `()` `,`  `->*` `->` |
+| `new`  `delete`    `new[]`     `delete[]` |
+
+Next , we will look at why C++ objects are so useful in an Object-Oriented Programming paradigm.
+
 ---
 [**Next**: C++ Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Inheritence.md)
