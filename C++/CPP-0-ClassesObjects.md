@@ -272,6 +272,7 @@ The syntax is as follows: `type operator sign (parameters) {/* body */}`.
 
 ### Operator Overloading Example
 To demonstrate operator overloading, we will look at a *3D Cartesian Vectors* class.  
+**vectors.cxx:**
 ```C++
 #include <stdio.h>
 
@@ -285,21 +286,32 @@ class CVector {
 };
 
 CVector CVector::operator+(const CVector& param) {
-  CVector vecsum;
+  CVector vecsum; // default constructor
   vecsum.x = x + param.x;
   vecsum.y = y + param.y;
+  vecsum.z = z + param.z;
   return vecsum;
 }
 
 int main () {
-  CVector vec_a(3,1);
-  CVector vec_b(1,2);
-  CVector vec_c = vec_a + vec_b
+  CVector vec_a(3.1, 1.1, 0.0);
+  CVector vec_b(1.0, 2.9, 8.7);
+  CVector vec_c = vec_a + vec_b;
   
-  printf("Vector C = <%f, %f, %f>\n",vec_c.x, vec_c.y, vec_c.z);
+  printf("  Vector A = <%f, %f, %f>\n",vec_a.x, vec_a.y, vec_a.z);
+  printf("+ Vector B = <%f, %f, %f>\n",vec_b.x, vec_b.y, vec_b.z);
+  printf("= Vector C = <%f, %f, %f>\n",vec_c.x, vec_c.y, vec_c.z);
   return 0;
 }
 ```
+**Output:**
+```bash
+$ ./vectors 
+  Vector A = <3.100000, 1.100000, 0.000000>
++ Vector B = <1.000000, 2.900000, 8.700000>
+= Vector C = <4.100000, 4.000000, 8.700000>
+```
+:large_orange_diamond: [Vectors Addition Source](https://bit.ly/30x4STR)
 
 ---
 
