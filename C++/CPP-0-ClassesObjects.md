@@ -265,7 +265,43 @@ Here is a list of all of the operators that can be overloaded:
 | `+`  `-`  `*`  `/` `=`  `<`  `>`  `+=` `-=` `*=` `/=` `<<` `>>` |
 | `<<=` `>>=`  `==`  `!=` `<=` `>=` `++` `--` `%`  `&`  `^`  `!`  `\|` |
 | ` ~`  `&=`   `^=`  `\|=` `&&` `\|\|` `%=` `[]` `()` `,`  `->*` `->` |
-| `new`  `delete`    `new[]`     `delete[]` |
+| `new`  `delete`  `new[]`  `delete[]` |
+
+### Operator Overloading Syntax
+The syntax is as follows: `type operator sign (parameters) {/* body */}`.  
+
+### Operator Overloading Example
+To demonstrate operator overloading, we will look at a *3D Cartesian Vectors* class.  
+```C++
+#include <stdio.h>
+
+class CVector {
+  public:
+    double x,y,z;
+    CVector() {}; // default constructor
+    CVector(double x_, double y_, double z_) : x(x_), y(y_), z(z_) {} // initialization constructor
+
+    CVector operator+(const CVector&);
+};
+
+CVector CVector::operator+(const CVector& param) {
+  CVector vecsum;
+  vecsum.x = x + param.x;
+  vecsum.y = y + param.y;
+  return vecsum;
+}
+
+int main () {
+  CVector vec_a(3,1);
+  CVector vec_b(1,2);
+  CVector vec_c = vec_a + vec_b
+  
+  printf("Vector C = <%f, %f, %f>\n",vec_c.x, vec_c.y, vec_c.z);
+  return 0;
+}
+```
+
+---
 
 Next , we will look at why C++ objects are so useful in an Object-Oriented Programming paradigm.
 
