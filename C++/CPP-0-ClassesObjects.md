@@ -163,6 +163,38 @@ int main(){
 }
 ```
 
+## Constructors
+In the above example, what would happen if we didn't set the values of the rectangles before calling `area()`?  
+We get an undetermined result since `height` and `width` are set.
+
+To prevent this situation, a class can include a special function called a **constructor**, which is automatically called when a new object of the class is instantiated. The constructor can be used to allocate memory and initialize data members.
+
+The **constructor** function is declared similarly to a member function, but its name matches the name of the class and without a return type.
+```C++
+class Rectangle2D {
+    double width, height; // private data members
+  public:
+    /* constructor */
+    Rectangle2D(double w, double h);
+    
+    /* methods */
+    void setValues(double w, double h);
+    double area(void);
+};
+
+Rectangle2D::Rectangle2D(double w, double h){
+  width = w;
+  height = h;
+}
+```
+
+### Member Initialization in Constructors
+When a constructor is used to initialize other members, these other members can be initialized directly, without using assignment statements inside the body. 
+This is done by inserting, before the constructor's body, a single colon `:` and a list of initializations for class members. For example,  
+- `Rectangle2D::Rectangle2D(double w, double h) : height(h), width(w) {}`, or  
+- `Rectangle2D::Rectangle2D(double w, double h) : width(w) {height = h;}`, or  
+- `Rectangle2D::Rectangle2D(double w, double h) : height(h) {width = w;}`, or 
+- `Rectangle2D::Rectangle2D(double w, double h) {height = h; width = w;}`.
 
 ---
 [**Next**: C++ Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Inheritence.md)
