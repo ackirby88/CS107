@@ -91,6 +91,10 @@ int main(void){
   return 0;
 }
 ```
+### `delete` vs `delete []`
+To delete an *array of objects* created using `new`, we need to `delete []` to delete the array.  
+If we had a single object, e.g. `Rectangle rec0;`, then we can use `delete rec0;`.  
+
 ## Accessing Data Members and Member Functions
 We can access the data members and methods using the `.` operator (when the members are public):
 ```C++
@@ -195,6 +199,52 @@ This is done by inserting, before the constructor's body, a single colon `:` and
 - `Rectangle2D::Rectangle2D(double w, double h) : width(w) {height = h;}`, or  
 - `Rectangle2D::Rectangle2D(double w, double h) : height(h) {width = w;}`, or 
 - `Rectangle2D::Rectangle2D(double w, double h) {height = h; width = w;}`.
+
+## Pointers to Classes
+Objects can also be pointed to by pointers: `Rectangle2D *p_rec;`.
+As we saw in C, the members of an object can be accessed directly from a pointer by using the arrow operator `->`.  
+
+**Example:**
+```C++
+#include <iostream>
+using std::cout;
+using std::endl;
+
+class Rectangle {
+private:
+  int width, height;
+public:
+  Rectangle(int x, int y) : width(x), height(y) {}
+  int area(void) {return width * height;}
+};
+
+int main() {
+  Rectangle obj(3,4);
+  Rectangle *foo, *bar, *baz;
+  
+  foo = &obj;
+  bar = new Rectangle(5,6);
+  baz = new Rectangle[2] {{2,5}, {3,6}}; // can initialize via {}
+
+  cout << "   obj's area: " << obj.area()    << endl;
+  cout << "  *foo's area: " << foo->area()   << endl;
+  cout << "  *bar's area: " << bar->area()   << endl;
+  cout << "baz[0]'s area: " << baz[0].area() << endl;
+  cout << "baz[1]'s area: " << baz[1].area() << endl;
+  delete bar;
+  delete[] baz;
+  return 0;
+}	
+```
+
+| **expression** | description     |
+|:---------------|-----------------|
+| `*x`           | pointed to by x |
+| `&x`           | address of x |
+| `x.y`          | member y of object x |
+| `x->y`         | member y of object pointed to by x |
+| `(*x).y`       | member y of object pointed to by x |
+| `x[0]`         | first object pointed to by x |
 
 ---
 [**Next**: C++ Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Inheritence.md)
