@@ -123,7 +123,45 @@ class Rectangle2D {
 ```
 It is recommended that you be explicit with access specifiers, e.g. putting `private:` as needed.
 
-## Scope Operator (::)
+## Scope Operator `::`
+We can seperate the function implementation from its declaration inside the class, as did the C source and header files.
+We use the scope operator `::` to specify the class to which the member being defined belongs.
+
+**Rectangle.h**
+```C++
+class Rectangle2D {
+    double width, height; // private data members
+  public:
+    void setValues(double w, double h);
+    double area(void);
+};
+```
+**Rectangle.cxx**
+```C
+/* header files */
+#include "Rectangle.h"
+
+void Rectangle2D::setValues(double w, double h){
+  width = w;
+  height = h;
+}
+
+double Rectangle2D::area(){
+  return width*height;
+}
+```
+**main.cxx**
+```C++
+#include <iostream>
+#include "Rectangle.h"
+
+int main(){
+  Rectangle2D rec1;
+  rec1.setValues(3.3, 7.1);
+  std::cout << "rec1 area: " << rec1.area() << std::endl;
+  return 0;
+}
+```
 
 
 ---
