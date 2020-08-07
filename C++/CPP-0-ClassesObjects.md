@@ -191,6 +191,8 @@ Rectangle2D::Rectangle2D(double w, double h){
   height = h;
 }
 ```
+We can have multiple constructors such as a default constructor or copy constructor.
+
 
 ### Member Initialization in Constructors
 When a constructor is used to initialize other members, these other members can be initialized directly, without using assignment statements inside the body. 
@@ -317,6 +319,24 @@ We can even add the vectors directly calling the operator using member access:
 CVector vec_c = vec_a.operator+ vec_b;
 ```
 :large_orange_diamond: [Vectors Addition Source](https://bit.ly/30x4STR)
+
+### Operator Overloading Expressions
+The operator overloads are just regular functions which can have any behavior!  
+This is no requirement that the operation actually resembles the mathematical or usual meaning of the operator.  
+For example, a class that overloads `operator+` to actually subtract is perfectly valid. Although, it's highly discouraged for readability.
+
+The parameter expected for a member function overload for operations such as `operator+` is naturally the operand to the right hand side of the operator. 
+This is common to all binary operators (those with an operand to its left and one operand to its right). But operators can come in diverse forms.  
+
+Summary of the parameters needed for each of the different operators than can be overloaded:  
+**Replace `@` by the operator (a is an object of A, b is an object B, and c is an object of C)**:  
+| Expression | Operator                                                                               | Member Function      | Non-member Function |
+|------------|----------------------------------------------------------------------------------------|----------------------|---------------------|
+| @a         | `+` `-` `*` `&` `!` `~` `++` `--`                                                      | A::operator@()       | operator@(A)        |
+| a@         | `++` `--`                                                                              | A::operator@(int)    | operator@(A,int)    |
+| a@b        | `+` `-` `*` `/` `%` `^` `&` `\|` `<` `>` `==` `!=` `<=` `>=` `<<` `>>` `&&` `\|\|` `,` | A::operator@(B)      | operator@(A,B)      |
+| a@b        | `=` `+=` `-=` `*=` `/=` `%=` `^=` `&=` `\|=` `<<=` `>>=` `[]`                          | A::operator@(B)      | -                   |
+| a(b,c,...) | ()                                                                                     | A::operator()(B,C,..)| -                   |
 
 ---
 
