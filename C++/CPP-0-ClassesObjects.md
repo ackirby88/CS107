@@ -282,7 +282,7 @@ class CVector {
     CVector() {}; // default constructor
     CVector(double x_, double y_, double z_) : x(x_), y(y_), z(z_) {} // initialization constructor
 
-    CVector operator+(const CVector&);
+    CVector operator+(const CVector&); // function that returns a CVector
 };
 
 CVector CVector::operator+(const CVector& param) {
@@ -310,6 +310,11 @@ $ ./vectors
   Vector A = <3.100000, 1.100000, 0.000000>
 + Vector B = <1.000000, 2.900000, 8.700000>
 = Vector C = <4.100000, 4.000000, 8.700000>
+```
+
+We can even add the vectors directly calling the operator using member access:  
+```C++
+CVector vec_c = vec_a.operator+ vec_b;
 ```
 :large_orange_diamond: [Vectors Addition Source](https://bit.ly/30x4STR)
 
