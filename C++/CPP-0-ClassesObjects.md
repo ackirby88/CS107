@@ -209,7 +209,7 @@ If a class definition has no constructors, the compiler assumes the class to hav
 class MyClass {
   public:
     int value;
-    void setValue(int v){value = v};
+    void setValue(int v){value = v;};
 }
 ...
 MyClass example; // implicit default constructor
@@ -326,10 +326,10 @@ class CVector {
     CVector() {}; // default constructor
     CVector(double x_, double y_, double z_) : x(x_), y(y_), z(z_) {} // initialization constructor
 
-    CVector operator+(const CVector&); // function that returns a CVector
+    CVector operator+ (const CVector&); // function that returns a CVector
 };
 
-CVector CVector::operator+(const CVector& param) {
+CVector CVector::operator+ (const CVector& param) {
   CVector vecsum; // default constructor
   vecsum.x = x + param.x;
   vecsum.y = y + param.y;
@@ -401,7 +401,7 @@ class CVector {
 };
 
 // Non-Member Function (not a part of the class definition): overload + operator
-CVector operator+(const CVector& lhs, const CVector& rhs) {
+CVector operator+ (const CVector& lhs, const CVector& rhs) {
   CVector temp;
   temp.x = lhs.x + rhs.x;
   temp.y = lhs.y + rhs.y;
@@ -461,6 +461,35 @@ const Vector vec_a;                // data members read-only from outside the cl
 int getVec() const {return x;}     // const member function: enables a const object the ability to call getVec()
 const int& get() {return x;}       // member function returning a const&
 const int& get() const {return x;} // const member function returning a const&
+```
+
+### Copy Constructor
+Now that we have some familiarity with operator overloading, we can introduce the **copy constructor**.  
+When an object is passed a named object of its own type as argument, its *copy constructor* is invoked in order to construct a copy.  
+
+There is an implicit *copy constructor* that performs a **shallow** copy:  
+`Vec::Vec(const Vec &b) : x(b.x), y(b.y), z(b.z) {}`
+```C++
+Vec foo;       // default constructor
+Vec bar(foo);  // object initialization: copy constructor called
+Vec baz = foo; // object initialization: copy constructor called
+foo = bar;     // object already initialized: copy assignment called
+```
+**Note that baz is initialized on construction using an equal sign, but this is not an assignment operation!**  
+The assignment on `foo` is an assignment operation. No object is being declared here, but an operation is being performed on `foo`.  
+The copy assignment operator is an overload of `operator=` which takes a value or reference of the class itself as parameter.  
+The return value is generally a reference to `*this` (although not required).  
+
+For example, for our class `Vec`, the copy assignment may have the following signature:  
+```C++
+// version 1
+Vec& operator= (const Vec&);
+
+// version 2
+Vec& operator= (const Vec &b) {
+  // optionally delete or allocate space and copy data
+  return *this;
+}
 ```
 
 ---
