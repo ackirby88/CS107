@@ -74,11 +74,22 @@ int main(void) {
    return 0;
 }
 ```
+The objects of the classes `Rectangle` and `Triangle` each contain members inherited from Shape. These are: `width`, `height`, `setWidth`, and `setHeight`.
+
+The `protected` access specifier used in class `Shape` is similar to `private`:  
+When a class inherits another one, the members of the derived class can access the protected members inherited from the base class, but not its private members.  
+
+By declaring `width` and `height` as `protected` instead of `private`, these members are also accessible from the derived classes `Rectangle` and `Triangle`, instead of just from members of `Shape`. If they were `public`, they could be accessed anywhere.
 
 ## Access Control and Inheritance
-**A derived class can access all the non-private members of its base class.** 
+The different access types can be summarized according to which functions can access them in the following way:  
 | Access        | **public** | **protected** | **private**|
 |---------------|:----------:|:-------------:|:----------:|
 | Same Class    | yes        | yes           | yes        |
 | Derived Class | yes        | yes           | no         |
 | Outside Class | yes        | no            | no         |
+
+Where `Outside Class` represents any access from outside the class, such as from `main`, from another class, or from a function.
+
+In the example above, the members inherited by `Rectangle` and `Triangle` have the same access permissions as they had in their base class `Shape`: 
+**A derived class can access all the non-private members of its base class.**
