@@ -202,6 +202,48 @@ This is done by inserting, before the constructor's body, a single colon `:` and
 - `Rectangle2D::Rectangle2D(double w, double h) : height(h) {width = w;}`, or 
 - `Rectangle2D::Rectangle2D(double w, double h) {height = h; width = w;}`.
 
+### Default Constructor
+The default constructor is the constructor called when objects of a class are declared, but are not initialized with any arguments.  
+If a class definition has no constructors, the compiler assumes the class to have an implicitly defined default constructor. 
+```C++
+class MyClass {
+  public:
+    int value;
+    void setValue(int v){value = v};
+}
+...
+MyClass example; // implicit default constructor
+```
+As soon as any constructor is declared in the class definition, then the compiler no longer provides an implicit default constructor!  
+But remember that we can have multiple constructors through function polymorphism.
+
+### Deconstructor
+Destructors are responsible for the necessary cleanup needed by a class when its lifetime ends.  
+A destructor is a member function very similar to a default constructor: it takes no arguments and returns nothing. 
+It also uses the class name as its own name, but preceded with a tilde sign `~`:
+```C++
+class MyClass2 {
+  public:
+    /* data members */
+    int narray;
+    double *darray;
+
+    /* constructors */
+    MyClass2(){darray = nullptr;}; // default constructor
+    MyClass2(int n) : narray(n) {darray = new double[n];}
+    
+    /* deconstructor */
+    ~MyClass2(){
+      if (darray) {
+        delete [] darray;
+      }
+    }
+    
+    /* member functions */
+    void setNArray(int v){narray = v};    
+}
+```
+
 ## Pointers to Classes
 Objects can also be pointed to by pointers: `Rectangle2D *p_rec;`.
 As we saw in C, the members of an object can be accessed directly from a pointer by using the arrow operator `->`.  
