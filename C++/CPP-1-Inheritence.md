@@ -44,20 +44,41 @@ class Shape {
 // Derived Class
 class Rectangle : public Shape {
    public:
-      double getArea(){ 
+      double area(){ 
          return (width * height); 
       }
 }
 
+// Derived Class
+class Triangle : public Shape {
+  public:
+    double area(){
+      return (0.5 * width * height);
+    }
+};
+
 int main(void) {
    Rectangle rec;
+   Triangle tri;
  
    rec.setWidth(5.0);
    rec.setHeight(7.2);
+   
+   tri.setWidth(5.0);
+   tri.setHeight(7.2);
 
    // Print the area of the object
-   printf("Total area: %f\n",rec.getArea());
+   printf("Rectangle total area: %f\n",rec.area());
+   printf("Triangle  total area: %f\n",tri.area());
 
    return 0;
 }
 ```
+
+## Access Control and Inheritance
+**A derived class can access all the non-private members of its base class.** 
+| Access        | **public** | **protected** | **private**|
+|---------------|:----------:|:-------------:|:----------:|
+| Same Class    | yes        | yes           | yes        |
+| Derived Class | yes        | yes           | no         |
+| Outside Class | yes        | no            | no         |
