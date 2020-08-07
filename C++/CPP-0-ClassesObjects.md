@@ -378,6 +378,49 @@ int main () {
 }
 ```
 
+### The `this` Keyword
+The keyword `this` represents a pointer to the object whose member function is being executed.  
+It is used within a class's member function to refer to the object itself.
+
+It can be used to check if a parameter passed to a member function is the object itself.
+```C++
+#include <iostream>
+
+class Vec {
+  public:
+    double x, y, z;
+    Vec(double x, double y, double z){
+      this->x = x;
+      this->y = y;
+      this->z = z;
+    }
+    bool isitme(Vec &param);
+};
+
+bool Vec::isitme(Vec &param){
+  if(&param == this) return true;
+  return false;
+}
+
+int main () {
+  Vec a;
+  Vec *b = &a;
+  if (b->isitme(a)) {
+    std::cout << "yes, &a is b\n";
+  }
+  return 0;
+}
+```
+
+### Const Member Functions
+The `const` qualifier can be used in various scenarios:  
+```C++
+const Vector vec_a;                // data members read-only from outside the class
+int getVec() const {return x;}     // const member function: enables a const object the ability to call getVec()
+const int& get() {return x;}       // member function returning a const&
+const int& get() const {return x;} // const member function returning a const&
+```
+
 ---
 
 Next , we will look at why C++ objects are so useful in an Object-Oriented Programming paradigm.
