@@ -330,13 +330,53 @@ This is common to all binary operators (those with an operand to its left and on
 
 Summary of the parameters needed for each of the different operators than can be overloaded:  
 **Replace `@` by the operator (a is an object of A, b is an object B, and c is an object of C)**:  
-| Expression | Operator                                                                               | Member Function      | Non-member Function |
-|------------|----------------------------------------------------------------------------------------|----------------------|---------------------|
-| @a         | `+` `-` `*` `&` `!` `~` `++` `--`                                                      | A::operator@()       | operator@(A)        |
-| a@         | `++` `--`                                                                              | A::operator@(int)    | operator@(A,int)    |
-| a@b        | `+` `-` `*` `/` `%` `^` `&` `\|` `<` `>` `==` `!=` `<=` `>=` `<<` `>>` `&&` `\|\|` `,` | A::operator@(B)      | operator@(A,B)      |
-| a@b        | `=` `+=` `-=` `*=` `/=` `%=` `^=` `&=` `\|=` `<<=` `>>=` `[]`                          | A::operator@(B)      | -                   |
-| a(b,c,...) | ()                                                                                     | A::operator()(B,C,..)| -                   |
+| Expression | Operator                                                                               | Member Function       | Non-Member Function |
+|------------|----------------------------------------------------------------------------------------|-----------------------|---------------------|
+| @a         | `+` `-` `*` `&` `!` `~` `++` `--`                                                      | A::operator@()        | operator@(A)        |
+| a@         | `++` `--`                                                                              | A::operator@(int)     | operator@(A,int)    |
+| a@b        | `+` `-` `*` `/` `%` `^` `&` `\|` `<` `>` `==` `!=` `<=` `>=` `<<` `>>` `&&` `\|\|` `,` | A::operator@(B)       | operator@(A,B)      |
+| a@b        | `=` `+=` `-=` `*=` `/=` `%=` `^=` `&=` `\|=` `<<=` `>>=` `[]`                          | A::operator@(B)       | -                   |
+| a(b,c,...) | `()`                                                                                   | A::operator()(B,C,...)| -                   |
+| a->b       | `->`                                                                                   | A::operator->()       | -                   |
+| (TYPE) a   | TYPE, e.g. `int`                                                                       | A::operator TYPE()    | -                   |
+
+Notice that some operators may be overloaded in two forms:  
+- as a class member function (as seen in the above example for `operator+`)
+- as a non-member function (not a function in the class definition)
+
+In the second case, some operators can also be overloaded as non-member functions. 
+The operator function takes an object of the proper class as first argument.
+
+**Non-Member Function Operation Overload Example:**
+```C++
+#include <stdio.h>
+
+class CVector {
+  public:
+    double x,y,z;
+    CVector() {}; // default constructor
+    CVector(double x_, double y_, double z_) : x(x_), y(y_), z(z_) {} // initialization constructor
+};
+
+// Non-Member Function (not a part of the class definition): overload + operator
+CVector operator+(const CVector& lhs, const CVector& rhs) {
+  CVector temp;
+  temp.x = lhs.x + rhs.x;
+  temp.y = lhs.y + rhs.y;
+  temp.z = lhs.z + rhs.z;
+  return temp;
+}
+
+int main () {
+  CVector foo(3., 1., -1.);
+  CVector bar(1., 2.,  2.);
+  CVector result;
+  result = foo + bar;
+  
+  printf("result = <%f, %f, %f>\n",result.x, result.y, result.z);
+  return 0;
+}
+```
 
 ---
 
