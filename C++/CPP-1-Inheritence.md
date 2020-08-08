@@ -14,7 +14,7 @@ Inheritance allows classes to be defined in terms of another class, which makes 
 
 When creating a class, instead of writing completely new data members and member functions, the programmer can designate that the new class should inherit the members of an existing class. This existing class is called the **base** class, and the new class is referred to as the **derived** class.
 
-#### ``` class derived-class: access-specifier base-class 1, access-specifier base-class 2, ... ```
+#### ``` class derived-class: access-specifier base-class```
  A class derivation list names one or more base classes given the above form where `access-specifier` is one of the following:
  - `public`
  - `protected`
