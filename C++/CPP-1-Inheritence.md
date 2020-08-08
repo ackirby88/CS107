@@ -93,3 +93,72 @@ Where `Outside Class` represents any access from outside the class, such as from
 
 In the example above, the members inherited by `Rectangle` and `Triangle` have the same access permissions as they had in their base class `Shape`: 
 **A derived class can access all the non-private members of its base class.**
+
+## What's Inherited from the Base Class?
+In principle, a publicly derived class inherits access to every member of a base class except:  
+- its constructors and its destructor
+- its assignment operator members (operator=)
+- its friends (`friend` class whose members have access to the private or protected members of another class)
+- its private members
+
+Even though access to the constructors and destructor of the base class is not inherited, they are *automatically* called by the constructors and destructor of the derived class.
+
+Unless otherwise specified, the *constructors of a derived class calls the default constructor of its base classes* (i.e., the constructor taking no arguments). Calling a different constructor of a base class is possible, using the same syntax used to initialize member variables in the initialization list:
+```
+derived_constructor_name (parameters) : base_constructor_name (parameters) {...}
+```
+
+**Calling Base-Class Constructor in Derived-Class Constuctor Example:**  
+```C++
+#include <iostream>
+
+class Polygon {
+  protected:
+    int a;
+  public:
+    // default constructor
+    Polygon() : a(0) {
+      std::cout << "Polygon default contructor called!\n";
+    }
+    // constructor with input argument
+    Polygon(int a_) : a(a_) {
+      std::cout << "Polygon input contructor called!\n";
+    }
+};
+
+class Circle : public Polygon {
+  public:
+    // default constructor
+    Circle() {
+      std::cout << "Circle default contructor called!\n";
+    }
+    // constructor with input argument
+    Circle(int a_) : Polygon(a_) {
+      std::cout << "Circle intput contructor called!\n";
+    }
+};
+
+int main(){
+  Polygon shape(0); std::cout << std::endl;
+  Circle circ1(0); std::cout << std::endl;
+  Circle circ2;
+  return 0;
+}
+```
+:large_orange_diamond: [Constructor Inheritance Demo](https://bit.ly/3fBPZDR)  
+
+### :question: **Question** :question: What's the output of the above `main` function?
+<details><summary>Answer</summary>
+<p>
+ 
+```
+Polygon input contructor called!
+
+Polygon input contructor called!
+Circle intput contructor called!
+
+Polygon default contructor called!
+Circle default contructor called!
+```
+</p>
+</details>
