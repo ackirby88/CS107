@@ -139,8 +139,8 @@ class Circle : public Polygon {
 };
 
 int main(){
-  Polygon shape(0); std::cout << std::endl;
-  Circle circ1(0); std::cout << std::endl;
+  Polygon shape(1); std::cout << std::endl;
+  Circle circ1(2); std::cout << std::endl;
   Circle circ2;
   return 0;
 }
@@ -159,6 +159,58 @@ Circle intput contructor called!
 
 Polygon default contructor called!
 Circle default contructor called!
+```
+</p>
+</details>
+
+## Multiple Inheritance
+A class may inherit from more than one class by simply specifying more base classes, separated by commas, in the list of a class's base classes (i.e., after the colon). 
+
+For example, if the program had a specific class to print on screen called `Output`, and we wanted our class `Circle` to also inherit its members in addition to those of `Polygon`:  
+**Multiple Inheritance Example:**  
+```C++
+#include <iostream>
+
+class Polygon {
+  protected:
+    int a;
+  public:
+    Polygon() : a(999) {}
+    Polygon(int a_) : a(a_) {}
+};
+
+class Output {
+  public:
+    void print(int v){
+      std::cout << "Value: " << v << std::endl;
+    }
+};
+
+class Circle : public Polygon, public Output {
+  public:
+    Circle() {}
+    Circle(int a_) : Polygon(a_) {}
+    
+    // method
+    int get_a(){return a;}
+};
+
+int main(){
+  Circle circ1(2);
+  Circle circ2;
+  
+  circ1.print(circ1.get_a());
+  circ2.print(circ2.get_a());
+  return 0;
+}
+```
+
+<details><summary>Output</summary>
+<p>
+ 
+```
+Value: 2
+Value: 999
 ```
 </p>
 </details>
