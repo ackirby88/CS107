@@ -5,7 +5,7 @@
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
 [**Previous**: C Basics - Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)  
-[**Next**: C++ Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Inheritence.md)
+[**Next**: C++ Constructors](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Constructors.md)
 
 ---
 # C++ Function Defaults
@@ -497,4 +497,4 @@ Vec& operator= (const Vec &b) {
 Next , we will look at why C++ objects are so useful in an Object-Oriented Programming paradigm.
 
 ---
-[**Next**: C++ Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Inheritence.md)
+[**Next**: C++ Constructors](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Constructors.md)  
