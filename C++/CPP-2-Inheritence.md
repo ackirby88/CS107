@@ -4,7 +4,7 @@
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[**Previous**: C++ Classes and Objects](https://github.com/ackirby88/CS107/blob/master/C++/CPP-0-ClassesObjects.md)  
+[**Previous**: C++ Constructors](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Constructors.md)  
 [**Next**: C++ Polymorphism](https://github.com/ackirby88/CS107/blob/master/C++/CPP-2-Polymorphism.md)
 
 ---
