@@ -125,7 +125,11 @@ But remember that we can have multiple constructors through function polymorphis
 ### Deconstructor
 Destructors are responsible for the necessary cleanup needed by a class when its lifetime ends.  
 A destructor is a member function very similar to a default constructor: it takes no arguments and returns nothing. 
-It also uses the class name as its own name, but preceded with a tilde sign `~`:
+It also uses the class name as its own name, but preceded with a tilde sign `~`.
+
+**<details><summary>:large_orange_diamond: Deconstructor Example:</summary>**
+<p>
+  
 ```C++
 class MyClass2 {
   public:
@@ -145,26 +149,31 @@ class MyClass2 {
     }
     
     /* member functions */
-    void setNArray(int v){narray = v};    
+    void setNArray(int v){narray = v;};    
 }
 ```
+</p>
+</details>
 
 ## Pointers to Classes
 Objects can also be pointed to by pointers: `Rectangle2D *p_rec;`.
 As we saw in C, the members of an object can be accessed directly from a pointer by using the arrow operator `->`.  
 
 **Example:**
+**<details><summary>:large_orange_diamond: Pointers to Classes Example:</summary>**
+<p>
+  
 ```C++
 #include <iostream>
 using std::cout;
 using std::endl;
 
 class Rectangle {
-private:
-  int width, height;
-public:
-  Rectangle(int x, int y) : width(x), height(y) {}
-  int area(void) {return width * height;}
+  private:
+    int width, height;
+  public:
+    Rectangle(int x, int y) : width(x), height(y) {}
+    int area(void) {return width * height;}
 };
 
 int main() {
@@ -185,6 +194,8 @@ int main() {
   return 0;
 }	
 ```
+</p>
+</details>
 
 | **expression** | description     |
 |:---------------|-----------------|
