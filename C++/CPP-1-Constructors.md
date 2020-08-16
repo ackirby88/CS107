@@ -76,8 +76,8 @@ class Rectangle2D {
     double width, height; // private data members
   public:
     /* constructors */
-    Rectangle2D();
-    Rectangle2D(double w, double h);
+    Rectangle2D(); // default contructor
+    Rectangle2D(double w, double h); // constructor with inputs
     
     /* methods */
     void setValues(double w, double h);
