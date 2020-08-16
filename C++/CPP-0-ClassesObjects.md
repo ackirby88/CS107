@@ -136,7 +136,10 @@ These specifiers modify the access rights for the members as follows:
  - `public`: accessible from anywhere where the object is visible.
 
 The default access specifier is `private` within a class. 
-For example, 
+
+**<details><summary>:large_orange_diamond: Access Specifier Example:</summary>**
+<p>
+
 ```C++
 class Rectangle2D {
     int width, height; // private data members
@@ -145,6 +148,9 @@ class Rectangle2D {
     int area(void);
 };
 ```
+</p>
+</details>
+
 It is recommended that you be explicit with access specifiers, e.g. putting `private:` as needed.
 
 ## Scope Operator `::`
