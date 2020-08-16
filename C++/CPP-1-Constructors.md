@@ -232,7 +232,10 @@ The syntax is as follows: `type operator sign (parameters) {/* body */}`.
 
 ### Operator Overloading Example
 To demonstrate operator overloading, we will look at a *3D Cartesian Vectors* class.  
-**vectors.cxx:**
+
+**<details><summary>:large_orange_diamond: vectors.cxx:</summary>**
+<p>
+
 ```C++
 #include <stdio.h>
 
@@ -264,13 +267,20 @@ int main () {
   return 0;
 }
 ```
-**Output:**
+</p>
+</details>
+
+**<details><summary>:large_orange_diamond: Output:</summary>**
+<p>
+  
 ```bash
 $ ./vectors 
   Vector A = <3.100000, 1.100000, 0.000000>
 + Vector B = <1.000000, 2.900000, 8.700000>
 = Vector C = <4.100000, 4.000000, 8.700000>
 ```
+</p>
+</details>
 
 We can even add the vectors directly calling the operator using member access:  
 ```C++
