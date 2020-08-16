@@ -4,8 +4,8 @@
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[**Previous**: C++ Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Inheritence.md)  
-[**Next**: C++ Templates and Namespaces](https://github.com/ackirby88/CS107/blob/master/C++/CPP-3-Templates.md)  
+[**Previous**: C++ Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-2-Inheritence.md)  
+[**Next**: C++ Templates and Namespaces](https://github.com/ackirby88/CS107/blob/master/C++/CPP-4-Templates.md)  
 
 ---
 # Class Polymorphism
