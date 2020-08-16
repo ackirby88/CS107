@@ -5,7 +5,7 @@
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
 [**Previous**: C++ Classes & Objects](https://github.com/ackirby88/CS107/blob/master/C++/CPP-0-ClassesObjects.md)  
-[**Next**: C++ Inheritance](https://github.com/ackirby88/CS107/blob/master/C++/CPP-3-Inheritance.md)
+[**Next**: C++ Inheritance](https://github.com/ackirby88/CS107/blob/master/C++/CPP-2-Inheritance.md)
 
 ---
 # C++ Constructors
@@ -338,5 +338,5 @@ Vec& operator= (const Vec &b) {
 Next , we will look at why C++ objects are so useful in an Object-Oriented Programming paradigm.
 
 ---
-[**Next**: C++ Inheritance](https://github.com/ackirby88/CS107/blob/master/C++/CPP-3-Inheritance.md)
+[**Next**: C++ Inheritance](https://github.com/ackirby88/CS107/blob/master/C++/CPP-2-Inheritance.md)
 
