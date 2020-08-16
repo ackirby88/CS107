@@ -15,6 +15,10 @@ We get an undetermined result since `height` and `width` are set.
 To prevent this situation, a class can include a special function called a **constructor**, which is automatically called when a new object of the class is instantiated. The constructor can be used to allocate memory and initialize data members.
 
 The **constructor** function is declared similarly to a member function, but its name matches the name of the class and without a return type.
+
+**<details><summary>:large_orange_diamond: Constructor Example:</summary>**
+<p>
+    
 ```C++
 class Rectangle2D {
     double width, height; // private data members
@@ -32,8 +36,39 @@ Rectangle2D::Rectangle2D(double w, double h){
   height = h;
 }
 ```
-We can have multiple constructors such as a default constructor or copy constructor.
+</p>
+</details>
 
+We can have multiple constructors such as a default constructor or copy constructor.
+**<details><summary>:large_orange_diamond: Multiple Constructors Example:</summary>**
+<p>
+    
+```C++
+class Rectangle2D {
+    double width, height; // private data members
+  public:
+    /* constructors */
+    Rectangle2D();
+    Rectangle2D(double w, double h);
+    
+    /* methods */
+    void setValues(double w, double h);
+    double area(void);
+};
+
+// default constructor
+Rectangle2D::Rectangle2D(){
+  width = 1.0;
+  height = 1.0;
+}
+
+Rectangle2D::Rectangle2D(double w, double h){
+  width = w;
+  height = h;
+}
+```
+</p>
+</details>
 
 ### Member Initialization in Constructors
 When a constructor is used to initialize other members, these other members can be initialized directly, without using assignment statements inside the body. 
