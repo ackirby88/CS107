@@ -9,7 +9,19 @@
 
 ---
 # C++ Function Defaults
-Functions in C++ can have default arguments:  
+Functions in C++ are allowed to have default arguments without providing one or more trailing arguments.  
+Default arguments are used in place of the missing trailing arguments in a function call:  
+```C++
+void point(int x = 3, int y = 4);
+ 
+point(1,2); // calls point(1,2)
+point(1);   // calls point(1,4)
+point();    // calls point(3,4)
+```
+
+**<details><summary>:large_orange_diamond: Arguments Defaults Example:</summary>**
+<p>
+  
 ```C++
 double distance(double x, double y = 0.0){
   return sqrt((x-y)*(x-y));
@@ -25,7 +37,10 @@ int main(void){
   return 0;
 }
 ```
-Note that default arguments must come at the end of the argument list in the function.
+</p>
+</details>
+
+**Note that default arguments must be trailing arguments in the list.**
 
 # C++ Function Polymorphism
 C++ allows mulitple functions with the same function name but with different arguments:
