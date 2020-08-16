@@ -22,7 +22,10 @@ When creating a class, instead of writing completely new data members and member
  
 If the access-specifier is not defined, then it is *private* by default.
 
-**Class Inheritance Example:**
+
+**<details><summary>:large_orange_diamond: Class Inheritance Example:</summary>**
+<p>
+ 
 ```C++
 #include <stdio.h>
 
@@ -74,6 +77,9 @@ int main(void) {
    return 0;
 }
 ```
+</p>
+</details>
+
 The objects of the classes `Rectangle` and `Triangle` each contain members inherited from Shape. These are: `width`, `height`, `setWidth`, and `setHeight`.
 
 The `protected` access specifier used in class `Shape` is similar to `private`:  
@@ -108,7 +114,9 @@ Unless otherwise specified, the *constructors of a derived class calls the defau
 derived_constructor_name (parameters) : base_constructor_name (parameters) {...}
 ```
 
-**Calling Base-Class Constructor in Derived-Class Constuctor Example:**  
+**<details><summary>:large_orange_diamond: Calling Base-Class Constructor in Derived-Class Constuctor Example:</summary>**
+<p>
+ 
 ```C++
 #include <iostream>
 
@@ -145,10 +153,13 @@ int main(){
   return 0;
 }
 ```
+</p>
+</details>
+
 :large_orange_diamond: [Constructor Inheritance Demo](https://bit.ly/3fBPZDR)  
 
 ### :question: **Question** :question: What's the output of the above `main` function?
-<details><summary>Answer</summary>
+**<details><summary>Answer</summary>**
 <p>
  
 ```
@@ -167,7 +178,10 @@ Circle default contructor called!
 A class may inherit from more than one class by simply specifying more base classes, separated by commas, in the list of a class's base classes (i.e., after the colon). 
 
 For example, if the program had a specific class to print on screen called `Output`, and we wanted our class `Circle` to also inherit its members in addition to those of `Polygon`:  
-**Multiple Inheritance Example:**  
+
+**<details><summary>:large_orange_diamond: Multiple Inheritance Example:</summary>**
+<p>
+ 
 ```C++
 #include <iostream>
 
@@ -204,8 +218,10 @@ int main(){
   return 0;
 }
 ```
+</p>
+</details>
 
-<details><summary>Output</summary>
+**<details><summary>:large_orange_diamond: Example Output:</summary>**
 <p>
  
 ```
