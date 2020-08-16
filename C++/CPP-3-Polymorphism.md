@@ -192,4 +192,4 @@ Shape myShapeObj;      // ERROR: Shape is an abstract base class
 Shape *myShapePointer; // VALID: Pointers to abstract base classes are advantageous
 ```
 ---
-[**Next**: C++ Templates and Namespaces](https://github.com/ackirby88/CS107/blob/master/C++/CPP-3-Templates.md)  
+[**Next**: C++ Templates and Namespaces](https://github.com/ackirby88/CS107/blob/master/C++/CPP-4-Templates.md)  
