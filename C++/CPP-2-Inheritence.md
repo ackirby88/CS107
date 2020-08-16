@@ -5,7 +5,7 @@
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
 [**Previous**: C++ Constructors](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Constructors.md)  
-[**Next**: C++ Polymorphism](https://github.com/ackirby88/CS107/blob/master/C++/CPP-2-Polymorphism.md)
+[**Next**: C++ Polymorphism](https://github.com/ackirby88/CS107/blob/master/C++/CPP-3-Polymorphism.md)
 
 ---
 # C++ Class Inheritance
@@ -233,6 +233,6 @@ Value: 999
 </details>
 
 ---
-[**Next**: C++ Polymorphism](https://github.com/ackirby88/CS107/blob/master/C++/CPP-2-Polymorphism.md)
+[**Next**: C++ Polymorphism](https://github.com/ackirby88/CS107/blob/master/C++/CPP-3-Polymorphism.md)
 
 
