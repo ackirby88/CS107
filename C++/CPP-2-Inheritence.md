@@ -22,7 +22,7 @@ When creating a class, instead of writing completely new data members and member
  
 If the access-specifier is not defined, then it is *private* by default.
 
-
+---
 **<details><summary>:large_orange_diamond: Class Inheritance Example:</summary>**
 <p>
  
@@ -87,6 +87,7 @@ When a class inherits another one, the members of the derived class can access t
 
 By declaring `width` and `height` as `protected` instead of `private`, these members are also accessible from the derived classes `Rectangle` and `Triangle`, instead of just from members of `Shape`. If they were `public`, they could be accessed anywhere.
 
+---
 ## Access Control and Inheritance
 The different access types can be summarized according to which functions can access them in the following way:  
 | Access        | **public** | **protected** | **private**|
