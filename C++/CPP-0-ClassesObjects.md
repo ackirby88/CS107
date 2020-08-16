@@ -52,7 +52,10 @@ class className {
   // function members (i.e. methods)
 };
 ```
-**Example:**
+
+**<details><summary>Example:</summary>**
+<p>
+
 ```C++
 class Rectangle{
   public: 
@@ -69,6 +72,9 @@ class Rectangle{
     }
 };
 ```
+</p>
+</details>
+
 Here, the **data members** are `length`, `width`, and `height`, and the **methods** are `surfaceArea` and `volume`.  
 To use the data members and methods defined in the calss, we need to create objects. 
 
