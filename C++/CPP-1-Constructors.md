@@ -11,7 +11,7 @@
 # C++ Constructors
 When we define a class, we may have data members that need to be initialized to prevent undefined behavior.
 
-**<details><summary>:large_orange_diamond: Undefined Behavior Example:</summary>**
+**<details><summary>:red_circle: Undefined Behavior Example:</summary>**
 <p>
 
 ```C++
