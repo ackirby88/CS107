@@ -53,7 +53,7 @@ class className {
 };
 ```
 
-**<details><summary>Example:</summary>**
+**<details><summary>:large_orange_diamond: Example:</summary>**
 <p>
 
 ```C++
@@ -137,7 +137,10 @@ It is recommended that you be explicit with access specifiers, e.g. putting `pri
 We can seperate the function implementation from its declaration inside the class, as did the C source and header files.
 We use the scope operator `::` to specify the class to which the member being defined belongs.
 
-**Rectangle.h**
+
+**<details><summary>:large_orange_diamond: Rectangle.h</summary>**
+<p>
+
 ```C++
 class Rectangle2D {
     double width, height; // private data members
@@ -146,7 +149,12 @@ class Rectangle2D {
     double area(void);
 };
 ```
-**Rectangle.cxx**
+</p>
+</details>
+
+**<details><summary>:large_orange_diamond: Rectangle.cxx</summary>**
+<p>
+
 ```C
 /* header files */
 #include "Rectangle.h"
@@ -160,7 +168,12 @@ double Rectangle2D::area(){
   return width*height;
 }
 ```
-**main.cxx**
+</p>
+</details>
+
+**<details><summary>:large_orange_diamond: main.cxx</summary>**
+<p>
+
 ```C++
 #include <iostream>
 #include "Rectangle.h"
@@ -172,5 +185,8 @@ int main(){
   return 0;
 }
 ```
+</p>
+</details>
+
 ---
 [**Next**: C++ Constructors](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Constructors.md)  
