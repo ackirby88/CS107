@@ -159,7 +159,6 @@ class MyClass2 {
 Objects can also be pointed to by pointers: `Rectangle2D *p_rec;`.
 As we saw in C, the members of an object can be accessed directly from a pointer by using the arrow operator `->`.  
 
-**Example:**
 **<details><summary>:large_orange_diamond: Pointers to Classes Example:</summary>**
 <p>
   
@@ -227,9 +226,11 @@ Here is a list of all of the operators that can be overloaded:
 | ` ~`  `&=`   `^=`  `\|=` `&&` `\|\|` `%=` `[]` `()` `,`  `->*` `->` |
 | `new`  `delete`  `new[]`  `delete[]` |
 
+---
 ### Operator Overloading Syntax
 The syntax is as follows: `type operator sign (parameters) {/* body */}`.  
 
+---
 ### Operator Overloading Example
 To demonstrate operator overloading, we will look at a *3D Cartesian Vectors* class.  
 
@@ -270,7 +271,7 @@ int main () {
 </p>
 </details>
 
-**<details><summary>:large_orange_diamond: Output:</summary>**
+**<details><summary>:large_orange_diamond: Vectors Output:</summary>**
 <p>
   
 ```bash
