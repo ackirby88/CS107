@@ -53,7 +53,7 @@ class className {
 };
 ```
 
-**<details><summary>:large_orange_diamond: Example:</summary>**
+**<details><summary>:large_orange_diamond: C++ Class Example:</summary>**
 <p>
 
 ```C++
@@ -72,11 +72,10 @@ class Rectangle{
     }
 };
 ```
+Here, the **data members** are `length`, `width`, and `height`, and the **methods** are `surfaceArea` and `volume`.  
+To use the data members and methods defined in the calss, we need to create objects.  
 </p>
 </details>
-
-Here, the **data members** are `length`, `width`, and `height`, and the **methods** are `surfaceArea` and `volume`.  
-To use the data members and methods defined in the calss, we need to create objects. 
 
 # C++ Objects 
 An **object** is an instance of a **class**.  
