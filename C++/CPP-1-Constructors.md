@@ -9,10 +9,38 @@
 
 ---
 # C++ Constructors
-In the above example, what would happen if we didn't set the values of the rectangles before calling `area()`?  
-We get an undetermined result since `height` and `width` are set.
+When we define a class, we may have data members that need to be initialized to prevent undefined behavior.
 
-To prevent this situation, a class can include a special function called a **constructor**, which is automatically called when a new object of the class is instantiated. The constructor can be used to allocate memory and initialize data members.
+**<details><summary>:large_orange_diamond: Undefined Behavior Example:</summary>**
+<p>
+
+```C++
+class myClass{
+  private:
+    int a;
+    int b;
+  public:
+    void set_values(int a_, int b_){
+      a = a_;
+      b = b_;
+    }
+    
+    int product(){
+      return a*b
+    }
+};
+
+int main(void){
+  myClass ex;
+  int result = ex.product(); // undefined behavior: a and b not set
+  return 0;
+}
+```
+</p>
+</details>
+
+---
+To prevent this situation, a class can include a special function called a **constructor**, which is *automatically* called when a new object of the class is instantiated. The constructor can be used to allocate memory and initialize data members.
 
 The **constructor** function is declared similarly to a member function, but its name matches the name of the class and without a return type.
 
@@ -70,6 +98,7 @@ Rectangle2D::Rectangle2D(double w, double h){
 </p>
 </details>
 
+---
 ### Member Initialization in Constructors
 When a constructor is used to initialize other members, these other members can be initialized directly, without using assignment statements inside the body. 
 This is done by inserting, before the constructor's body, a single colon `:` and a list of initializations for class members. For example,  
