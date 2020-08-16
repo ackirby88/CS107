@@ -351,6 +351,7 @@ int main () {
 </p>
 </details>
 
+---
 ### The `this` Keyword
 The keyword `this` represents a pointer to the object whose member function is being executed.  
 It is used within a class's member function to refer to the object itself.
@@ -391,6 +392,7 @@ int main () {
 </p>
 </details>
 
+---
 ### Const Member Functions
 The `const` qualifier can be used in various scenarios:  
 ```C++
@@ -400,6 +402,7 @@ const int& get() {return x;}       // member function returning a const&
 const int& get() const {return x;} // const member function returning a const&
 ```
 
+---
 ### Copy Constructor
 Now that we have some familiarity with operator overloading, we can introduce the **copy constructor**.  
 When an object is passed a named object of its own type as argument, its *copy constructor* is invoked in order to construct a copy.  
@@ -412,6 +415,7 @@ Vec bar(foo);  // object initialization: copy constructor called
 Vec baz = foo; // object initialization: copy constructor called
 foo = bar;     // object already initialized: copy assignment called
 ```
+
 **Note that baz is initialized on construction using an equal sign, but this is not an assignment operation!**  
 The assignment on `foo` is an assignment operation. No object is being declared here, but an operation is being performed on `foo`.  
 The copy assignment operator is an overload of `operator=` which takes a value or reference of the class itself as parameter.  
