@@ -9,7 +9,9 @@
 
 ---
 # Operators
-## Unary Operators
+**<details><summary>Unary Operators</summary>**
+<p>
+
 - minus `-`, plus `+`
 - logical negation `!`
 - prefix increment `++` and decrement `--`
@@ -17,8 +19,12 @@
 - bitwise negation `~`
 - cast operator
 - `sizeof` operator
+</p>
+</details>
 
-## Binary Operators
+**<details><summary>Binary Operators</summary>**
+<p>
+  
 - multiplication `*`, remainder `%`, and division `/`
 - addition `+` and subtraction `-`
 - left shift `<<` and right shift `>>`
@@ -26,8 +32,12 @@
 - equality `==` and inequality `!=`
 - bitwise operators: AND `&`, OR `|`, and XOR `^`
 - logical operators: AND `&&` and OR `||`
+</p>
+</details>
 
-## Conditional (Ternary) Operator
+**<details><summary>Conditional (Ternary) Operator</summary>**
+<p>
+  
 The conditional operator `(expression) ? (val1):(val2)` takes three operands. It tests the result of the first operand and then evaluates one of the other two operands based on the result of the first.
 ```C
 if (expression == true) {
@@ -44,6 +54,8 @@ Example:
 ```C
 int a = (x < y) ? x : y; // a = min(x, y)
 ```
+</p>
+</details>
 
 # Logic
 ## `if`
