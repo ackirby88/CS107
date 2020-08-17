@@ -146,7 +146,7 @@ You may see `#pragma once` which is a **non-standard** but widely used directive
 ### **`#define`**:  
 As we have seen, we can make a macro that serves as a substitution or abbreviation. Before we can use the macro, it must first be defined with the `#define` directive.
 
-- `#define VAR value`: sets `VAR` to `value`  
+- [x] `#define VAR value`: sets `VAR` to `value`  
 
 **<details><summary>:large_orange_diamond: Define Macro Expansion</summary>**
 <p>
@@ -155,7 +155,7 @@ As we have seen, we can make a macro that serves as a substitution or abbreviati
 #define BUFFER 128
 char *str = (char *) malloc(BUFFER);
 ```
-**Expanded version:**
+**Expanded result:**
 ```C
 char *str = (char *) malloc(128);
 ```
@@ -171,7 +171,7 @@ course = CS
 #define CS 107
 num = CS
 ``` 
-**Expanded version:**
+**Expanded result:**
 ```C
 course = CS
 num = 107
@@ -180,23 +180,32 @@ num = 107
 </details>
 
 ---
-### **`#undef`**
+### **`#undef`:**
 We can also undefine a variable as follows:
 - [x] `#undef VAR`: unsets `VAR`  
-Example:
+
+**<details><summary>:large_orange_diamond: Undefine Macro Example</summary>**
+<p>
+  
 ```C
 #define CS 107
 course = CS
-#undef
+#undef CS
 num = CS
 ``` 
-results in the expanded version
+**Expanded result:**
 ```C
 course = 107
 num = CS
 ```
+</p>
+</details>
 
+---
+#### Macro Naming Conventions
 :arrow_right: **NOTE**: In a **user** header file, the macro name should **not** begin with `_`; this is due to avoiding collisions with system header files which normally begin with `__`. It is good practice to make the macro contain the name of the file and possibly additional text to avoid conflicts with other header files.
+
+**Bad User Macro Naming**: `#define _MYVAR_` or `#define __TESTVAR__`.
 
 ---
 ## Conditional Macros
