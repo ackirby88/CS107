@@ -58,7 +58,7 @@ make hello
 
 
 ## Executing on the command line:
-**<details><summary>:large_orange_diamond: hello Output (simple version)</summary>**
+**<details><summary>:large_orange_diamond: hello Output</summary>**
 <p>
   
 ```C
