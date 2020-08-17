@@ -540,7 +540,7 @@ int main(void){
 ```
 
 ### Size of Data Types
-The amount of bytes used to store a variable may vary by machine. To check, you can use the `sizeof` unary operator.
+The amount of bytes used to store a variable may vary by machine. To check, you can use the `sizeof` unary operator.  
 This will return the **number of bytes**.
 ```C
 sizeof(var)
