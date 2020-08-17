@@ -12,7 +12,7 @@
 We touched a little bit on arrays in the data structures section, but, let's look at statically and dynamically allocated arrays in detail.  
 
 ## Arrays
-Recall, an array is a variable which stores multiple values of the same type contiguously in memory.
+Recall, an array is a variable which stores multiple values of the same type **contiguously in memory**.
 ```C
 int data[12];
 ```
