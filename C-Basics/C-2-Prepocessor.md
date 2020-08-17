@@ -21,18 +21,28 @@ The C Preprocessor can perform multiple functions:
 ## Preprocessor Directives
 Preprocessor directives are lines starting with the character `#`, e.g. `#define FOO 107`.  
 Whitespace is also allowed before and after the `#`, and directives can expand over multiple lines by using the character `\`.  
+**<details><summary>:large_orange_diamond: Macro Define: cubeThreads</summary>**
+<p>
+  
 ```C
 #define cubeThreads              \
   for (int k = 0; k < 4; ++k)    \
     for (int j = 0; j < 3; ++j)  \
       for (int i = 0; i < 6; ++i)
-```  
-Example Usage:  
+```
+</p>
+</details>
+
+**<details><summary>:large_orange_diamond: Usage: cubeThreads</summary>**
+<p>
+  
 ```C
 cubeThreads {
   my_array[k][j][i] = 2*i + j + 3*k;
 }
 ```
+</p>
+</details>
 
 ### **`#include`**
 Both user and system header files are included using the preprocessing directive `#include`.
