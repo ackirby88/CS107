@@ -5,7 +5,7 @@
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
 [**Previous**: C++ Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-2-Inheritence.md)  
-[**Next**: C++ Templates and Namespaces](https://github.com/ackirby88/CS107/blob/master/C++/CPP-4-Templates.md)  
+[**Next**: C++ Templates and Namespaces](https://github.com/ackirby88/CS107/blob/master/C++/CPP-4-Templates-Namespaces.md)  
 
 ---
 # Class Polymorphism
@@ -248,4 +248,4 @@ Shape myShapeObj;      // ERROR: Shape is an abstract base class
 Shape *myShapePointer; // VALID: Pointers to abstract base classes are advantageous
 ```
 ---
-[**Next**: C++ Templates and Namespaces](https://github.com/ackirby88/CS107/blob/master/C++/CPP-4-Templates.md)  
+[**Next**: C++ Templates and Namespaces](https://github.com/ackirby88/CS107/blob/master/C++/CPP-4-Templates-Namespaces.md)  
