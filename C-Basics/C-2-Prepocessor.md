@@ -50,7 +50,7 @@ Both user and system header files are included using the preprocessing directive
 - [x] `#include <file>`: **include system header files**  
 The preprocessor searches for a file named *file* in a list of directories specified by you, then in a standard list of system directories. 
 You specify directories to search for header files with the command option `-I`.  
-To see which directories the C Preprocessor searches, we can execute `cpp -v`.  
+**To see which directories the C Preprocessor searches, we can execute `cpp -v`.**
 
 **<details><summary>:large_orange_diamond: C Preprocessor Search Locations: `cpp -v`</summary>**
 <p>
@@ -304,11 +304,13 @@ j = 3
 
 **Be sure to use extra parenthesis for these scenarios!**
 
-:large_orange_diamond: [3D Function Arguments](https://bit.ly/3e6HLD2)  
+---
 If caution is taken, macros with arguments can be combined to make useful programming options. 
 Let's suppose that we want to build a program that depends on physical space dimensions: 2D or 3D. We would like to have our functions take additional arguments without having to make a new function (recall that C programming does **not** allow function overloading).  
+:large_orange_diamond: [3D Function Arguments](https://bit.ly/3e6HLD2)  
 
-## Some Useful Macros
+---
+## Some Useful System Macros
 - `__FILE__` The name of the current file, as a string literal
 - `__LINE__` Current line of the source file, as a numeric literal
 - `__DATE__` Current system date, as a string
@@ -318,6 +320,7 @@ Let's suppose that we want to build a program that depends on physical space dim
 
 :large_orange_diamond: [Macro Example](https://bit.ly/3hpti7g)
 
+---
 ## C Preprocessor Exercises
 :large_blue_diamond: [Fix Max Define Bug](https://bit.ly/2BpdkL2)  
 :large_blue_diamond: Build a program that uses `float` when the macro `SINGLE_PRECISION` is defined, otherwise uses `double` as the floating pointing representation by defining a macro.
