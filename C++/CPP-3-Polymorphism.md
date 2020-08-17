@@ -12,7 +12,7 @@
 One of the key features of class inheritance is that a pointer to a derived class is type-compatible with a pointer to its base class.  
 **Polymorphism** means that a call to a member function will cause a different function to be executed depending on the type of object that invokes the function.
 
-<details><summary>:large_orange_diamond: Pointer to Class Example:</summary>
+**<details><summary>:large_orange_diamond: Pointer to Class Example:</summary>**
 <p>
   
 ```C++
@@ -62,7 +62,10 @@ int main () {
 </details>
 
 ---
-Consider the following example:
+Consider the following example (three code blocks):  
+**<details><summary>:large_orange_diamond: Base Class:</summary>**
+<p>
+  
 ```C++
 #include <iostream>
 using namespace std;
@@ -82,7 +85,14 @@ class Polygon {
       return 0;
     }
 };
+```
+</p>
+</details>
 
+**<details><summary>:large_orange_diamond: Derived Classes:</summary>**
+<p>
+  
+```C++
 class Rectangle: public Polygon {
   public:
     int area(){
@@ -98,7 +108,14 @@ class Triangle: public Polygon {
       return width*height/2;
     }
 };
+</p>
+</details>
 
+
+**<details><summary>:large_orange_diamond: Main:</summary>**
+<p>
+
+```C++
 int main () {
   Rectangle rect;
   Triangle trgl;
@@ -114,8 +131,10 @@ int main () {
   return 0;
 }
 ```
+</p>
+</details>
 
-<details><summary>Output</summary>
+**<details><summary>:red_circle: Main Output:</summary>**
 <p>
  
 ```
