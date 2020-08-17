@@ -106,7 +106,7 @@ class Polygon {
     
     // base-class area function
     int area(){
-      cout << "Parent class area: " << endl;
+      cout << "Calling Parent class area... " << endl;
       return 0;
     }
 };
@@ -121,7 +121,7 @@ class Polygon {
 class Rectangle: public Polygon {
   public:
     int area(){
-      cout << "Rectangle class area: " << endl;
+      cout << "Calling Rectangle class area... " << endl;
       return width*height;
     }
 };
@@ -129,7 +129,7 @@ class Rectangle: public Polygon {
 class Triangle: public Polygon {
   public:
     int area(){
-      cout << "Triangle class area: " << endl;
+      cout << "Calling Triangle class area... " << endl;
       return width*height/2;
     }
 };
@@ -163,8 +163,8 @@ int main () {
 <p>
  
 ```
-Parent class area: 
-Parent class area: 
+Calling Parent class area...
+Calling Parent class area...
 ```
 </p>
 </details>
@@ -189,7 +189,7 @@ class Polygon {
     
     // virtual base-class area function
     virtual int area(){
-      cout << "Parent class area: " << endl;
+      cout << "Calling Parent class area... " << endl;
       return 0;
     }
 };
@@ -201,8 +201,8 @@ class Polygon {
 <p>
  
 ```
-Rectangle class area: 
-Triangle class area: 
+Calling Rectangle class area...
+Calling Triangle class area...
 ```
 </p>
 </details>
