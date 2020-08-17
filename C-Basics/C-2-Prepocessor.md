@@ -216,6 +216,9 @@ These conditional macros need to be closed with the directive `#endif`.
 - [x] `#elif` Directive: Testing several alternative possibilities.
 
 Example:  
+**<details><summary>:large_orange_diamond: Conditional Macro Example</summary>**
+<p>
+  
 ```C
 #if X == 1
 ...
@@ -227,23 +230,27 @@ Example:
 #  endif
 #endif
 ```
+</p>
+</details>
 
-### **`#ifdef`**
-We can check if a variable has been defined using two directives:
+---
+### **`#ifdef`:** Check if a variable has been defined using two directives
+
 - [x] `#ifdef VAR`
 - [x] `#if defined VAR`
 
-### **`#ifndef`**
-We can also check if a variable has not been defined:
+---
+### **`#ifndef`:** Check if a variable has not been defined
 - [x] `#ifndef VAR`
 
+---
 ## Macros With Arguments
-Macros can be more flexible when they accept arguments. Arguments are fragments of code that you supply each time the macro is used.  
-These fragments are included in the expansion of the macro according to the directions in the macro definition.  
+Macros can be more flexible when they accept arguments. Arguments are fragments of code that you supply each time the macro is used. These fragments are included in the expansion of the macro according to the directions in the macro definition.  
+
 A macro that accepts arguments is called a *function-like* macro because the syntax for using it looks like a function call.
 
-To define a macro that uses arguments, you write a `#define` directive with a list of argument names in parentheses after the name of the macro.  
-The open-parenthesis must follow the macro name immediately, with no space in between.
+- Define a macro with arguments: **write a `#define` directive with a list of argument names in parentheses after the macro name**
+- **Open-parenthesis must follow the macro name immediately (no space in between)**
 
 For example, here is a macro that computes the minimum of two numeric values, as it is defined in many C programs:
 ```C
