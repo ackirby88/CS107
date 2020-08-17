@@ -20,12 +20,17 @@ int data[12];
   <img src="array.png">
 </p>
 
+---
 #### Array Declaration
 ```C
 dataType arrayName[arraySize];
 ```
 Note that `arraySize` must be a fixed constant known at **compile time**.  
 The compiler *automatically* allocates and deallocates the array memory.  
+
+**<details><summary><b>:large_orange_diamond: Memory Addresses Example</b></summary>**
+<p>
+
 :large_orange_diamond: [Array Memory Demo](https://bit.ly/2CFIYEY): We can check to see if the memory is actually contiguous.
 ```C
 #include <stdio.h>
@@ -40,6 +45,7 @@ int main(void){
     return 0;
 }
 ```
+
 <details><summary><b>Result</b></summary>
 <p>
 
@@ -60,6 +66,10 @@ data[11] address 0x7ffc29e1fc0c
 </p>
 </details>
 
+</p>
+</details>
+
+---
 #### Array Initialization
 We can initialize arrays during the declaration:
 ```C
@@ -67,12 +77,15 @@ int arr1[4] = {4, 234, 22, -1};
 int arr2[]  = {45, 107, 207, 4, 0};
 ```
 
+---
 #### Array Access
 We can simply access arrays by using `[]`. For example, 
 ```C
 int b = data[2];
 ```
-:red_circle: **Be careful when accessing data elements!** The compiler won't stop you from accessing elements out-of-bounds. We can accidently access elements beyond our allocated memory.
+:red_circle: **Be careful when accessing data elements!** :red_circle:  
+- The compiler won't stop you from accessing elements out-of-bounds (can set a compiler flag to check though)
+- Can accidently access elements beyond allocated memory
 ```C
 int data[4] = {0, 0, 0, 0};
 
@@ -80,6 +93,7 @@ printf("data[4] = %d\n",data[4]); // index 4 is out of bounds
 >>> data[4] = -585229896
 ```
 
+---
 #### Multidimensional Arrays
 We can also create multidimensional arrays, e.g. 
 ```C
@@ -87,11 +101,13 @@ int dim2d[20][8];
 int dim3d[10][3][44];
 ```
 
+---
 ### Array Memory Location and Limitations
-Static arrays have limitations on how many elements can be allocated.  
-Arrays are allocated on the memory **stack** which is the area in the computer's memory stores temporary variables created by a function.  
-The *actual* size limit of the stack depends on how much space your CPU thread has allocated, e.g. 2 megabytes. 
+- Static arrays have limitations on how many elements can be allocated
+- Arrays are allocated on the **memory stack**: computer's memory which stores temporary variables created by a function 
+- The **actual size limit of the stack** depends on how much space your CPU thread has allocated, e.g. **2 megabytes** 
 
+---
 ## Pointers
 As we saw above, we can obtain the **memory address** of a variable and store it in a **pointer** variable.  
 If we have a variable `var`, then we can access its address in memory by `&var`.  
