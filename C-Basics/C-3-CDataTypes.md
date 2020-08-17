@@ -414,8 +414,9 @@ error: assignment of read-only location ‘*ptr’
 **<details><summary>2. Qualifier `volatile` </summary>**
 <p>
 
-The `volatile` qualifier tells the compiler that the **value of the variable may change at any time, without any action being taken by the code** the compiler finds nearby. Volatile accesses cannot be optimized out or reordered with another visible side effect that is sequenced-before or sequenced-after the volatile access. 
-This qualifier is used primarily in embedded programming of devices, e.g.  mobile phones, washing machines, and digital cameras.
+- The `volatile` qualifier tells the compiler that the **value of the variable may change at any time, without any action being taken by the code** the compiler finds nearby.
+- Volatile accesses cannot be optimized out or reordered with another visible side effect that is sequenced-before or sequenced-after the volatile access. 
+- This qualifier is used primarily in embedded programming of devices, e.g.  mobile phones, washing machines, and digital cameras.
 </p>
 </details>
 
