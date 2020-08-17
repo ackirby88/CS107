@@ -30,12 +30,6 @@ int h = 0xC05FEFE; // hexadecimal
 :large_orange_diamond: [Literals Sandbox](https://bit.ly/2ZJ0Ffg)
 
 ---
-### Some C/C++ Standard Types (C: `#include <stdint.h>`, C++: `#include <cstdlib>`)
-- `size_t`: unsigned integer type of at least 16 bits  
-- ` int8_t`,` int16_t`,` int32_t`, ` int64_t`: 8/16/32/64 bit signed integers  
-- `uint8_t`,`uint16_t`,`uint32_t`, `uint64_t`: 8/16/32/64 bit unsigned integers  
-
----
 ## Derived Types
 - `Function`:  a function that returns a value of a specified type
 - `Pointer`: a value that represents the address of an object of a stated type
@@ -214,6 +208,13 @@ These change the range and size that the variable can represent, e.g. `unsigned 
 long long int a;   // 8 bytes
 unsigned short b;  // 2 bytes, [0,65535]
 ```
+
+---
+### Some C/C++ Standard Types (C: `#include <stdint.h>`, C++: `#include <cstdlib>`)
+- `size_t`: unsigned integer type of at least 16 bits  
+- `int8_t`,`int16_t`,`int32_t`, `int64_t`: 8/16/32/64-bit signed integers  
+- `uint8_t`,`uint16_t`,`uint32_t`, `uint64_t`: 8/16/32/64-bit unsigned integers  
+
 ---
 ### Qualifiers
 - `const`: object cannot be modified; attempt to do so directly is a compile-time error
