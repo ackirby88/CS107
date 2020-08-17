@@ -108,9 +108,9 @@ class Triangle: public Polygon {
       return width*height/2;
     }
 };
+```
 </p>
 </details>
-
 
 **<details><summary>:large_orange_diamond: Main:</summary>**
 <p>
