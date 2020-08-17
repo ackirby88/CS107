@@ -171,6 +171,11 @@ Parent class area:
 
 :red_circle: Be careful though with assigning the same pointer to multiple derived classes! Without the keyword **virtual** we can get **static resolution** or **static linkage** meaning the function call is fixed before the program is executed.
 
+---
+### What's the fix?
+**<details><summary>:large_orange_diamond: Virtual Functions</summary>**
+<p>
+ 
 To fix this behavior, we introduce the keyword **virtual**:
 ```C++
 class Polygon {
@@ -189,7 +194,10 @@ class Polygon {
     }
 };
 ```
-<details><summary>Virtual Output</summary>
+</p>
+</details>
+
+**<details><summary>:large_orange_diamond: Fix: Virtual Output</summary>**
 <p>
  
 ```
