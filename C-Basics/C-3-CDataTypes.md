@@ -424,9 +424,9 @@ error: assignment of read-only location ‘*ptr’
 **<details><summary>3. Qualifier `restrict` (C only)</summary>**
 <p>
   
-In the C programming language, `restrict` is a keyword that can be used in pointer declarations. By adding this type qualifier, a programmer hints to the compiler that for the lifetime of the pointer, only the pointer itself or a value directly derived from it (such as pointer + 1) will be used to access the object to which it points.
+- `restrict` is a keyword used in pointer declarations: hints to the compiler that for the lifetime of the pointer, only the pointer itself or a value directly derived from it (such as pointer + 1) will be used to access the object to which it points.
 
-`restrict` limits the effects of pointer aliasing, aiding optimizations. If the declaration of intent is not followed and the object is accessed by an independent pointer, this will result in undefined behavior.
+- `restrict` limits the effects of pointer aliasing, aiding optimizations. If the declaration of intent is not followed and the object is accessed by an independent pointer, this will result in undefined behavior.
 
 If the compiler knows that there is only one pointer to a memory block, it can produce better optimized code. For instance:
 ```C
@@ -441,7 +441,9 @@ void updatePtrs(size_t *restrict ptrA, size_t *restrict ptrB, size_t *restrict v
 **<details><summary>4. Qualifier `static`</summary>**
 <p>
   
-Static variables have a property of preserving their value even after they are out of their scope! Hence, static variables preserve their previous value in their previous scope and are not initialized again in the new scope.
+- Static variables have a property of preserving their value even after they are out of their scope! 
+- Static variables preserve their previous value in their previous scope and are not initialized again in the new scope.
+
 ```C
 #include<stdio.h>
 int fun(){
@@ -465,12 +467,13 @@ Count = 2
 </p>
 </details>
 
-
 **<details><summary>5. Qualifier `extern`</summary>**
 <p>
   
-An object declaration outside of a function is called an **external declaration**. If the file does not include the file 
-provides the compiler with sufficient information to access a variable declared in another file. Later in the semester when we build libraries, we will see be utilized to prevent *name mangling* with `extern "C"{...}`.  
+- An object declaration outside of a function is called an **external declaration**. 
+- If the file does not include the file provides the compiler with sufficient information to access a variable declared in another file. 
+
+Later in the semester when we build libraries, we will see be utilized to prevent *name mangling* with `extern "C"{...}`.  
 :large_orange_diamond: [Name Mangling (Header File Example)](https://bit.ly/2WPu1XD)
 </p>
 </details>
