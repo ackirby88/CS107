@@ -384,7 +384,6 @@ error: assignment of read-only location ‘*ptr’
 </p>
 </details>
 
----
 **<details><summary>2. Qualifier `volatile` </summary>**
 <p>
 
