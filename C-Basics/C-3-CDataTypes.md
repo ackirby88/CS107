@@ -236,17 +236,21 @@ int const b = 8;
 ```
 
 ---
-**Pointer to constant**: `const int*`  
+**<details><summary>**Pointer to constant**: `int const *`</summary>**
+<p>
+
 Pointer to constant can be declared in following two ways.
 ```C
-const int *ptr;
 int const *ptr; 
+const int *ptr;
 ```
 We can change the pointer to point to any other integer variable, but cannot change the value of the object (entity) pointed using pointer ptr. 
 The pointer is stored in the read-write area (stack in the present case). 
 The object pointed may be in the read-only or read-write area. Let's look at some examples.  
 
-**Example:**
+**<details><summary>:large_orange_diamond: `int const *` Example:</summary>**
+<p>
+  
 ```C
 #include <stdio.h>
 
@@ -257,19 +261,26 @@ int main(void){
   const int *ptr = &i;	 
 
   printf("ptr: %d\n", *ptr);
-  /* error: object pointed cannot be modified using the pointer ptr */
-  *ptr = 100;
+  *ptr = 100; // error: object pointed cannot be modified using the pointer ptr
 
-  ptr = &j;  /* valid */
+  ptr = &j;  // valid 
   printf("ptr: %d\n", *ptr);
 
   return 0;
 }
 ```
-**Output:**
+</p>
+</details>
+
+**<details><summary>:large_orange_diamond: `int const *` Example Output</summary>**
+<p>
+  
 ```
  error: assignment of read-only location ‘*ptr’
 ```
+</p>
+</details>
+
 :large_orange_diamond: [Pointer To Constant Bug](https://bit.ly/3hpxTq2)
 
 ---
@@ -309,9 +320,13 @@ int main(void){
 ```
 error: assignment of read-only location ‘*ptr’
 ```
+</p>
+</details>
 
 ---
-**Constant pointer to variable**: `int *const`  
+**<details><summary>**Constant pointer to variable**: `int *const`</summary>**
+<p>
+  
 ```C
 int *const ptr; 
 ```
@@ -342,9 +357,13 @@ int main(void){
 ```
 error: assignment of read-only variable ‘ptr’
 ```
+</p>
+</details>
 
 ---
-**Constant pointer to constant**: `const int *const`
+**<details><summary>**Constant pointer to constant**: `const int *const`</summary>**
+<p>
+  
 ```C
 const int *const ptr; 
 ```
@@ -374,10 +393,12 @@ int main(void){
 error: assignment of read-only variable ‘ptr’
 error: assignment of read-only location ‘*ptr’
 ```
+</p>
+</details>
 
 ---
 **Qualifier `const` Summary**  
- - [x] `int const*` is pointer to constant integer  
+ - [x] `int const *` is pointer to constant integer  
  - [x] `int *const` is a constant pointer to integer  
  - [x] `const int* const` is a constant pointer to constant integer
  
