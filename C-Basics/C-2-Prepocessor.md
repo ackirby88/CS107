@@ -260,9 +260,8 @@ An example usage could be `MIN(2,3)` resulting in the expected value `2`.
 We can even do `MIN(cs + 107, *p)` which expands to `((cs + 107) < (*p) ? (cs + 107) : (*p))`
 
 ---
-### :red_circle: Macros With Arguments: Unintended Consequences
-We can have unintended side effects using macros for function-like expressions. :red_circle:  
-
+### :red_circle: Macros With Arguments: Unintended Consequences :red_circle:  
+We can have unintended side effects using macros for function-like expressions.  
 For example, if we defined a MAX function as follows:
 **<details><summary>:red_circle: Buggy Macro Example</summary>**
 <p>
