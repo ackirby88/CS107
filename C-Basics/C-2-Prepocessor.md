@@ -263,7 +263,7 @@ We can even do `MIN(cs + 107, *p)` which expands to `((cs + 107) < (*p) ? (cs + 
 ### :red_circle: Macros With Arguments: Unintended Consequences
 We can have unintended side effects using macros for function-like expressions. :red_circle:  
 
-For example, if we defined a MAX function as  
+For example, if we defined a MAX function as follows:
 **<details><summary>:red_circle: Buggy Macro Example</summary>**
 <p>
   
