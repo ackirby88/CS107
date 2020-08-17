@@ -58,7 +58,10 @@ int a = (x < y) ? x : y; // a = min(x, y)
 </details>
 
 # Logic
-## `if`
+
+**<details><summary>`if`</summary>**
+<p>
+
 ```C
 // with braces
 if (x == 100) {
@@ -77,8 +80,13 @@ In the following example, only `free(my_ptr)` is subject to the conditional stat
 ```C
 if(my_ptr != NULL) free(my_ptr); my_ptr = NULL;
 ```
+</p>
+</details>
 
-## `else`
+
+**<details><summary>`else`</summary>**
+<p>
+  
 We can have more conditionals using `else if` and `else`. Again, **braces are optional but highly recommended!**
 ```C
 if (x > 0)
@@ -88,8 +96,13 @@ else if (x < 0)
 else
   cout << "x is 0";
 ```
+</p>
+</details>
 
-## `switch`
+
+**<details><summary>`switch`</summary>**
+<p>
+  
 The `switch` control structure can simplify `else if` statements. The general structure is as follows:
 ```C
 switch (expression) {
@@ -109,6 +122,7 @@ switch (expression) {
 
 Notice the use of `break;` statements within the `case` options.  
 If we don't include the `break`, it will execute that case **and** the next case, resulting in *fall-through*.  
+
 Example:
 ```C
 switch (x) {
@@ -121,6 +135,9 @@ switch (x) {
 ```
 If `x = 1`, then the statements for `case 1` **and** `case 2` are executed.  
 :large_orange_diamond:[Switch Case Demo](https://bit.ly/2OWazEm)
+</p>
+</details>
+
 
 # Loops
 ## The `for` Loop
