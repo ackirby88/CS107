@@ -77,7 +77,34 @@ The preprocessor searches for a file named *file* first in the current directory
 This is known as a *computed #include* directive where *anything else* can be other macros, which are expanded. After the expansion, it must conform one of the first two variants: `<file>` or `"file"`.
 
 #### How `#include` Works
-Looking at **Example 1**, the C Proprocessor generates the following from **hello_1.h** to **hello_1.c**:  
+Looking at **Example 1**, the C Proprocessor generates the following from **hello_1.h** to **hello_1.c**: 
+**<details><summary>:large_orange_diamond: Example 1</summary>**
+<p>
+
+**hello_1.h**
+```C
+void print_hello_world(void);
+```
+**hello_1.c**
+```C
+#include <stdio.h>
+#include "hello_1.h"
+
+int main(void){
+  print_hello_world();
+  return 0;
+}
+
+void print_hello_world(void){
+  printf("Hello, World!\n");
+}
+```
+</p>
+</details>
+
+**<details><summary>:large_orange_diamond: Example 1: Post-Preprocessor</summary>**
+<p>
+  
 ```C
 #include <stdio.h>
 void print_hello_world(void);
@@ -90,13 +117,18 @@ int main(void){
 void print_hello_world(void){
   printf("Hello, world!\n");
 }
-```  
-Note that the C Preprocessor would also replace `#include <stdio.h>` accordingly.  
+```
+</p>
+</details>
 
+- Note that the C Preprocessor would also replace `#include <stdio.h>` accordingly.  
+
+---
 #### Include Guards: Once-Only Include Files
 You will most likely include a header file multiple times in a project. This may lead to compiling errors if the header file contains defined data types.
 To fix this, we normally add *Include Guards* in the header file:  
 ```C
+// include guards
 #ifndef HELLO_H
 #define HELLO_H
 void print_hello_world(void);
@@ -104,7 +136,7 @@ void print_hello_world(void);
 ```
 Notice that the macro `HELLO_H` indicates that the file has been included once already. If a subsequent `#include` specifies the same file, and the macro in the `#ifndef` is already defined, then the file contents within the directives are skipped completely.  
 
-You may see `#pragma once` which is a non-standard but widely used directive designed to cause the current source file to be included only once in a single compilation. **However, `#pragma once` is now obsolete and should not be used.**  
+You may see `#pragma once` which is a **non-standard** but widely used directive designed to cause the current source file to be included only once in a single compilation. **However, `#pragma once` is now obsolete and should not be used.**  
 
 :large_orange_diamond: [Header File Collision](https://bit.ly/32NDaUr)
 
