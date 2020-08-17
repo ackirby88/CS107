@@ -235,6 +235,7 @@ const int a = 7;
 int const b = 8;
 ```
 
+---
 **Pointer to constant**: `const int*`  
 Pointer to constant can be declared in following two ways.
 ```C
@@ -244,6 +245,7 @@ int const *ptr;
 We can change the pointer to point to any other integer variable, but cannot change the value of the object (entity) pointed using pointer ptr. 
 The pointer is stored in the read-write area (stack in the present case). 
 The object pointed may be in the read-only or read-write area. Let's look at some examples.  
+
 **Example:**
 ```C
 #include <stdio.h>
@@ -270,6 +272,7 @@ int main(void){
 ```
 :large_orange_diamond: [Pointer To Constant Bug](https://bit.ly/3hpxTq2)
 
+---
 Following is another example where variable `i` itself is constant.  
 **Example:**
 ```C
@@ -301,16 +304,19 @@ int main(void){
   return 0;
 }
 ```
+
 **Output:**
 ```
 error: assignment of read-only location ‘*ptr’
 ```
 
-- **Constant pointer to variable**: `int *const`  
+---
+**Constant pointer to variable**: `int *const`  
 ```C
 int *const ptr; 
 ```
 The declaration is a constant pointer to an integer variable, means we can change the value of object pointed by pointer, but cannot change the pointer to point another variable.  
+
 **Example:**
 ```C
 #include <stdio.h> 
@@ -331,16 +337,19 @@ int main(void){
   return 0;
 }
 ```
+
 **Output:**
 ```
 error: assignment of read-only variable ‘ptr’
 ```
 
-- **Constant pointer to constant**: `const int *const`
+---
+**Constant pointer to constant**: `const int *const`
 ```C
 const int *const ptr; 
 ```
 The declaration is a constant pointer to a constant variable which means we cannot change value pointed by the pointer as well as we cannot point the pointer to other variables.  
+
 **Example:**
 ```C
 #include <stdio.h>
@@ -359,12 +368,14 @@ int main(void){
   return 0;
 }
 ```
+
 **Output:**
 ```
 error: assignment of read-only variable ‘ptr’
 error: assignment of read-only location ‘*ptr’
 ```
 
+---
 **Qualifier `const` Summary**  
  - [x] `int const*` is pointer to constant integer  
  - [x] `int *const` is a constant pointer to integer  
@@ -373,6 +384,7 @@ error: assignment of read-only location ‘*ptr’
 </p>
 </details>
 
+---
 **<details><summary>2. Qualifier `volatile` </summary>**
 <p>
 
