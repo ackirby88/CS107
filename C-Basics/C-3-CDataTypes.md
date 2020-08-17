@@ -248,7 +248,7 @@ We can change the pointer to point to any other integer variable, but cannot cha
 The pointer is stored in the read-write area (stack in the present case). 
 The object pointed may be in the read-only or read-write area. Let's look at some examples.  
 
-**<details><summary>:large_orange_diamond: `int const *` Example:</summary>**
+**<details><summary>:large_orange_diamond: `int const *` Example 1</summary>**
 <p>
   
 ```C
@@ -257,8 +257,8 @@ The object pointed may be in the read-only or read-write area. Let's look at som
 int main(void){
   int i = 10;
   int j = 20;
-  /* ptr is pointer to constant */
-  const int *ptr = &i;	 
+
+  const int *ptr = &i; // ptr is pointer to constant 
 
   printf("ptr: %d\n", *ptr);
   *ptr = 100; // error: object pointed cannot be modified using the pointer ptr
@@ -272,7 +272,7 @@ int main(void){
 </p>
 </details>
 
-**<details><summary>:large_orange_diamond: `int const *` Example Output</summary>**
+**<details><summary>:large_orange_diamond: `int const *` Example 1 Output</summary>**
 <p>
   
 ```
@@ -285,13 +285,14 @@ int main(void){
 
 ---
 Following is another example where variable `i` itself is constant.  
-**Example:**
+**<details><summary>:large_orange_diamond: `int const *` Example 2 </summary>**
+<p>
+  
 ```C
 #include <stdio.h> 
 
 int main(void){
-  /* i is stored in read only area */
-  int const i = 10;
+  int const i = 10; // i is stored in read only area
   int j = 20;
 
   /* Pointer to integer constant:
@@ -302,8 +303,7 @@ int main(void){
   int const *ptr = &i;
   printf("ptr: %d\n", *ptr);
 
-  /* error */
-  *ptr = 100;
+  *ptr = 100; // error
 
   /* valid. We call it up qualification.
    * In C/C++, the type of "int *" is allowed to up qualify to the type "const int *".
@@ -315,11 +315,19 @@ int main(void){
   return 0;
 }
 ```
+</p>
+</details>
 
-**Output:**
+
+**<details><summary>:large_orange_diamond: `int const *` Example 2 Output</summary>**
+<p>
+  
 ```
 error: assignment of read-only location ‘*ptr’
 ```
+</p>
+</details>
+
 </p>
 </details>
 
