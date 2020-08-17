@@ -20,12 +20,18 @@ Header files can be used used to share these declarations and macro expansions a
 
 Here we can see a function declaration for the function `print_hello_world()`:
 ## Example 1: Hello World Header Files!
-:large_blue_diamond: **hello_1.h**
+**<details><summary>:large_orange_diamond: hello_1.h: header file</summary>**
+<p>
+  
 ```C
 void print_hello_world(void);
 ```
+</p>
+</details>
 
-:large_blue_diamond: **hello_1.c**
+**<details><summary>:large_orange_diamond: hello_1.c: source file</summary>**
+<p>
+  
 ```C
 #include <stdio.h>
 #include "hello_1.h"
@@ -38,7 +44,10 @@ int main(void){
 void print_hello_world(void){
   printf("Hello, World!\n");
 }
-```  
+```
+</p>
+</details>
+
 If we don't include the header file `hello_1.h` containing the function declaration `print_hello_world()` at the top of the source file, then the function `print_hello_world()` would not be known by the `main` function. This is because programs compiled with gcc are parsed *top-down*.  
 Luckily for us, the C Preprocessor replaces the `#include "hello_1.h"` line with all of the code found in **hello_1.h**.  
 
