@@ -229,13 +229,13 @@ unsigned short b;  // 2 bytes, [0,65535]
 **<details><summary>1. Qualifier `const`</summary>**
 <p>
   
-The qualifier `const` can be applied to the declaration of any variable to specify that its value will not be changed.
+The qualifier `const` can be applied to the declaration of any variable to **specify that its value will not be changed.**
 ```C
 const int a = 7;
 int const b = 8;
 ```
 
-- **Pointer to constant**: `const int*`  
+**Pointer to constant**: `const int*`  
 Pointer to constant can be declared in following two ways.
 ```C
 const int *ptr;
