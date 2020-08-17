@@ -259,23 +259,51 @@ For example, here is a macro that computes the minimum of two numeric values, as
 An example usage could be `MIN(2,3)` resulting in the expected value `2`.   
 We can even do `MIN(cs + 107, *p)` which expands to `((cs + 107) < (*p) ? (cs + 107) : (*p))`
 
-:red_circle: We could have unintended side effects using macros for function-like expressions. :red_circle:  
+---
+### :red_circle: Macros With Arguments: Unintended Consequences
+We can have unintended side effects using macros for function-like expressions. :red_circle:  
+
 For example, if we defined a MAX function as  
+**<details><summary>:red_circle: Buggy Macro Example</summary>**
+<p>
+  
 ```C
 #define MAX(a,b) a > b ? a : b
 ```
-and the code
+</p>
+</details>
+
+**<details><summary>:red_circle: Buggy Macro Example: Usage</summary>**
+<p>
+  
 ```C
 i = MAX(2,3)+5;
 j = MAX(3,2)+5;
 ```
-Then the expansion gives
+</p>
+</details>
+
+**<details><summary>:red_circle: Buggy Macro Example: Expansion</summary>**
+<p>
+  
 ```C
 i = 2 > 3 ? 2 : 3+5;
 j = 3 > 2 ? 3 : 2+5;
 ```
-Thus, after execution **`i=8`** and **`j=3`** instead of **`i=j=8`**!  
-So be sure to use extra parenthesis for these scenarios.
+</p>
+</details>
+
+**<details><summary>:red_circle: Buggy Macro Example: Result</summary>**
+<p>
+  
+```C
+i = 8
+j = 3
+```
+</p>
+</details>
+
+**Be sure to use extra parenthesis for these scenarios!**
 
 :large_orange_diamond: [3D Function Arguments](https://bit.ly/3e6HLD2)  
 If caution is taken, macros with arguments can be combined to make useful programming options. 
