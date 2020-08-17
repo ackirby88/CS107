@@ -176,7 +176,7 @@ myNameSpace::b
 ```
 
 ## Namespace Examples
-**<details><summary>:large_orange_diamond: Namespace Example 1</summary>**
+**<details><summary>:large_orange_diamond: Namespace Example</summary>**
 <p>
    
 ```C++
