@@ -157,3 +157,82 @@ int main () {
 
 ---
 # Namespaces
+**Namespaces** allow grouping of entities like classes, objects, and functions under a name.  
+This way the global scope can be divided in "sub-scopes", each one with its own name.
+
+## Namespace Format
+```C++
+namespace identifier {
+  //entities
+}
+```
+
+---
+### Scope Operator `::`
+Recall the scope operator `::` which allows us to access entities from namespaces or specifies class functions when we are outside of the namespace scope:  
+```C++
+myNameSpace::a 
+myNameSpace::b
+```
+
+## Namespace Examples
+**<details><summary>:large_orange_diamond: Namespace Example 1</summary>**
+<p>
+   
+```C++
+// namespaces
+#include <iostream>
+using namespace std;
+
+namespace first {
+  int var = 5;
+}
+
+namespace second {
+  double var = 3.1416;
+}
+
+int main () {
+  cout << first::var << endl;
+  cout << second::var << endl;
+  return 0;
+}
+```
+</p>
+</details>
+
+---
+### `using` Keyword
+The keyword `using` is used to introduce a name from a namespace into the current declarative region.
+
+**<details><summary>:large_orange_diamond: `using` Example</summary>**
+<p>
+
+```C++
+#include <iostream>
+using namespace std;
+
+namespace first {
+  int x = 5;
+  int y = 10;
+}
+
+namespace second {
+  double x = 3.1416;
+  double y = 2.7183;
+}
+
+int main () {
+  using first::x;
+  using second::y;
+  
+  cout << x << endl;
+  cout << y << endl;
+  
+  cout << first::y << endl;
+  cout << second::x << endl;
+  return 0;
+}
+```
+</p>
+</details>
