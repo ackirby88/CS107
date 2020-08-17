@@ -57,8 +57,8 @@ int a = (x < y) ? x : y; // a = min(x, y)
 </p>
 </details>
 
+---
 # Logic
-
 **<details><summary>The `if` Statement</summary>**
 <p>
 
@@ -138,7 +138,7 @@ If `x = 1`, then the statements for `case 1` **and** `case 2` are executed.
 </p>
 </details>
 
-
+---
 # Loops
 **<details><summary>The `for` Loop</summary>**
 <p>
@@ -219,9 +219,8 @@ int main(void){
 </p>
 </details>
 
-
+---
 # Jump Statements
-
 **<details><summary>The `break` Statement</summary>**
 <p>
   
@@ -269,14 +268,22 @@ Result: `10, 9, 8, 7, 6, 4, 3, 2, 1, FIRE!`
 </p>
 </details>
 
+---
 # Functions
+**<details><summary>Function Template</summary>**
+<p>
+  
 ```C
 return_type function_name (argument list){
     Set of statements – Block of code
 }
 ```
+</p>
+</details>
 
-## Variadic Functions
+**<details><summary>Variadic Functions</summary>**
+<p>
+
 Variadic functions are functions (e.g. printf) which take a variable number of arguments.
 ```C
 #include <stdio.h>
@@ -308,6 +315,8 @@ int main(void){
     simple_printf("dcff", 3, 'a', 1.999, 42.5); 
 }
 ```
+</p>
+</details>
 
 ---
 [**Next**: Arrays, Pointers, Memory, References](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-5-Memory.md)
