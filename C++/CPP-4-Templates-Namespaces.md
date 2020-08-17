@@ -8,8 +8,7 @@
 
 ---
 # Templating
-Templates are the foundation of generic programming, which involves writing code in a way that is independent of any particular type.
-
+Templates are the foundation of generic programming, which involves writing code in a way that is independent of any particular type.  
 A **template** is a blueprint for creating a generic class or a function.
 
 ## Function Template
