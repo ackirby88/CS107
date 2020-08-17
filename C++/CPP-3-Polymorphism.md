@@ -12,7 +12,7 @@
 One of the key features of class inheritance is that a pointer to a derived class is type-compatible with a pointer to its base class.  
 **Polymorphism** means that a call to a member function will cause a different function to be executed depending on the type of object that invokes the function.
 
-**<details><summary>:large_orange_diamond: Pointer to Class Example: Base Class</summary>**
+**<details><summary>:large_orange_diamond: Pointer to Class: Base Class</summary>**
 <p>
   
 ```C++
@@ -32,7 +32,7 @@ class Polygon {
 </p>
 </details>
 
-**<details><summary>:large_orange_diamond: Pointer to Class Example: Derived Classes</summary>**
+**<details><summary>:large_orange_diamond: Pointer to Class: Derived Classes</summary>**
 <p>
   
 ```C++
@@ -53,7 +53,7 @@ class Triangle: public Polygon {
 </p>
 </details>
 
-**<details><summary>:large_orange_diamond: Pointer to Class Example: Main</summary>**
+**<details><summary>:large_orange_diamond: Pointer to Class: Main</summary>**
 <p>
   
 ```C++
@@ -75,7 +75,7 @@ int main () {
 </p>
 </details>
 
-**<details><summary>:large_orange_diamond: Pointer to Class Example: Output</summary>**
+**<details><summary>:large_orange_diamond: Pointer to Class: Output</summary>**
 <p>
   
 ```C++
@@ -159,7 +159,7 @@ int main () {
 </p>
 </details>
 
-**<details><summary>:red_circle: Non-Virtual Function: Main Output</summary>**
+**<details><summary>:red_circle: Non-Virtual Function: Output</summary>**
 <p>
  
 ```
