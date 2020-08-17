@@ -229,14 +229,20 @@ unsigned short b;  // 2 bytes, [0,65535]
 **<details><summary>1. Qualifier `const`</summary>**
 <p>
   
-The qualifier `const` can be applied to the declaration of any variable to **specify that its value will not be changed.**
+- The qualifier `const` can be applied to the declaration of any variable to **specify that its value will not be changed.**
 ```C
 const int a = 7;
 int const b = 8;
 ```
 
 ---
-**<details><summary>**Pointer to constant**: `int const *`</summary>**
+**Qualifier `const` Summary**:  
+ - [x] `int const *` is pointer to constant integer  
+ - [x] `int *const` is a constant pointer to integer  
+ - [x] `const int* const` is a constant pointer to constant integer
+ 
+---
+**<details><summary>(A) **Pointer to constant**: `int const *`</summary>**
 <p>
 
 Pointer to constant can be declared in following two ways.
@@ -281,10 +287,7 @@ int main(void){
 </p>
 </details>
 
-:large_orange_diamond: [Pointer To Constant Bug](https://bit.ly/3hpxTq2)
-
----
-Following is another example where variable `i` itself is constant.  
+The following is another example where variable `i` itself is constant.  
 **<details><summary>:large_orange_diamond: `int const *` Example 2 </summary>**
 <p>
   
@@ -318,7 +321,6 @@ int main(void){
 </p>
 </details>
 
-
 **<details><summary>:large_orange_diamond: `int const *` Example 2 Output</summary>**
 <p>
   
@@ -328,11 +330,12 @@ error: assignment of read-only location ‘*ptr’
 </p>
 </details>
 
+:large_orange_diamond: [Pointer To Constant Bug](https://bit.ly/3hpxTq2)
 </p>
 </details>
 
 ---
-**<details><summary>**Constant pointer to variable**: `int *const`</summary>**
+**<details><summary>(B) **Constant pointer to variable**: `int *const`</summary>**
 <p>
   
 ```C
@@ -369,7 +372,7 @@ error: assignment of read-only variable ‘ptr’
 </details>
 
 ---
-**<details><summary>**Constant pointer to constant**: `const int *const`</summary>**
+**<details><summary>(C) **Constant pointer to constant**: `const int *const`</summary>**
 <p>
   
 ```C
@@ -405,11 +408,6 @@ error: assignment of read-only location ‘*ptr’
 </details>
 
 ---
-**Qualifier `const` Summary**  
- - [x] `int const *` is pointer to constant integer  
- - [x] `int *const` is a constant pointer to integer  
- - [x] `const int* const` is a constant pointer to constant integer
- 
 </p>
 </details>
 
