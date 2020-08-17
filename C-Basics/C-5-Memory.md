@@ -109,31 +109,33 @@ int dim3d[10][3][44];
 
 ---
 ## Pointers
-As we saw above, we can obtain the **memory address** of a variable and store it in a **pointer** variable.  
-If we have a variable `var`, then we can access its address in memory by `&var`.  
-To print the address in the C language, we use the format `%p`:
+- We can obtain the **memory address** of a variable and store it in a **pointer** variable.  
+- If we have a variable `var`, then we can **access its address in memory by `&var`**.  
+- To print the address in the C language, we use the format `%p`:
 ```C
 int var;
 printf("var's address: %p\n",&var);
 ```
 
-We can assign a **pointer** to the address in memory: `int *pvar = &var`.  
+- We can assign a **pointer** to the address in memory: `int *pvar = &var`. 
+
 The declaration of pointers is flexible in terms of the `*` placement relative to spaces. 
 ```C
 int *p1;
 int* p2;
 int * p3;
 ```
-My preference in the first one: `int *p1;`. By placing `*` next to the variable name, it helps provide an implicit local assignment.
+My preference is the first one: `int *p1;`. By placing `*` next to the variable name, it helps provide an implicit local assignment.
 ```C
 int *p1, v1;  // p1 is an integer pointer, v1 is an integer
 int* p2, v2;  // p2 is an integer pointer, v2 is an integer (NOT a pointer)
 int *p3, *p4; // p3 is an integer pointer, p4 in an integer pointer
 ```
 
+---
 ### Getting the Address and Value
-If we wish to assign the address to a variable or *pass the variable by address*, we use the `&` operator.  
-To get the value from a pointer, we can either *dereference* the value by using `*pvar` or `var[0]`.
+- If we wish to **assign the address to a variable or pass the variable by address, we use the `&` operator.**  
+- To **get the value from a pointer**, we can either **dereference the value by using `*pvar` or `var[0]`**.
 
 ```C
 /* assign pointer */
