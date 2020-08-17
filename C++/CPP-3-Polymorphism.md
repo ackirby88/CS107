@@ -67,10 +67,20 @@ int main () {
   ppoly1->set_values(4,5);
   ppoly2->set_values(4,5);
   
-  cout << rect.area() << endl;
-  cout << trgl.area() << endl;
+  cout << "Rectangle area: " << rect.area() << endl;
+  cout << "Triangle area: " << trgl.area() << endl;
   return 0;
 }
+```
+</p>
+</details>
+
+**<details><summary>:large_orange_diamond: Pointer to Class Example: Output</summary>**
+<p>
+  
+```C++
+Rectangle area: 20
+Traingle area: 10
 ```
 </p>
 </details>
