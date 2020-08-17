@@ -140,32 +140,46 @@ You may see `#pragma once` which is a **non-standard** but widely used directive
 
 :large_orange_diamond: [Header File Collision](https://bit.ly/32NDaUr)
 
+---
 ## Simple Macros
 
 ### **`#define`**:  
-As we have seen, we can make a macro that serves as a substitution or abbreviation. Before we can use the macro, it must first be defined with the `#define` directive.  
-- [x] `#define VAR value`: sets `VAR` to `value`  
-Example:
+As we have seen, we can make a macro that serves as a substitution or abbreviation. Before we can use the macro, it must first be defined with the `#define` directive.
+
+- `#define VAR value`: sets `VAR` to `value`  
+
+**<details><summary>:large_orange_diamond: Define Macro Expansion</summary>**
+<p>
+
 ```C
 #define BUFFER 128
 char *str = (char *) malloc(BUFFER);
 ```
-results in the expanded version  
+**Expanded version:**
 ```C
 char *str = (char *) malloc(128);
 ```
-Note that the C preprocessor is sequential top-down. So given the following as input to the C Preprocessor 
+</p>
+</details>
+
+Note that the C preprocessor is sequential top-down.
+**<details><summary>:large_orange_diamond: Define Macro Top-Down Expansion</summary>**
+<p>
+
 ```C
 course = CS
 #define CS 107
 num = CS
 ``` 
-results in the expanded version
+**Expanded version:**
 ```C
 course = CS
 num = 107
 ``` 
+</p>
+</details>
 
+---
 ### **`#undef`**
 We can also undefine a variable as follows:
 - [x] `#undef VAR`: unsets `VAR`  
@@ -184,6 +198,7 @@ num = CS
 
 :arrow_right: **NOTE**: In a **user** header file, the macro name should **not** begin with `_`; this is due to avoiding collisions with system header files which normally begin with `__`. It is good practice to make the macro contain the name of the file and possibly additional text to avoid conflicts with other header files.
 
+---
 ## Conditional Macros
 A conditional in the C preprocessor begins with a conditional directive: `#if`, `#ifdef` or `#ifndef`.  
 These conditional macros need to be closed with the directive `#endif`.
