@@ -43,7 +43,9 @@ int h = 0xC05FEFE; // hexadecimal
 - `Structure`: a data structure that can store data items of different types
 - `Union`: a data structure that can store different data types in the same memory location
 
-### 1. Function Type
+**<details><summary>1. Function Type</summary>**
+<p>
+
 A function type describes a function that returns a value of a specified type.  
 If the function returns no value, it should be declared as "function returning void " as follows:  
 ```C
@@ -56,8 +58,12 @@ int uppercase(int lc){
   return uc;
 }
 ```
+</p>
+</details>
 
-### 2. Pointer Type
+**<details><summary>2. Pointer Type</summary>**
+<p>
+  
 A pointer type describes a value that represents the *address* of an object of a stated type.  
 A pointer is stored as an integral value that references the address of the target object.  
 Pointer types are derived from other types, called the referenced type of the pointer.  
@@ -76,8 +82,12 @@ The `void *` construction can be used to point to an object of any type, and it 
 ```C
 int MPI_Send(const void *buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm);
 ```
+</p>
+</details>
 
-### 3. Array Type
+**<details><summary>3. Array Type</summary>**
+<p>
+
 An array is a data structure that can store a fixed-size sequential collection of elements of the same type.
 Arrays cannot be of void or function type, since the void type cannot be completed and function types are not object types requiring storage.
 ```C
@@ -94,7 +104,6 @@ for (int i = 1 ; i < nvec; ++i) {
 /* deallocate memory */
 free(vec); vec = NULL;
 ```
-
 Each of the elements has the size of a double object, 8 bytes (64 bits). The size of the array is determined by its initialization; in the previous example, the array has `nvec = 107` explicit elements.
 
 An array is allocated contiguously in memory, and cannot be empty (that is, have no members).  
@@ -121,8 +130,12 @@ for (int j = 0; j < 10; ++j) {
 }
 free(two_dim); two_dim = NULL;
 ```
+</p>
+</details>
 
-### 4. Structure Type
+**<details><summary>4. Structure Type</summary>**
+<p>
+
 A structure type is a sequentially allocated nonempty set of objects, called members, allowing grouping of heterogeneous data. 
 Unlike arrays, the elements of a structure need not be of the same data type. Also, elements of a structure are accessed by name, not by subscript. 
 ```C
@@ -133,6 +146,7 @@ struct [structure tag] {
   member definition;
 } [one or more structure variables];  
 ```
+
 **Example:**
 ```C
 struct student {
@@ -145,10 +159,13 @@ struct student andrew, ed, mary;
 // access member
 andrew.age = 21;
 ```
-
 :large_orange_diamond: Sandbox Example: [Structs - Pass-by-Value/Address/Reference](https://bit.ly/3fMX05R)
+</p>
+</details>
 
-### 5. Union Type
+**<details><summary>5. Union Type</summary>**
+<p>
+  
 A **union** is a special data type available in C that allows to store different data types in the same memory location. You can define a union with many members, but only one member can contain a value at any given time. Unions provide an efficient way of using the same memory location for multiple-purpose.
 ```C
 union [union tag] {
@@ -176,6 +193,9 @@ union Data {
   double f[2]: (8 bytes per double) * (2 doubles) = 16 bytes  
   char str[20]: (1 byte per char) * (20 chars) = 20 bytes
 ```  
+</p>
+</details>
+
 </p>
 </details>
 
