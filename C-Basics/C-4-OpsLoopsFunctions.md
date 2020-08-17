@@ -59,7 +59,7 @@ int a = (x < y) ? x : y; // a = min(x, y)
 
 # Logic
 
-**<details><summary>`if`</summary>**
+**<details><summary>The `if` Statement</summary>**
 <p>
 
 ```C
@@ -84,7 +84,7 @@ if(my_ptr != NULL) free(my_ptr); my_ptr = NULL;
 </details>
 
 
-**<details><summary>`else`</summary>**
+**<details><summary>The `else` Statement</summary>**
 <p>
   
 We can have more conditionals using `else if` and `else`. Again, **braces are optional but highly recommended!**
@@ -100,7 +100,7 @@ else
 </details>
 
 
-**<details><summary>`switch`</summary>**
+**<details><summary>The `switch` Statement</summary>**
 <p>
   
 The `switch` control structure can simplify `else if` statements. The general structure is as follows:
@@ -140,7 +140,9 @@ If `x = 1`, then the statements for `case 1` **and** `case 2` are executed.
 
 
 # Loops
-## The `for` Loop
+**<details><summary>The `for` Loop</summary>**
+<p>
+  
 Format:
 ```C
 for (initialization; condition; increase) statement;
@@ -158,8 +160,13 @@ for (n = 0, i = 100; n != i; n++, i--) {
    // whatever here...
 }
 ```
+</p>
+</details>
 
-## The `while` Loop
+
+**<details><summary>The `while` Loop</summary>**
+<p>
+  
 Format:
 ```C
 while (expression) statement
@@ -183,7 +190,13 @@ int main(void){
   return 0;
 }
 ```
-## The `do-while` Loop
+</p>
+</details>
+
+
+**<details><summary>The `do-while` Loop</summary>**
+<p>
+  
 Format:
 ```C
 do statement while (condition);
@@ -203,9 +216,15 @@ int main(void){
   return 0;
 }
 ```
+</p>
+</details>
+
 
 # Jump Statements
-## The `break` Statement
+
+**<details><summary>The `break` Statement</summary>**
+<p>
+  
 Using `break` we can leave a loop even if the condition for its end is not fulfilled.  
 It can be used to end an infinite loop, or to force it to end before its natural end.  
 ```C++
@@ -224,8 +243,13 @@ int main(void){
 }
 ```
 Result: `10, 9, 8, 7, 6, 5, 4, 3, countdown aborted!`  
+</p>
+</details>
 
-## The `continue` Statement
+
+**<details><summary>The `continue` Statement</summary>**
+<p>
+  
 The `continue` statement causes the program to skip the rest of the loop in the current iteration as if the end of the statement block had been reached, causing it to jump to the start of the following iteration.
 ```C++
 // continue loop example
@@ -242,6 +266,8 @@ int main(void){
 }
 ```
 Result: `10, 9, 8, 7, 6, 4, 3, 2, 1, FIRE!`  
+</p>
+</details>
 
 # Functions
 ```C
