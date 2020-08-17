@@ -33,7 +33,9 @@ template <class type> class class-name {
 ```
 ---
 ### Function Template Example
-
+**<details><summary>:large_orange_diamond: Function Template</summary>**
+<p>
+   
 ```C++
 // function template
 #include <iostream>
@@ -45,7 +47,14 @@ T getMax(T a, T b) {
   result = (a > b) ? a : b;
   return (result);
 }
+```
+</p>
+</details>
 
+**<details><summary>:large_orange_diamond: Function Template Main</summary>**
+<p>
+
+```C++
 int main () {
   int i = 5, j = 6, k;
   long l = 10, m = 5, n;
@@ -53,11 +62,24 @@ int main () {
   k = getMax<int>(i,j);
   n = getMax<long>(l,m);
   
-  cout << k << endl;
-  cout << n << endl;
+  cout << "Int Max: " << k << endl;
+  cout << "Long Max: " << n << endl;
   return 0;
 }
 ```
+</p>
+</details>
+
+
+**<details><summary>:large_orange_diamond: Function Template Output</summary>**
+<p>
+   
+```C++
+Int Max: 6
+Long Max: 10
+```
+</p>
+</details>
 
 ---
 # Namespaces
