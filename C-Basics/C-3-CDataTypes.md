@@ -223,7 +223,9 @@ unsigned short b;  // 2 bytes, [0,65535]
 - `static`: value remains in memory for duration of program life
 - `extern`: t provides the compiler with sufficient information to access a variable declared in another file
 
-#### 1. `const`
+**<details><summary>1. Qualifier `const`</summary>**
+<p>
+  
 The qualifier `const` can be applied to the declaration of any variable to specify that its value will not be changed.
 ```C
 const int a = 7;
@@ -359,20 +361,27 @@ int main(void){
 error: assignment of read-only variable ‘ptr’
 error: assignment of read-only location ‘*ptr’
 ```
+</p>
+</details>
+
+**Qualifier `const` Summary**  
+ - [x] `int const*` is pointer to constant integer  
+ - [x] `int *const` is a constant pointer to integer  
+ - [x] `const int* const` is a constant pointer to constant integer
 
 ---
-**Summary**  
-`int const*` is pointer to constant integer  
-`int *const` is a constant pointer to integer  
-`const int* const` is a constant pointer to constant integer
+**<details><summary>2. Qualifier `volatile` </summary>**
+<p>
 
----
-
-#### 2. `volatile`
 The `volatile` qualifier tells the compiler that the **value of the variable may change at any time, without any action being taken by the code** the compiler finds nearby. Volatile accesses cannot be optimized out or reordered with another visible side effect that is sequenced-before or sequenced-after the volatile access. 
 This qualifier is used primarily in embedded programming of devices, e.g.  mobile phones, washing machines, and digital cameras.
+</p>
+</details>
 
-#### 3. `restrict` (C only)
+
+**<details><summary>3. Qualifier `restrict` (C only)</summary>**
+<p>
+  
 In the C programming language, `restrict` is a keyword that can be used in pointer declarations. By adding this type qualifier, a programmer hints to the compiler that for the lifetime of the pointer, only the pointer itself or a value directly derived from it (such as pointer + 1) will be used to access the object to which it points.
 
 `restrict` limits the effects of pointer aliasing, aiding optimizations. If the declaration of intent is not followed and the object is accessed by an independent pointer, this will result in undefined behavior.
@@ -384,8 +393,12 @@ void updatePtrs(size_t *restrict ptrA, size_t *restrict ptrB, size_t *restrict v
   *ptrB += *val;
 }
 ```
+</p>
+</details>
 
-#### 4. `static`
+**<details><summary>4. Qualifier `static`</summary>**
+<p>
+  
 Static variables have a property of preserving their value even after they are out of their scope! Hence, static variables preserve their previous value in their previous scope and are not initialized again in the new scope.
 ```C
 #include<stdio.h>
@@ -407,11 +420,18 @@ int main(void){
 Count = 1
 Count = 2
 ```
+</p>
+</details>
 
-#### 5. `extern`
+
+**<details><summary>5. Qualifier `extern`</summary>**
+<p>
+  
 An object declaration outside of a function is called an **external declaration**. If the file does not include the file 
 provides the compiler with sufficient information to access a variable declared in another file. Later in the semester when we build libraries, we will see be utilized to prevent *name mangling* with `extern "C"{...}`.  
 :large_orange_diamond: [Name Mangling (Header File Example)](https://bit.ly/2WPu1XD)
+</p>
+</details>
 
 ---
 ## Declaration and Assignment
