@@ -361,15 +361,15 @@ int main(void){
 error: assignment of read-only variable ‘ptr’
 error: assignment of read-only location ‘*ptr’
 ```
-</p>
-</details>
 
 **Qualifier `const` Summary**  
  - [x] `int const*` is pointer to constant integer  
  - [x] `int *const` is a constant pointer to integer  
  - [x] `const int* const` is a constant pointer to constant integer
+ 
+</p>
+</details>
 
----
 **<details><summary>2. Qualifier `volatile` </summary>**
 <p>
 
