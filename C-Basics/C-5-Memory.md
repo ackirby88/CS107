@@ -119,6 +119,7 @@ int dim3d[10][3][44];
 ```C
 int var;
 printf("var's address: %p\n",&var);
+>>> var's address: 0x7ffc29e1fbe0
 ```
 </p>
 </details>
