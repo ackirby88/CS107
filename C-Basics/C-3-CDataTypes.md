@@ -58,10 +58,11 @@ int uppercase(int lc){
 **<details><summary>2. Pointer Type</summary>**
 <p>
   
-A pointer type describes a value that represents the *address* of an object of a stated type.  
-A pointer is stored as an integral value that references the address of the target object.  
-Pointer types are derived from other types, called the referenced type of the pointer.  
-For example:
+- A pointer type describes a value that represents the **address** of an object of a stated type.  
+- A pointer is stored as an integral value that references the address of the target object.  
+- Pointer types are derived from other types, called the referenced type of the pointer.  
+
+Example:
 ```C
 int *p;          /*  p is a pointer to an int type */
 double *q();     /*  q is a function returning a pointer to an object of type double */
@@ -71,8 +72,10 @@ const char s[6]; /*  s is a const-qualified array of 6 elements */
 
 int *prt = (int *) malloc(10*sizeof(int));
 ```
-The construction `void *` designates a generic *pointer to void* type.  
-The `void *` construction can be used to point to an object of any type, and it is most useful when a pointer is needed to point to the address of objects with different or unknown types (such as in a function prototype). A pointer to `void` can also be converted to or from a pointer of any other type, and has the same representation and alignment requirements as a pointer to a character type.  
+The construct `void *` designates a generic **pointer to void** type **(but cannot be used to allocate memory)**.  
+- The `void *` construct can be used to point to an object of any type, and it is most useful when a pointer is needed to point to the address of objects with different or unknown types (such as in a function prototype).
+- A pointer to `void` can also be converted to or from a pointer of any other type, and has the same representation and alignment requirements as a pointer to a character type.  
+
 ```C
 int MPI_Send(const void *buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm);
 ```
