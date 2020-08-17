@@ -12,7 +12,9 @@
 One of the key features of class inheritance is that a pointer to a derived class is type-compatible with a pointer to its base class.  
 **Polymorphism** means that a call to a member function will cause a different function to be executed depending on the type of object that invokes the function.
 
-**Pointer to Class Example:**
+<details><summary>:large_orange_diamond: Pointer to Class Example:</summary>
+<p>
+  
 ```C++
 #include <iostream>
 using namespace std;
@@ -56,8 +58,10 @@ int main () {
   return 0;
 }
 ```
----
+</p>
+</details>
 
+---
 Consider the following example:
 ```C++
 #include <iostream>
