@@ -111,26 +111,46 @@ int dim3d[10][3][44];
 ## Pointers
 - We can obtain the **memory address** of a variable and store it in a **pointer** variable.  
 - If we have a variable `var`, then we can **access its address in memory by `&var`**.  
-- To print the address in the C language, we use the format `%p`:
+- To print the address in the C language, we use the format `%p`.
+
+**<details><summary><b>:large_orange_diamond: Print Address</b></summary>**
+<p>
+  
 ```C
 int var;
 printf("var's address: %p\n",&var);
 ```
+</p>
+</details>
 
 - We can assign a **pointer** to the address in memory: `int *pvar = &var`. 
+- The declaration of pointers is flexible in terms of the `*` placement relative to **spaces**. 
 
-The declaration of pointers is flexible in terms of the `*` placement relative to spaces. 
+**<details><summary><b>:large_orange_diamond: Pointer `*` Placement </b></summary>**
+<p>
+  
 ```C
 int *p1;
 int* p2;
 int * p3;
 ```
-My preference is the first one: `int *p1;`. By placing `*` next to the variable name, it helps provide an implicit local assignment.
+</p>
+</details>
+
+**<details><summary><b>:large_orange_diamond: Suggested Pointer `*` Placement </b></summary>**
+<p>
+  
+By placing `*` next to the variable name, it helps provide an implicit local assignment.
 ```C
 int *p1, v1;  // p1 is an integer pointer, v1 is an integer
 int* p2, v2;  // p2 is an integer pointer, v2 is an integer (NOT a pointer)
 int *p3, *p4; // p3 is an integer pointer, p4 in an integer pointer
 ```
+</p>
+</details>
+
+</p>
+</details>
 
 ---
 ### Getting the Address and Value
