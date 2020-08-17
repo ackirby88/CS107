@@ -86,8 +86,9 @@ Traingle area: 10
 </details>
 
 ---
+## :red_circle: Non-Virtual Base Class Functions
 Consider the following example (three code blocks):  
-**<details><summary>:large_orange_diamond: Base Class:</summary>**
+**<details><summary>:large_orange_diamond: Non-Virtual Function: Base Class</summary>**
 <p>
   
 ```C++
@@ -113,7 +114,7 @@ class Polygon {
 </p>
 </details>
 
-**<details><summary>:large_orange_diamond: Derived Classes:</summary>**
+**<details><summary>:large_orange_diamond: Non-Virtual Function: Derived Classes</summary>**
 <p>
   
 ```C++
@@ -136,7 +137,7 @@ class Triangle: public Polygon {
 </p>
 </details>
 
-**<details><summary>:large_orange_diamond: Main:</summary>**
+**<details><summary>:large_orange_diamond: Non-Virtual Function: Main</summary>**
 <p>
 
 ```C++
@@ -158,7 +159,7 @@ int main () {
 </p>
 </details>
 
-**<details><summary>:red_circle: Main Output:</summary>**
+**<details><summary>:red_circle: Non-Virtual Function: Main Output</summary>**
 <p>
  
 ```
