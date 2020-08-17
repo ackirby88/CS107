@@ -44,12 +44,17 @@ cubeThreads {
 </p>
 </details>
 
+---
 ### **`#include`**
 Both user and system header files are included using the preprocessing directive `#include`.
 - [x] `#include <file>`: **include system header files**  
 The preprocessor searches for a file named *file* in a list of directories specified by you, then in a standard list of system directories. 
 You specify directories to search for header files with the command option `-I`.  
 To see which directories the C Preprocessor searches, we can execute `cpp -v`.  
+
+**<details><summary>:large_orange_diamond: C Preprocessor Search Locations: `cpp -v`</summary>**
+<p>
+  
 > ```bash
 > $ cpp -v
 > ...
@@ -58,10 +63,12 @@ To see which directories the C Preprocessor searches, we can execute `cpp -v`.
 > /usr/lib/gcc/x86_64-linux-gnu/7/include
 > /usr/local/include
 > /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed
->  /usr/include/x86_64-linux-gnu
->  /usr/include
+> /usr/include/x86_64-linux-gnu
+> /usr/include
 > End of search list.
 > ```
+</p>
+</details>
 
 - [x] `#include "file"`: **include header files of your own program**  
 The preprocessor searches for a file named *file* first in the current directory, then in the same directories used for system header files.  
