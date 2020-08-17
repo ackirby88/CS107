@@ -12,7 +12,7 @@
 We touched a little bit on arrays in the data structures section, but, let's look at statically and dynamically allocated arrays in detail.  
 
 ## Arrays
-Recall, an array is a variable which stores multiple values of the same type **contiguously in memory**.
+Recall, an **array is a variable which stores multiple values of the same type contiguously in memory**.
 ```C
 int data[12];
 ```
@@ -155,9 +155,12 @@ int *p3, *p4; // p3 is an integer pointer, p4 in an integer pointer
 
 ---
 ### Getting the Address and Value
-- If we wish to **assign the address to a variable or pass the variable by address, we use the `&` operator.**  
-- To **get the value from a pointer**, we can either **dereference the value by using `*pvar` or `var[0]`**.
+- If we wish to **assign the address to a variable** or **pass the variable by address**, we **use the `&` operator.**  
+- To **get the value from a pointer**, we can either **dereference the value by using `*pvar`** or **`var[0]`**.
 
+**<details><summary><b>:large_orange_diamond: Assigning and Accessing Pointers </b></summary>**
+<p>
+  
 ```C
 /* assign pointer */
 int v1;
@@ -165,12 +168,17 @@ int *p1 = &v1;  // assign address of v1 to p1
 int v2 = *p1;   // assign v2 to the value pointed by p1
 int v3 = p1[0]; // assign v3 to the value pointed at the 0-index pointed by p1
 ```
+</p>
+</details>
 
+**<details><summary><b>:large_orange_diamond: Pass By Address</b></summary>**
+<p>
+  
 ```C
 void my_function(int *ad){
   int v0 = *ad; // access the value stored at ad
-  ad[0] = 46; // set the value
-  *ad = 46; // or equivalently
+  ad[0] = 46;   // set the value
+  *ad = 46;     // or equivalently
 }
 
 void main(void){
@@ -178,6 +186,9 @@ void main(void){
   my_function(&var);  // pass by address
 }
 ```
+</p>
+</details>
+
 
 #### Working Example
 ```C
