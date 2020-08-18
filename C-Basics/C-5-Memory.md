@@ -111,6 +111,7 @@ int dim3d[10][3][44];
 ## Pointers
 - We can obtain the **memory address** of a variable and store it in a **pointer** variable.  
 - If we have a variable `var`, then we can **access its address in memory by `&var`**.  
+- We can assign a **pointer** to the address in memory: `int *pvar = &var`.  
 - To print the address in the C language, we use the format `%p`.
 
 **<details><summary><b>:large_orange_diamond: Print Address</b></summary>**
@@ -124,12 +125,10 @@ printf("var's address: %p\n",&var);
 </p>
 </details>
 
-- We can assign a **pointer** to the address in memory: `int *pvar = &var`. 
-- The declaration of pointers is flexible in terms of the `*` placement relative to **spaces**. 
-
 **<details><summary><b>:large_orange_diamond: Pointer `*` Placement </b></summary>**
 <p>
-  
+
+- The declaration of pointers is flexible in terms of the `*` placement relative to **spaces**. 
 ```C
 int *p1;
 int* p2;
@@ -223,6 +222,7 @@ int ind2 = *(array + 1); // := array[1] = 1054
 ```
 :large_orange_diamond: [Pointer Arithmetic Demo](https://bit.ly/3g6UJTg)
 
+---
 ## Memory
 As we saw above, the array sizes must be known at compile time and the maximum number of elements is limited system-assigned stack size (and the amount of stack already occupied). To get around these limitations, we introduce **Dynamic Memory Allocation**.
 
