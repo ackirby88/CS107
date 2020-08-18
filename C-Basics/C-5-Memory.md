@@ -270,7 +270,7 @@ int main(void){
 **<details><summary><b>:large_orange_diamond: Allocating Memory: `calloc`</b></summary>**
 <p>
   
-- `calloc` declared in `<stdlib.h>` allocates memory dynamically but also **initializes the bits to `0`**.  
+- `calloc` declared in `<stdlib.h>` allocates memory dynamically but also **initializes the bytes to `0`**.  
 
 **Syntax:**
 ```C
@@ -391,9 +391,14 @@ free(x); x = NULL;
 Now that we have command of pointers, we can examine how to pass variables to functions by three approaches.
 
 ---
-#### 1. Pass by Value: Variable *Copied*
-In *pass by value*, the value that is passed as a function argument is **copied** into a temporary variable on the stack by the compiler.  
-Therefore, we cannot actually modify the value of the variable passed into the function are an argument. Second, if we are passing a `struct` or an object, this can be very slow.
+#### 1. Pass By Value: Variable *Copied*
+- Value that is passed as a function argument is **copied** into a temporary variable on the stack by the compiler
+- Cannot modify the value of the variable passed into the function as an argument
+- Passing a `struct` or object is **very slow**
+
+**<details><summary><b>:large_orange_diamond: Pass By Value Example</b></summary>**
+<p>
+  
 ```C
 #include <stdio.h>
 
@@ -409,10 +414,17 @@ int main(void){
   return 0;
 }
 ````
+</p>
+</details>
 
 ---
 #### 2. Pass by Pointer
-If we wish to modify the value inside the function or send an object, e.g. struct or class, we can *pass by pointer* which means we will pass the address of the variable as the fucntion argument.
+If we wish to modify the value inside the function or send an object, e.g. `struct` or `class`, we can **pass by pointer**.
+- Pass the address of the variable as the fucntion argument
+
+**<details><summary><b>:large_orange_diamond: Pass by Pointer Example</b></summary>**
+<p>
+  
 ```C
 #include <stdio.h>
 
@@ -427,21 +439,31 @@ int main(void){
   printf("Value of b = %d\n",b); // value of b = 0
   return 0;
 }
-````
+```
+</p>
+</details>
 
 ---
 #### 3. Pass by Reference (C++ only)
-C++ introduced *pass by reference* which looks like passing by value but it the value is modified, the original object will reflect those changes.
+C++ introduced **pass by reference**. 
+- Looks similar to passing by value but the value can be modified and the original object will reflect those changes.
+- Function input argument declaration uses `&var`
+- Much faster for passing objects
+
+**<details><summary><b>:large_orange_diamond: Pass by Reference Example</b></summary>**
+<p>
+  
 ```C++
 #include <stdio.h>
 
+// pass by reference (C++ only)
 void try_resetting(int &a){
   a = 0;
 }
 
 int main(void){
   int b = 10;
-  try_resetting(b); // pass by pointer -- send address of b to function
+  try_resetting(b); // pass b directly
   
   printf("Value of b = %d\n",b); // value of b = 0
   return 0;
@@ -452,6 +474,8 @@ If we want pass by reference but make sure we do not modify the value or object,
 ```C++
 void try_resetting(const int &a);
 ```
+</p>
+</details>
 
 ---
 Let's look at all three approaches when a struct is the object passed to a function.  
