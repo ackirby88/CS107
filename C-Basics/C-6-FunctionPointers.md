@@ -51,8 +51,10 @@ int main(void){
 ```C
 void *(*bar_func)(int *);
 ```
-To understand this function, start reading inside out: `(*bar_foo)` - pointer to the function.  
-The leading `void *` is simply a pointer to a void type, and, lastly, the function takes in an integer pointer as an argument.
+To understand this function, start reading inside out:
+- `(*bar_foo)`: pointer to the function
+- `void *`: pointer to a void type
+- `(int *)`: integer pointer is the input argument
 
 ---
 ## Functions as Arguments to Other Functions
