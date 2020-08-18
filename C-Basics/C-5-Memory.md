@@ -266,13 +266,20 @@ int main(void){
 </details>
 
 
-#### `calloc`
-Similarly, the function `calloc` declared in `<stdlib.h>` allocates memory dynamically but also initializes the bits to `0`.  
+
+**<details><summary><b>:large_orange_diamond: Allocating Memory: `calloc`</b></summary>**
+<p>
+  
+- `calloc` declared in `<stdlib.h>` allocates memory dynamically but also **initializes the bits to `0`**.  
+
 **Syntax:**
 ```C
 void *calloc(size_t nelements, size_t element_size);
 ```
-**Example:**
+
+**<details><summary><b>:large_orange_diamond: `calloc` Example</b></summary>**
+<p>
+  
 ```C
 int main(void){
   int *my_ints = (int *) calloc(16, size(int));  // allocate a block of memory the size of 16 integers (64 bytes) and initialize to 0
@@ -282,9 +289,20 @@ int main(void){
   return 0;
 }
 ```
+</p>
+</details>
 
+</p>
+</details>
+
+---
 #### Double, Triple, and Beyond Pointers
-Recall that we call have double (pointers containing pointers), triple pointers, or more. Note that when do allocate pointers containing pointers, the data is only contiguous within their individual memory blocks and the momory block containing the pointer addresses.
+Recall that we call have double pointers (pointers containing pointers), triple pointers, and more.  
+Note that when do allocate pointers containing pointers, the data is only contiguous within their individual memory blocks and the momory block containing the pointer addresses.
+
+**<details><summary><b>:large_orange_diamond: Double Pointers Example (Pointers Containing Pointers)</b></summary>**
+<p>
+  
 **Example:**
 ```C
 // allocate pointer of pointers memory
@@ -311,9 +329,13 @@ free(pp); pp = NULL;
 ```
 ![](doublepointer.png)
 
+</p>
+</details>
+
+---
 #### Recommended Array Arithmetic
-In the previous example, we saw that using data structures containing pointers of pointers made the memory space discontiguous.  
-This may result in very poor performance if we are trying to perform matrix-based calculations.  
+In the previous example, we saw that using data structures containing **pointers of pointers fragnants the memory space**.  
+This may **result in very poor performance** if we are trying to perform matrix-based calculations.  
 
 Suppose we wish to perform a matrix-vector product:  
 
@@ -358,9 +380,11 @@ free(b); b = NULL;
 free(x); x = NULL;
 ```
 
+---
 ## Pass by Value, Pointer, Reference (C++)
 Now that we have command of pointers, we can examine how to pass variables to functions by three approaches.
 
+---
 #### Pass by Value: Variable *Copied*
 In *pass by value*, the value that is passed as a function argument is **copied** into a temporary variable on the stack by the compiler.  
 Therefore, we cannot actually modify the value of the variable passed into the function are an argument. Second, if we are passing a `struct` or an object, this can be very slow.
@@ -380,6 +404,7 @@ int main(void){
 }
 ````
 
+---
 #### Pass by Pointer
 If we wish to modify the value inside the function or send an object, e.g. struct or class, we can *pass by pointer* which means we will pass the address of the variable as the fucntion argument.
 ```C
@@ -398,6 +423,7 @@ int main(void){
 }
 ````
 
+---
 #### Pass by Reference (C++ only)
 C++ introduced *pass by reference* which looks like passing by value but it the value is modified, the original object will reflect those changes.
 ```C++
