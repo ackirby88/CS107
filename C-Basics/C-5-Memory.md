@@ -344,7 +344,11 @@ Suppose we wish to perform a matrix-vector product:
 </p>
 
 where `i` and `j` represent the indexes into the matrix and vector.  
-We need to allocate and access the memory in a contiguous manner. To do so, we will **allocate a single block of contiguous memory** and perform the calculation as follows:
+We need to allocate and access the memory in a contiguous manner. To do so, we will **allocate a single block of contiguous memory**.
+
+**<details><summary><b>:large_orange_diamond: Contiguous Memory Matrix Multiplication</b></summary>**
+<p>
+
 ```C
 // Naive Matrix-Vector Multiplication
 const int M = 32;
@@ -379,13 +383,15 @@ free(A); A = NULL;
 free(b); b = NULL;
 free(x); x = NULL;
 ```
+</p>
+</details>
 
 ---
 ## Pass by Value, Pointer, Reference (C++)
 Now that we have command of pointers, we can examine how to pass variables to functions by three approaches.
 
 ---
-#### Pass by Value: Variable *Copied*
+#### 1. Pass by Value: Variable *Copied*
 In *pass by value*, the value that is passed as a function argument is **copied** into a temporary variable on the stack by the compiler.  
 Therefore, we cannot actually modify the value of the variable passed into the function are an argument. Second, if we are passing a `struct` or an object, this can be very slow.
 ```C
@@ -405,7 +411,7 @@ int main(void){
 ````
 
 ---
-#### Pass by Pointer
+#### 2. Pass by Pointer
 If we wish to modify the value inside the function or send an object, e.g. struct or class, we can *pass by pointer* which means we will pass the address of the variable as the fucntion argument.
 ```C
 #include <stdio.h>
@@ -424,7 +430,7 @@ int main(void){
 ````
 
 ---
-#### Pass by Reference (C++ only)
+#### 3. Pass by Reference (C++ only)
 C++ introduced *pass by reference* which looks like passing by value but it the value is modified, the original object will reflect those changes.
 ```C++
 #include <stdio.h>
