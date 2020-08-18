@@ -215,29 +215,41 @@ int main(){
 ```
 
 #### Pointer Arithmetic
-Pointers simply point to memory address. Nothing is stopping us from actually using arithmetic on the pointer itself to access other elements stored beyond the base pointer.
+Pointers simply point to memory address.  
+Nothing is stopping us from actually performing arithmetic on the pointer itself to access other elements stored beyond the base pointer.
 ```C
 int array[2] = {212, 1054};
 int ind2 = *(array + 1); // := array[1] = 1054
 ```
 :large_orange_diamond: [Pointer Arithmetic Demo](https://bit.ly/3g6UJTg)
 
+
 ---
 ## Memory
 As we saw above, the array sizes must be known at compile time and the maximum number of elements is limited system-assigned stack size (and the amount of stack already occupied). To get around these limitations, we introduce **Dynamic Memory Allocation**.
 
+---
 ### C Dynamic Allocation and Deallocation
 Dynamic memory allocation in C is achieved by `malloc` and `calloc`.
 
-#### `malloc`
-The `malloc()` function stands for memory allocation. It is a function which is used to allocate a block of memory dynamically.  
-It reserves memory space of specified size and returns the null pointer pointing to the memory location.  
-The pointer returned is usually of type void which means that we can assign malloc function to any pointer.
+
+**<details><summary><b>:large_orange_diamond: Allocating Memory: `malloc`</b></summary>**
+<p>
+  
+- `malloc()` stands for memory allocation
+- It is a function which is used to allocate a block of memory dynamically
+- It reserves memory space of specified size and returns the null pointer pointing to the memory location
+- The pointer returned is usually of type `void` which means that we can assign malloc function to any pointer  
+
 **Syntax:**
 ```C
- void *malloc(byte_size);
+ void * malloc(byte_size);
 ```
-Example:
+- The values found within the the allocated memory is *garbage* until you fill in the values
+
+**<details><summary><b>:large_orange_diamond: `malloc` Example</b></summary>**
+<p>
+  
 ```C
 int main(void){
   int *my_ints = (int *) malloc(16 * size(int)); // allocate a block of memory the size of 16 integers (64 bytes)
@@ -247,7 +259,12 @@ int main(void){
   return 0;
 }
 ```
-The values found within the the allocated memory is *garbage* until you fill in the values.
+</p>
+</details>
+
+</p>
+</details>
+
 
 #### `calloc`
 Similarly, the function `calloc` declared in `<stdlib.h>` allocates memory dynamically but also initializes the bits to `0`.  
