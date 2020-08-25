@@ -51,7 +51,7 @@ void print_hello_world(void){
 If we don't include the header file `hello_1.h` containing the function declaration `print_hello_world()` at the top of the source file, then the function `print_hello_world()` would not be known by the `main` function. This is because programs compiled with gcc are parsed *top-down*.  
 Luckily for us, the C Preprocessor replaces the `#include "hello_1.h"` line with all of the code found in **hello_1.h**.  
 
-:large_orange_diamond: [Hello World Header Files!](https://bit.ly/2WPu1XD) This example also introduces *name mangling* which we will learn more later in the semester.
+:large_orange_diamond: [Hello World Header Files!](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee) This example also introduces *name mangling* which we will learn more later in the semester.
 
 ---
 [**Next**: C Preprocessor](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-2-Prepocessor.md)
