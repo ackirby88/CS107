@@ -1,10 +1,3 @@
-Title: C++ Track Overview  
-Category: lectures  
-Date: 2019-11-22  
-Slug: lecture5-C++-Overview  
-Author: Andrew Kirby  
-tags: C++  
-
 ## Background
 This track assumes basic programming knowledge at the level covered in [Harvard's CS50](https://cs50.harvard.edu/college/2019/fall/).  
 Our goal is to build up your C++ experience and introduce system development techniques for Computational Science & Engineering.
@@ -20,7 +13,7 @@ class CppTrack: public CS107 {
 
 ---
 ## C++ Track Outline
-- C Basics [Lectures 5-6]
+**C Basics [Lectures 5-6]**
   - [Compilation Basics](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-0-CompilationBasics.md)
   - [Source & Header Files](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-1-SourceHeaderFiles.md)
   - [C-Preprocessor](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-2-Prepocessor.md)
@@ -29,20 +22,21 @@ class CppTrack: public CS107 {
   - [Arrays, Pointers, Memory, References](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-5-Memory.md)
   - [Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)
 
-- C++ Object-Oriented Programming [Lectures 7-8]
-  - Classes/Objects: methods, constructors, accessors, operator overloading
-  - Inheritence: (pure) virtual functions
-  - Templating
-  - Namespaces
+**C++ Object-Oriented Programming [Lectures 7-8]**
+  - [Classes & Objects](https://github.com/ackirby88/CS107/blob/master/C++/CPP-0-ClassesObjects.md)
+  - [Constructors](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Constructors.md)
+  - [Inheritence](https://github.com/ackirby88/CS107/blob/master/C++/CPP-2-Inheritence.md)
+  - [Polymorphism](https://github.com/ackirby88/CS107/blob/master/C++/CPP-3-Polymorphism.md)
+  - [Templating & Namespaces](https://github.com/ackirby88/CS107/blob/master/C++/CPP-4-Templates-Namespaces.md)
 
-- Tools and Documentation [Lectures 13-14]
+**Tools and Documentation [Lectures 13-14]**
   - Project Organization
   - Build Systems and Generators: Make, CMake
   - Building and Linking Libraries: static/dynamic libraries, mixed-language programming (C++/F90, Python/C++)
   - Doxygen, Sphinx
   - Testing: TravisCI, Google Test, CMake Tests, Code Coverage
 
-- Design Patterns, Data Structures, Algorithms [Lectures 16-20]  
+**Design Patterns, Data Structures, Algorithms [Lectures 16-20]**
 
 ---
 
@@ -54,5 +48,5 @@ class CppTrack: public CS107 {
 [IDEAS Project](https://ideas-productivity.org/events/hpc-best-practices-webinars/): Best Practices for `Computational Science` Software Developers.  
 
 ---
-[Next: Compilation Basics]({filename}CPP-0-CompilationBasics.md)
+[Next: Compilation Basics](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-0-CompilationBasics.md)
 
