@@ -31,7 +31,7 @@ The compiler *automatically* allocates and deallocates the array memory.
 **<details><summary><b>:large_orange_diamond: Memory Addresses Example</b></summary>**
 <p>
 
-:large_orange_diamond: [Array Memory Demo](https://bit.ly/2CFIYEY): We can check to see if the memory is actually contiguous.
+:large_orange_diamond: [Deepnote: Array Memory Demo](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee): We can check to see if the memory is actually contiguous.
 ```C
 #include <stdio.h>
 
@@ -221,7 +221,7 @@ Nothing is stopping us from actually performing arithmetic on the pointer itself
 int array[2] = {212, 1054};
 int ind2 = *(array + 1); // := array[1] = 1054
 ```
-:large_orange_diamond: [Pointer Arithmetic Demo](https://bit.ly/3g6UJTg)
+:large_orange_diamond: [Deepnote: Pointer Arithmetic Demo](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
 
 
 ---
@@ -479,7 +479,7 @@ void try_resetting(const int &a);
 
 ---
 Let's look at all three approaches when a struct is the object passed to a function.  
-:large_orange_diamond: [Passing Structs By Value, Pointer, and Reference](https://bit.ly/3fMX05R)
+:large_orange_diamond: [Deepnote: Passing Structs By Value, Pointer, and Reference](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
 
 ---
 [**Next**: Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)
