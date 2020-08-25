@@ -73,7 +73,7 @@ You specify directories to search for header files with the command option `-I`.
 - [x] `#include "file"`: **include header files of your own program**  
 The preprocessor searches for a file named *file* first in the current directory, then in the same directories used for system header files.  
 
-- [x] `#include`*`anything else`*:   
+- [x] `#include` *`anything else`*:   
 This is known as a *computed #include* directive where *anything else* can be other macros, which are expanded. After the expansion, it must conform one of the first two variants: `<file>` or `"file"`.
 
 #### How `#include` Works
