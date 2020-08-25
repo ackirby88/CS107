@@ -333,4 +333,4 @@ value of v = 4
 </p>
 </details>
 
-[C++ STL Tutorial](https://www.geeksforgeeks.org/cpp-stl-tutorial/)
+Learn about the Standard Template Library: [C++ STL Tutorial](https://www.geeksforgeeks.org/cpp-stl-tutorial/)
