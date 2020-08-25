@@ -11,30 +11,40 @@
 ## Source Files
 The majority of our code will be written in source files.  
 
-**C++ source code file extensions:**
+**<details><summary>C++ Source File Extensions</summary>**
+<p>
 
 - `.cpp`
 - `.cc`
 - `.C`
 - `.cxx`
+</p>
+</details>
 
-**C source code file extensions:**
+**<details><summary>C Source File Extensions</summary>**
 
 - `.c`
+</p>
+</details>
 
 ---
 ## Header Files
 Header files usually contain function declarations but can sometimes also contain functions implementations, e.g. inlined functions.  
 **Header files can be used used to share these declarations and macro expansions across multiple files.**
 
-**C++ header file extensions:**
+**<details><summary>C++ Header File Extensions</summary>**
+<p>
 
-- `.h`
 - `.hpp`
+- `.h`
+</p>
+</details>
 
-**C header file extensions:**
+**<details><summary>C Hource File Extensions</summary>**
 
 - `.h`
+</p>
+</details>
 
 ---
 ### Example: `print_hello_world()`
