@@ -157,7 +157,7 @@ int main(){
 </p>
 </details>
 
-:large_orange_diamond: [Constructor Inheritance Demo](https://bit.ly/3fBPZDR)  
+:large_orange_diamond: [Deepnote: Constructor Inheritance](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
 
 ### :question: **Question** :question: What's the output of the above `main` function?
 **<details><summary>Answer</summary>**
