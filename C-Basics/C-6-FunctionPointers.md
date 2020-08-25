@@ -44,7 +44,7 @@ int main(void){
 </p>
 </details>
 
-:large_orange_diamond: [Function Pointer Demo](https://bit.ly/3jCxPFn)
+:large_orange_diamond: [Deepnote: Function Pointers](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
 
 ---
 ### Reading Function Pointer Declarations
@@ -91,7 +91,7 @@ Return value meaning
 </p>
 </details>
 
-:large_orange_diamond: [Sorting Structs Demo](https://bit.ly/30SRetk)
+:large_orange_diamond: [Deepnote: Sorting Structs](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
 
 ---
 ## Callback Functions
@@ -131,8 +131,8 @@ int main(void){
 </p>
 </details>
 
-:large_orange_diamond: [Callback Functions Demo](https://bit.ly/3g0XlBP)  
-:large_orange_diamond: [Callback Functions Shared Library Demo](https://bit.ly/2ZXsZuG)
+:large_orange_diamond: [Deepnote: Callback Functions](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
+:large_orange_diamond: [Sandbox: Callback Functions Shared Library](https://bit.ly/2ZXsZuG)
 
 ---
 ## Building a *Class* in C - *Sort Of*
@@ -146,7 +146,7 @@ typedef struct {
     custom_print_func_t my_print;
 } func_t;
 ```
-:large_orange_diamond: [Function Pointers in Structs!](https://bit.ly/2WQlwM5)  
+:large_orange_diamond: [Deepnote: Function Pointers in Structs!](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
 
 ---
 [**Next**: C++ Classes & Objects](https://github.com/ackirby88/CS107/blob/master/C++/CPP-0-ClassesObjects.md)
