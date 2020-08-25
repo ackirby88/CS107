@@ -138,7 +138,7 @@ Notice that the macro `HELLO_H` indicates that the file has been included once a
 
 You may see `#pragma once` which is a **non-standard** but widely used directive designed to cause the current source file to be included only once in a single compilation. **However, `#pragma once` is now obsolete and should not be used.**  
 
-:large_orange_diamond: [Header File Collision](https://bit.ly/32NDaUr)
+:large_orange_diamond: [Deepnote: Header File Collision](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
 
 ---
 ## Simple Macros
@@ -307,7 +307,7 @@ j = 3
 ---
 If caution is taken, macros with arguments can be combined to make useful programming options. 
 Let's suppose that we want to build a program that depends on physical space dimensions: 2D or 3D. We would like to have our functions take additional arguments without having to make a new function (recall that C programming does **not** allow function overloading).  
-:large_orange_diamond: [3D Function Arguments](https://bit.ly/3e6HLD2)  
+:large_orange_diamond: [Deepnote: 3D Function Arguments](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
 
 ---
 ## Some Useful System Macros
@@ -318,11 +318,11 @@ Let's suppose that we want to build a program that depends on physical space dim
 - `__cplusplus` Undefined for C code compiled by a C compiler; `199711L` C code is compiled by a C++ compiler (98 C++ standard)
 - `__func__` Current function name of the source file, as a string (part of C99)
 
-:large_orange_diamond: [Macro Example](https://bit.ly/3hpti7g)
+:large_orange_diamond: [Deepnote: Macros](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
 
 ---
 ## C Preprocessor Exercises
-:large_blue_diamond: [Fix Max Define Bug](https://bit.ly/2BpdkL2)  
+:large_blue_diamond: [Deepnote: Fix Max Define Bug](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
 :large_blue_diamond: Build a program that uses `float` when the macro `SINGLE_PRECISION` is defined, otherwise uses `double` as the floating pointing representation by defining a macro.
 
 ---
