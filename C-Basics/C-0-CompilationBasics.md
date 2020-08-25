@@ -18,6 +18,8 @@ Compiled languages are usually *much faster* than interpreted languages.
 - **Compiled** languages pass the source code to a compiler, which is translated directly to machine code.  
 - **Interpreted** languages pass the source code to a separate program called an *interpreter*, which reads each line of code and then executes it on the processor. 
 
+---
+## Compiling `Hello, World!`
 Let's take a look at the canonical **Hello, World!** to learn the basics of compiling programs from source files.  
 
 **<details><summary>:large_orange_diamond: hello.c</summary>**
@@ -34,7 +36,8 @@ int main(void) {
 </p>
 </details>
 
-## Compiling on the command line:
+---
+#### Compiling on the command line:
 **<details><summary>:large_orange_diamond: Compiling with gcc</summary>**
 <p>
   
@@ -44,8 +47,11 @@ gcc -o hello hello.c
 </p>
 </details>
 
-Here, `gcc` is the GNU C compiler, `-o hello` tells the compiler to *output* a program named `hello`, and we provide the **hello.c** source file as the input.  
+- `gcc`: the GNU C compiler
+- `-o hello`: *output* a program named `hello`
+- `hello.c`: source file to compile
 
+---
 We can also compile the single file using **make**.
 **<details><summary>:large_orange_diamond: Compiling with make (simple version)</summary>**
 <p>
@@ -56,8 +62,8 @@ make hello
 </p>
 </details>
 
-
-## Executing on the command line:
+---
+#### Executing on the command line:
 **<details><summary>:large_orange_diamond: hello Output</summary>**
 <p>
   
@@ -68,7 +74,8 @@ make hello
 </p>
 </details>
 
-:large_orange_diamond: Sandbox Example: [Hello World!](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FHelloWorld%2FHelloWorld.c)   
+---
+:large_orange_diamond: Sandbox Example: [Hello World!](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FHelloWorld%2FHelloWorld.c)
 
 ---
 [**Next**: Source & Header Files](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-1-SourceHeaderFiles.md)
