@@ -68,9 +68,7 @@ make hello
 </p>
 </details>
 
-:large_orange_diamond: Sandbox Example: [Hello World!](https://bit.ly/2Oq5iV8)  
-:large_orange_diamond: Guided Example: [Hello World Lab!](https://lab.cs50.io/ackirby88/CS107/master/labs/helloworld/)
-([Github markdown](https://github.com/ackirby88/CS107/blob/master/labs/helloworld/README.md))
+:large_orange_diamond: Sandbox Example: [Hello World!](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FHelloWorld%2FHelloWorld.c)   
 
 ---
 [**Next**: Source & Header Files](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-1-SourceHeaderFiles.md)
