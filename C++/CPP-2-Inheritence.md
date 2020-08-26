@@ -173,12 +173,8 @@ int main(){
   return 0;
 }
 ```
-</p>
-</details>
 
-:large_orange_diamond: [Deepnote: Constructor Inheritance](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
-
-#### **Question:** What's the output of the above `main` function?  
+**Question:** What's the output of the above `main` function?  
 **<details><summary>Answer</summary>**
 <p>
  
@@ -193,6 +189,11 @@ Circle default contructor called!
 ```
 </p>
 </details>
+</p>
+</details>
+
+
+:large_orange_diamond: [Deepnote: Constructor Inheritance](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
 
 ---
 ## Multiple Inheritance
