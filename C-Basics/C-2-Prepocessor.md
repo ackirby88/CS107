@@ -230,8 +230,8 @@ num = CS
 ---
 #### Macro Naming Conventions
 - In **user** header files: the macro name should **not** begin with `_`  
-- Avoiding collisions with system header files which normally begin with `__`.  
-- Good practice to make the macro contain the name of the file and possibly additional text to avoid conflicts with other header files
+- Avoiding collisions with system header files which normally begin with `__`  
+- Good practice: macro name contains file name and additional text to avoid conflicts with other header files
 
 **Bad User Macro Naming Examples:**
 
@@ -243,9 +243,9 @@ num = CS
 A conditional in the C preprocessor begins with a conditional directive: `#if`, `#ifdef` or `#ifndef`.  
 These conditional macros need to be closed with the directive `#endif`.
 
-- `#if` Directive: Basic conditionals paired with `#endif`.
-- `#else` Directive: Including some text if the condition fails.
-- `#elif` Directive: Testing several alternative possibilities.
+- [x] `#if` Directive: Basic conditionals paired with `#endif`.
+- [x] `#else` Directive: Including some text if the condition fails.
+- [x] `#elif` Directive: Testing several alternative possibilities.
 
 **<details><summary>:large_orange_diamond: Conditional Macro Example</summary>**
 <p>
@@ -266,13 +266,13 @@ These conditional macros need to be closed with the directive `#endif`.
 
 ---
 #### **`#ifdef`:** Check if a variable has been defined using two directives  
-- `#ifdef VAR`  
-- `#if defined VAR`  
+- [x] `#ifdef VAR`  
+- [x] `#if defined VAR`  
 
 ---
 #### **`#ifndef`:** Check if a variable has not been defined  
-- `#ifndef VAR` 
-- `#if !defined`  
+- [x] `#ifndef VAR` 
+- [x] `#if !defined`  
 
 ---
 ## Macros With Arguments
