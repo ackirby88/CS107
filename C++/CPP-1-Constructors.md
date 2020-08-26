@@ -219,6 +219,7 @@ a = b + c; // not obvious how to add apple objects...
 ```
 C++ enables developers to overload most operators so that the behavior is well defined.  
 Here is a list of all of the operators that can be overloaded:
+
 | Overloadable Operators |
 |------------------------|
 | `+`  `-`  `*`  `/` `=`  `<`  `>`  `+=` `-=` `*=` `/=` `<<` `>>` |
@@ -299,6 +300,7 @@ This is common to all binary operators (those with an operand to its left and on
 
 Summary of the parameters needed for each of the different operators than can be overloaded:  
 **Replace `@` by the operator (a is an object of A, b is an object B, and c is an object of C)**:  
+
 | Expression | Operator                                                                               | Member Function       | Non-Member Function |
 |------------|----------------------------------------------------------------------------------------|-----------------------|---------------------|
 | @a         | `+` `-` `*` `&` `!` `~` `++` `--`                                                      | A::operator@()        | operator@(A)        |
