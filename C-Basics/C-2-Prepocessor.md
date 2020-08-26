@@ -12,16 +12,18 @@
 The C Preprocessor is a *macro processor* which allows you to define macros (abbreviations).  
 It is used **automatically** by the C compiler to transform your program before actual compilation.  
 
-The C Preprocessor can perform multiple functions:
-- Include header files - files of declarations that can be substituted into your program
-- Define macro expansions - abbreviations that are expanded with their definition in line
-- Conditional compilation - include or exclude specific definitions using conditionals
-- Line control - inform the compiler of where source lines originated from when a program to used to combine or rearrange source files into an intermediate file which is then compiled
+The C Preprocessor can perform multiple functions:  
+- **Include header files:** files of declarations that can be substituted into your program  
+- **Define macro expansions:** abbreviations that are expanded with their definition in line  
+- **Conditional compilation:** include or exclude specific definitions using conditionals  
 
 ## Preprocessor Directives
-Preprocessor directives are lines starting with the character `#`, e.g. `#define FOO 107`.  
-Whitespace is also allowed before and after the `#`, and directives can expand over multiple lines by using the character `\`.  
-**<details><summary>:large_orange_diamond: Macro Define: cubeThreads</summary>**
+- Preprocessor directives are lines starting with the character `#`, e.g. `#define FOO 107`
+- Whitespace is also allowed before and after the `#` symbol
+- Directives can expand over multiple lines by using the character `\`
+ 
+**Example:**  
+**<details><summary> :large_orange_diamond: Macro Define: cubeThreads</summary>**
 <p>
   
 ```C
