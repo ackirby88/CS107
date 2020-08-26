@@ -9,9 +9,11 @@
 
 ---
 # Class Polymorphism
-One of the key features of class inheritance is that a pointer to a derived class is type-compatible with a pointer to its base class.  
-**Polymorphism** means that a call to a member function will cause a different function to be executed depending on the type of object that invokes the function.
+One of the key features of class inheritance is that **a pointer to a derived class is type-compatible with a pointer to its base class**.  
 
+- **Polymorphism**: a call to a member function will cause a different function to be executed depending on the type of object that invokes the function
+
+**Polymorphism Example:**  
 **<details><summary>:large_orange_diamond: Pointer to Class: Base Class</summary>**
 <p>
   
@@ -210,13 +212,19 @@ Calling Triangle class area...
 Now, the compiler looks at the contents of the pointer rather than its type. Hence the expected `area()` functions being called from each of the derived-classes. 
 
 ---
-As you can see, each of the child classes has a separate implementation for the function area(). This is how **polymorphism** is generally used. You have different classes with a function of the same name, and even the same parameters, but with different implementations.
 
+**Polymorphism** is generally used in the following way:
+
+- Each of the child classes has a separate implementation for a function (e.g. `area()`)
+- Different classes with a function of the same name, and even the same parameters, but with different implementations
+
+---
 ## Virtual Functions
-A **virtual** function is a function in a base class that is declared using the keyword `virtual`.  
-Defining in a base class a virtual function, with another version in a derived class, signals to the compiler not to perform **static linkage** for this function.
-This sort of operation is referred to as **dynamic linkage** or **late binding**.
+- A **virtual** function is a function in a base class that is declared using the keyword `virtual`
+- Defining a **virtual function** in the base class a virtual function signals to the compiler **not** to perform **static linkage**
+- This sort of operation is referred to as **dynamic linkage** or **late binding**
 
+---
 ### Pure Virtual Functions
 It is possible to include a virtual function in a base class such that it must be redefined in a derived class, but that has no meaningful definition in the context of the base class.
 
@@ -235,9 +243,11 @@ class Shape {
       virtual int area() = 0;
 };
 ```
-In `virtual int area() = 0;`, the `= 0` signals to the compiler that the function has no body and **must** be redefined by any derived class. 
-This is known as a **pure virtual function**.
+`virtual int area() = 0;`, the `= 0` signals that the function has no body and **must** be implemented by any derived class
 
+- This is known as a **pure virtual function**
+
+---
 ## Abstract Base Classes
 Our `Polygon` or `Shape` classes are really *abstractions*, and should only serve as base classes which cannot instantiate objects.  
 :heavy_exclamation_mark: Classes that contain at least one pure virtual function are known as **abstract base classes**.
