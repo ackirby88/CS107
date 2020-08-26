@@ -61,8 +61,9 @@ This is known as a *computed #include* directive where *anything else* can be ot
 After the expansion, it must conform one of the first two variants: `<file>` or `"file"`.  
 
 #### How `#include` Works
-Looking at **Example 1**, the C Proprocessor generates the following from **hello_1.h** to **hello_1.c**: 
-**<details><summary>:large_orange_diamond: Example 1</summary>**
+Looking at our **Hello, World!** example, the C Proprocessor generates the following from **hello_1.h** to **hello_1.c**: 
+
+**<details><summary>:large_orange_diamond: Before Pre-Processing</summary>**
 <p>
 
 **hello_1.h**
@@ -86,7 +87,7 @@ void print_hello_world(void){
 </p>
 </details>
 
-**<details><summary>:large_orange_diamond: Example 1: Post-Preprocessor</summary>**
+**<details><summary>:large_orange_diamond: After Pre-Processing</summary>**
 <p>
   
 ```C
@@ -109,18 +110,57 @@ void print_hello_world(void){
 
 ---
 #### Include Guards: Once-Only Include Files
-You will most likely include a header file multiple times in a project. This may lead to compiling errors if the header file contains defined data types.
-To fix this, we normally add *Include Guards* in the header file:  
+You will most likely include a header file multiple times in a project.
+
+- Compiling error occurs if a header file is included multiple times in the same file (variables/functions get defined multiple times)
+- **The FIX:** Add *Include Guards* in the header file
+
+**<details><summary>:large_orange_diamond: print_hello_world.h</summary>**
+<p>
+
 ```C
 // include guards
 #ifndef HELLO_H
 #define HELLO_H
+
+/* system header files */
+#include <stdio.h>
+
+/* function declarations */
 void print_hello_world(void);
+
 #endif /* HELLO_H */
 ```
-Notice that the macro `HELLO_H` indicates that the file has been included once already. If a subsequent `#include` specifies the same file, and the macro in the `#ifndef` is already defined, then the file contents within the directives are skipped completely.  
+</p>
+</details>
 
-You may see `#pragma once` which is a **non-standard** but widely used directive designed to cause the current source file to be included only once in a single compilation. **However, `#pragma once` is now obsolete and should not be used.**  
+**<details><summary>:large_orange_diamond: print_hello_world.c</summary>**
+<p>
+
+```C
+/* header files */
+#include "print_hello_world.h"
+#include "print_hello_world.h" // include 2nd time!
+
+int main(){
+  print_hello_world();
+  return 0;
+}
+
+void print_hello_world(void){
+  printf("Hello, World!\n");
+}
+```
+</p>
+</details>
+
+- The macro `HELLO_H` indicates that the file has been included once already  
+- If a subsequent `#include` specifies the same file, and the macro in the `#ifndef` is already defined, then the contents within the directives are skipped  
+
+**NOTE:** You may see `#pragma once` which is a **non-standard** macro.
+
+- Widely used directive designed to cause the current source file to be included only once in a single compilation
+- **`#pragma once` is now obsolete and should not be used!**  
 
 :large_orange_diamond: [Deepnote: Header File Collision](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
 
