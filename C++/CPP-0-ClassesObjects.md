@@ -1,11 +1,17 @@
+Title: C++ Classes and Objects 
+Category: lectures
+Date: 2020-9-29
+Slug: lecture7-C++/CPP0
+Author: Andrew Kirby
+Tags: C++, Classes, Objects
 
 ---
 **Key:** 
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[**Previous**: C Basics - Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)  
-[**Next**: C++ Constructors](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Constructors.md)
+[**Previous**: C Basics - Function Pointers]({filename}../../lecture6/C++/C-6-FunctionPointers.md)  
+[**Next**: C++ Constructors]({filename}CPP-1-Constructors.md)
 
 ---
 # C++ Function Defaults
@@ -42,6 +48,7 @@ int main(void){
 
 **Note that default arguments must be trailing arguments in the list.**
 
+---
 # C++ Function Polymorphism
 C++ allows mulitple functions with the same function name but with different arguments:
 ```C++
@@ -55,6 +62,7 @@ double average(double a, double b, double c){
 ```
 The functions declaration must differ in type or number of *input arguments*.
 
+---
 # C++ Classes
 A **class** is in C++ is similar to a `struct` in that they can contain data members, but they can also contain functions as members, which we will call *methods*.
 
@@ -92,6 +100,7 @@ To use the data members and methods defined in the calss, we need to create obje
 </p>
 </details>
 
+---
 # C++ Objects 
 An **object** is an instance of a **class**.  
 To create an object from the example class `Rectangle`, we specify the class name, followed by the object name, e.g. `Rectangle rec0`.  
@@ -103,6 +112,7 @@ int main(void){
   return 0;
 }
 ```
+
 We can also create an array of objects using `new`:
 ```C++
 int main(void){
@@ -111,10 +121,13 @@ int main(void){
   return 0;
 }
 ```
+
+---
 ### `delete` vs `delete []`
 To delete an *array of objects* created using `new`, we need to `delete []` to delete the array.  
 If we had a single object, e.g. `Rectangle rec0;`, then we can use `delete rec0;`.  
 
+---
 ## Accessing Data Members and Member Functions
 We can access the data members and methods using the `.` operator (when the members are public):
 ```C++
@@ -128,9 +141,11 @@ double surf_area = rect0.surfaceArea();
 double volume = rect0.volume();
 ```
 
+---
 ## Access Specifiers
 Classes have *access specifiers* which is one of the three keywords: `private`, `public`, or `protected`.  
 These specifiers modify the access rights for the members as follows:  
+
  - `private`: accessible only from within other members of the same class (or from their `friends`).
  - `protected`: accessible from other members of the same class (or from `friends`), and from members of their derived classes.
  - `public`: accessible from anywhere where the object is visible.
@@ -153,6 +168,7 @@ class Rectangle2D {
 
 It is recommended that you be explicit with access specifiers, e.g. putting `private:` as needed.
 
+---
 ## Scope Operator `::`
 We can seperate the function implementation from its declaration inside the class, as did the C source and header files.
 We use the scope operator `::` to specify the class to which the member being defined belongs.
@@ -209,4 +225,4 @@ int main(){
 </details>
 
 ---
-[**Next**: C++ Constructors](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Constructors.md)  
+[**Next**: C++ Constructors]({filename}CPP-1-Constructors.md)  

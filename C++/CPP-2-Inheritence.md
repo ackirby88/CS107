@@ -1,26 +1,38 @@
+Title: C++ Constructors
+Category: lectures
+Date: 2020-9-29
+Slug: lecture7-C++/CPP2
+Author: Andrew Kirby
+Tags: C++, Inheritance
 
 ---
 **Key:** 
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[**Previous**: C++ Constructors](https://github.com/ackirby88/CS107/blob/master/C++/CPP-1-Constructors.md)  
-[**Next**: C++ Polymorphism](https://github.com/ackirby88/CS107/blob/master/C++/CPP-3-Polymorphism.md)
+[**Previous**: C++ Constructors]({filename}CPP-1-Constructors.md)  
+[**Next**: C++ Polymorphism]({filename}../../lecture8/C++/CPP-3-Polymorphism.md)
 
 ---
 # C++ Class Inheritance
 One of the most important concepts in object-oriented programming is **inheritance**!  
-Inheritance allows classes to be defined in terms of another class, which makes it easier to create and maintain an application.  
 
-When creating a class, instead of writing completely new data members and member functions, the programmer can designate that the new class should inherit the members of an existing class. This existing class is called the **base** class, and the new class is referred to as the **derived** class.
+- **Inheritance allows classes to be defined in terms of another class**, which makes it easier to create and maintain an application.
 
-#### ``` class derived-class: access-specifier base-class```
+When creating a class, instead of writing completely new data members and member functions, the programmer can designate that the new class should inherit the members of an existing class. 
+
+- The existing class used to create the new class is called the **base class**
+- The new class is referred to as the **derived class**
+
+---
+#### Syntax: ```class derived_class_name: access-specifier base_class_name```
  A class derivation list names one or more base classes given the above form where `access-specifier` is one of the following:
+
  - `public`
  - `protected`
  - `private`  
  
-If the access-specifier is not defined, then it is *private* by default.
+If the access-specifier is not defined, then it is **private** by default.
 
 ---
 **<details><summary>:large_orange_diamond: Class Inheritance Example:</summary>**
@@ -80,40 +92,53 @@ int main(void) {
 </p>
 </details>
 
-The objects of the classes `Rectangle` and `Triangle` each contain members inherited from Shape. These are: `width`, `height`, `setWidth`, and `setHeight`.
+The objects of the classes `Rectangle` and `Triangle` each contain members inherited from Shape: 
 
-The `protected` access specifier used in class `Shape` is similar to `private`:  
-When a class inherits another one, the members of the derived class can access the protected members inherited from the base class, but not its private members.  
+- `width`
+- `height`
+- `setWidth`
+- `setHeight`
+
+The `protected` access specifier used in class `Shape` is similar to `private`.  
+**When a class inherits another class:**
+
+- The members of the derived class can access the protected members inherited from the base class, but **not its private members**
 
 By declaring `width` and `height` as `protected` instead of `private`, these members are also accessible from the derived classes `Rectangle` and `Triangle`, instead of just from members of `Shape`. If they were `public`, they could be accessed anywhere.
 
 ---
 ## Access Control and Inheritance
 The different access types can be summarized according to which functions can access them in the following way:  
+
 | Access        | **public** | **protected** | **private**|
 |---------------|:----------:|:-------------:|:----------:|
 | Same Class    | yes        | yes           | yes        |
 | Derived Class | yes        | yes           | no         |
 | Outside Class | yes        | no            | no         |
 
-Where `Outside Class` represents any access from outside the class, such as from `main`, from another class, or from a function.
+`Outside Class` represents any access from outside the class, such as from `main`, from another class, or from a function.
 
-In the example above, the members inherited by `Rectangle` and `Triangle` have the same access permissions as they had in their base class `Shape`: 
-**A derived class can access all the non-private members of its base class.**
+In the example above, the members inherited by `Rectangle` and `Triangle` have the same access permissions as they had in their base class `Shape`:  
 
+- **A derived class can access all the non-private members of its base class**
+
+---
 ## What's Inherited from the Base Class?
-In principle, a publicly derived class inherits access to every member of a base class except:  
+In principle, a publicly derived class inherits access to every member of a base class **except** the following.
+
+**Members Not Inherited From Base Class:**
+
 - its constructors and its destructor
 - its assignment operator members (operator=)
 - its friends (`friend` class whose members have access to the private or protected members of another class)
 - its private members
 
-Even though access to the constructors and destructor of the base class is not inherited, they are *automatically* called by the constructors and destructor of the derived class.
+Even though access to the constructors and destructor of the base class is not inherited, they are **automatically** called by the constructors and destructor of the derived class.
 
-Unless otherwise specified, the *constructors of a derived class calls the default constructor of its base classes* (i.e., the constructor taking no arguments). Calling a different constructor of a base class is possible, using the same syntax used to initialize member variables in the initialization list:
-```
-derived_constructor_name (parameters) : base_constructor_name (parameters) {...}
-```
+- Unless otherwise specified, the **constructors of a derived class calls the default constructor of its base classes**
+- Calling a different constructor of a base class is possible, using the same syntax used to initialize member variables in the initialization list:
+- `derived_constructor_name (parameters) : base_constructor_name (parameters) {...}`
+
 
 **<details><summary>:large_orange_diamond: Calling Base-Class Constructor in Derived-Class Constuctor Example:</summary>**
 <p>
@@ -154,12 +179,7 @@ int main(){
   return 0;
 }
 ```
-</p>
-</details>
-
-:large_orange_diamond: [Deepnote: Constructor Inheritance](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
-
-### :question: **Question** :question: What's the output of the above `main` function?
+**Question:** What's the output of the above `main` function?  
 **<details><summary>Answer</summary>**
 <p>
  
@@ -174,12 +194,17 @@ Circle default contructor called!
 ```
 </p>
 </details>
+</p>
+</details>
 
+:large_orange_diamond: [Deepnote: Constructor Inheritance](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
+
+---
 ## Multiple Inheritance
-A class may inherit from more than one class by simply specifying more base classes, separated by commas, in the list of a class's base classes (i.e., after the colon). 
+- **A class may inherit from more than one class** by simply specifying more base classes, separated by commas, in the list of a class's base classes (i.e., after the colon)
+
 
 For example, if the program had a specific class to print on screen called `Output`, and we wanted our class `Circle` to also inherit its members in addition to those of `Polygon`:  
-
 **<details><summary>:large_orange_diamond: Multiple Inheritance Example:</summary>**
 <p>
  
@@ -222,7 +247,7 @@ int main(){
 </p>
 </details>
 
-**<details><summary>:large_orange_diamond: Example Output:</summary>**
+**<details><summary>:large_orange_diamond: Multiple Inheritance Output:</summary>**
 <p>
  
 ```
@@ -233,6 +258,6 @@ Value: 999
 </details>
 
 ---
-[**Next**: C++ Polymorphism](https://github.com/ackirby88/CS107/blob/master/C++/CPP-3-Polymorphism.md)
+[**Next**: C++ Polymorphism]({filename}../../lecture8/C++/CPP-3-Polymorphism.md)
 
 

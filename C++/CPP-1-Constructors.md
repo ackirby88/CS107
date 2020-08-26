@@ -1,11 +1,17 @@
+Title: C++ Constructors
+Category: lectures
+Date: 2020-9-29
+Slug: lecture7-C++/CPP1
+Author: Andrew Kirby
+Tags: C++, Constructors
 
 ---
 **Key:** 
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[**Previous**: C++ Classes & Objects](https://github.com/ackirby88/CS107/blob/master/C++/CPP-0-ClassesObjects.md)  
-[**Next**: C++ Inheritance](https://github.com/ackirby88/CS107/blob/master/C++/CPP-2-Inheritence.md)
+[**Previous**: C++ Classes & Objects]({filename}CPP-0-ClassesObjects.md)  
+[**Next**: C++ Inheritance]({filename}CPP-2-Inheritence.md)
 
 ---
 # C++ Constructors
@@ -40,9 +46,15 @@ int main(void){
 </details>
 
 ---
-To prevent this situation, a class can include a special function called a **constructor**, which is *automatically* called when a new object of the class is instantiated. The constructor can be used to allocate memory and initialize data members.
+To prevent this situation, a class can include a special function called a **constructor**. 
 
-The **constructor** function is declared similarly to a member function, but its name matches the name of the class and without a return type.
+- **Automatically** called when a new object of the class is instantiated
+- Constructor can be used to **allocate memory** and **initialize data members**
+
+The **constructor** function is declared similarly to a member function: 
+
+- Constructor's name matches the name of the class **but without a return type**
+
 
 **<details><summary>:large_orange_diamond: Constructor Example:</summary>**
 <p>
@@ -67,7 +79,8 @@ Rectangle2D::Rectangle2D(double w, double h){
 </p>
 </details>
 
-We can have multiple constructors such as a default constructor or copy constructor.
+- We can have multiple constructors such as a default constructor or copy constructor.  
+
 **<details><summary>:large_orange_diamond: Multiple Constructors Example:</summary>**
 <p>
     
@@ -101,12 +114,14 @@ Rectangle2D::Rectangle2D(double w, double h){
 ---
 ### Member Initialization in Constructors
 When a constructor is used to initialize other members, these other members can be initialized directly, without using assignment statements inside the body. 
-This is done by inserting, before the constructor's body, a single colon `:` and a list of initializations for class members. For example,  
+This is done by inserting, before the constructor's body, a single colon `:` and a list of initializations for class members. For example: 
+
 - `Rectangle2D::Rectangle2D(double w, double h) : height(h), width(w) {}`, or  
 - `Rectangle2D::Rectangle2D(double w, double h) : width(w) {height = h;}`, or  
 - `Rectangle2D::Rectangle2D(double w, double h) : height(h) {width = w;}`, or 
 - `Rectangle2D::Rectangle2D(double w, double h) {height = h; width = w;}`.
 
+---
 ### Default Constructor
 The default constructor is the constructor called when objects of a class are declared, but are not initialized with any arguments.  
 If a class definition has no constructors, the compiler assumes the class to have an implicitly defined default constructor. 
@@ -122,10 +137,11 @@ MyClass example; // implicit default constructor
 As soon as any constructor is declared in the class definition, then the compiler no longer provides an implicit default constructor!  
 But remember that we can have multiple constructors through function polymorphism.
 
+---
 ### Deconstructor
-Destructors are responsible for the necessary cleanup needed by a class when its lifetime ends.  
-A destructor is a member function very similar to a default constructor: it takes no arguments and returns nothing. 
-It also uses the class name as its own name, but preceded with a tilde sign `~`.
+- Destructors are responsible for the necessary cleanup needed by a class when its lifetime ends
+- A destructor is a member function very similar to a default constructor: it takes no arguments and returns nothing
+- It also uses the class name as its own name, but preceded with a tilde sign `~`
 
 **<details><summary>:large_orange_diamond: Deconstructor Example:</summary>**
 <p>
@@ -155,6 +171,7 @@ class MyClass2 {
 </p>
 </details>
 
+---
 ## Pointers to Classes
 Objects can also be pointed to by pointers: `Rectangle2D *p_rec;`.
 As we saw in C, the members of an object can be accessed directly from a pointer by using the arrow operator `->`.  
@@ -205,10 +222,12 @@ int main() {
 | `(*x).y`       | member y of object pointed to by x |
 | `x[0]`         | first object pointed to by x |
 
+---
 ## Operator Overloading
 The C++ language was designed to define new types via calsses that are operate like the fundamental types: `int`, `double`, etc.  
 To enable this behavior, we can define and implement operations such as add `+` or `<` even though it may not be obvious.  
 For example, 
+
 ```C++
 class apple {
   string color;
@@ -217,10 +236,12 @@ class apple {
 
 a = b + c; // not obvious how to add apple objects...
 ```
+
 C++ enables developers to overload most operators so that the behavior is well defined.  
 Here is a list of all of the operators that can be overloaded:
-| Overloadable Operators |
-|------------------------|
+
+| **Overloadable Operators** |
+|:---------------------------|
 | `+`  `-`  `*`  `/` `=`  `<`  `>`  `+=` `-=` `*=` `/=` `<<` `>>` |
 | `<<=` `>>=`  `==`  `!=` `<=` `>=` `++` `--` `%`  `&`  `^`  `!`  `\|` |
 | ` ~`  `&=`   `^=`  `\|=` `&&` `\|\|` `%=` `[]` `()` `,`  `->*` `->` |
@@ -271,7 +292,7 @@ int main () {
 </p>
 </details>
 
-**<details><summary>:large_orange_diamond: Vectors Output:</summary>**
+**<details><summary>:large_orange_diamond: vectors.cxx Output:</summary>**
 <p>
   
 ```bash
@@ -289,6 +310,7 @@ CVector vec_c = vec_a.operator+ vec_b;
 ```
 :large_orange_diamond: [Deepnote: Vectors Addition Source](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
 
+---
 ### Operator Overloading Expressions
 The operator overloads are just regular functions which can have any behavior!  
 This is no requirement that the operation actually resembles the mathematical or usual meaning of the operator.  
@@ -299,6 +321,7 @@ This is common to all binary operators (those with an operand to its left and on
 
 Summary of the parameters needed for each of the different operators than can be overloaded:  
 **Replace `@` by the operator (a is an object of A, b is an object B, and c is an object of C)**:  
+
 | Expression | Operator                                                                               | Member Function       | Non-Member Function |
 |------------|----------------------------------------------------------------------------------------|-----------------------|---------------------|
 | @a         | `+` `-` `*` `&` `!` `~` `++` `--`                                                      | A::operator@()        | operator@(A)        |
@@ -310,6 +333,7 @@ Summary of the parameters needed for each of the different operators than can be
 | (TYPE) a   | TYPE, e.g. `int`                                                                       | A::operator TYPE()    | -                   |
 
 Notice that some operators may be overloaded in two forms:  
+
 - as a class member function (as seen in the above example for `operator+`)
 - as a non-member function (not a function in the class definition)
 
@@ -353,10 +377,9 @@ int main () {
 
 ---
 ### The `this` Keyword
-The keyword `this` represents a pointer to the object whose member function is being executed.  
-It is used within a class's member function to refer to the object itself.
-
-It can be used to check if a parameter passed to a member function is the object itself.
+- The keyword `this` **represents a pointer to the object whose member function is being executed**
+- It is used within a class's member function to refer to the object itself
+- It can be used to check if a parameter passed to a member function is the object itself
 
 **<details><summary>:large_orange_diamond: `this` Example:</summary>**
 <p>
@@ -417,9 +440,11 @@ foo = bar;     // object already initialized: copy assignment called
 ```
 
 **Note that baz is initialized on construction using an equal sign, but this is not an assignment operation!**  
-The assignment on `foo` is an assignment operation. No object is being declared here, but an operation is being performed on `foo`.  
-The copy assignment operator is an overload of `operator=` which takes a value or reference of the class itself as parameter.  
-The return value is generally a reference to `*this` (although not required).  
+
+- The assignment on `foo` is an assignment operation
+- No object is being declared here, but an operation is being performed on `foo`
+- The copy assignment operator is an overload of `operator=` which takes a value or reference of the class itself as parameter
+- The return value is generally a reference to `*this` (although not required)
 
 For example, for our class `Vec`, the copy assignment may have the following signature:  
 ```C++
@@ -434,9 +459,8 @@ Vec& operator= (const Vec &b) {
 ```
 
 ---
-
 Next , we will look at why C++ objects are so useful in an Object-Oriented Programming paradigm.
 
 ---
-[**Next**: C++ Inheritance](https://github.com/ackirby88/CS107/blob/master/C++/CPP-2-Inheritence.md)
+[**Next**: C++ Inheritance]({filename}CPP-2-Inheritence.md)
 
