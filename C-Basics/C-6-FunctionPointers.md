@@ -1,11 +1,17 @@
+Title: C/C++ Operations, Loops, and Functions
+Category: lectures
+Date: 2020-9-24
+Slug: lecture6-C++/C6
+Author: Andrew Kirby
+Tags: C, C++, Function Pointers
 
 ---
 **Key:** 
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[**Previous**: Arrays, Pointers, Memory, References](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-5-Memory.md)  
-[**Next**: C++ Classes & Objects](https://github.com/ackirby88/CS107/blob/master/C++/CPP-0-ClassesObjects.md)
+[**Previous**: Arrays, Pointers, Memory, References]({filename}C-5-Memory.md)  
+[**Next**: C++ Classes & Objects]({filename}../../lecture7/C++/CPP-0-ClassesObjects.md)
 
 ---
 # Function Pointers
@@ -51,7 +57,9 @@ int main(void){
 ```C
 void *(*bar_func)(int *);
 ```
+
 To understand this function, start reading inside out:
+
 - `(*bar_foo)`: pointer to the function
 - `void *`: pointer to a void type
 - `(int *)`: integer pointer is the input argument
@@ -71,10 +79,10 @@ void qsort (void* base, size_t num, size_t size,
 **<details><summary><b>Sort Function Parameters</b></summary>**
 <p>
 
-- [x] **base** − pointer to the first element of the array to be sorted
-- [x] **num**  − number of elements in the array pointed by base
-- [x] **size** − size in bytes of each element in the array
-- [x] **comparator** − function that compares two elements
+- **base** − pointer to the first element of the array to be sorted
+- **num**  − number of elements in the array pointed by base
+- **size** − size in bytes of each element in the array
+- **comparator** − function that compares two elements
 </p>
 </details>
 
@@ -149,4 +157,4 @@ typedef struct {
 :large_orange_diamond: [Deepnote: Function Pointers in Structs!](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
 
 ---
-[**Next**: C++ Classes & Objects](https://github.com/ackirby88/CS107/blob/master/C++/CPP-0-ClassesObjects.md)
+[**Next**: C++ Classes & Objects]({filename}../../lecture7/C++/CPP-0-ClassesObjects.md)

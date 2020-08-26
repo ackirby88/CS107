@@ -1,11 +1,17 @@
+Title: C/C++ Operations, Loops, and Functions
+Category: lectures
+Date: 2020-9-24
+Slug: lecture6-C++/C5
+Author: Andrew Kirby
+Tags: C, C++, Arrays, Pointers, Memory, References
 
 ---
 **Key:** 
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[**Previous**: Operators, Loops, Functions](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-4-OpsLoopsFunctions.md)  
-[**Next**: Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)
+[**Previous**: Operators, Loops, Functions]({filename}C-4-OpsLoopsFunctions.md)  
+[**Next**: Function Pointers]({filename}C-6-FunctionPointers.md)
 
 ---
 # Arrays, Pointers, Memory, References
@@ -83,9 +89,12 @@ We can simply access arrays by using `[]`. For example,
 ```C
 int b = data[2];
 ```
-:red_circle: **Be careful when accessing data elements!** :red_circle:  
+:red_circle: **Be careful when accessing data elements!** :red_circle:
+
 - The compiler won't stop you from accessing elements out-of-bounds (can set a compiler flag to check though)
 - Can accidently access elements beyond allocated memory
+
+**Example:**  
 ```C
 int data[4] = {0, 0, 0, 0};
 
@@ -445,7 +454,8 @@ int main(void){
 
 ---
 #### 3. Pass by Reference (C++ only)
-C++ introduced **pass by reference**. 
+C++ introduced **pass by reference**.
+
 - Looks similar to passing by value but the value can be modified and the original object will reflect those changes.
 - Function input argument declaration uses `&var`
 - Much faster for passing objects
@@ -482,4 +492,4 @@ Let's look at all three approaches when a struct is the object passed to a funct
 :large_orange_diamond: [Deepnote: Passing Structs By Value, Pointer, and Reference](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
 
 ---
-[**Next**: Function Pointers](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-6-FunctionPointers.md)
+[**Next**: Function Pointers]({filename}C-6-FunctionPointers.md)

@@ -1,11 +1,17 @@
+Title: C/C++ Operations, Loops, and Functions
+Category: lectures
+Date: 2020-9-24
+Slug: lecture6-C++/C4
+Author: Andrew Kirby
+Tags: C, C++, Operations, Loops, Functions
 
 ---
 **Key:** 
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[**Previous**: C Data Types](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-3-CDataTypes.md)  
-[**Next**: Arrays, Pointers, Memory, References](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-5-Memory.md)
+[**Previous**: C Data Types]({filename}../../lecture5/C++/C-3-CDataTypes.md)  
+[**Next**: Arrays, Pointers, Memory, References]({filename}C-5-Memory.md)
 
 ---
 # Operators
@@ -38,8 +44,10 @@
 **<details><summary>Conditional (Ternary) Operator</summary>**
 <p>
   
-The conditional operator `(expression) ? (val1):(val2)` takes three operands. It tests the result of the first operand and then evaluates one of the other two operands based on the result of the first.
+The conditional operator `(expression) ? (val1):(val2)` takes three operands.  
+It tests the result of the first operand and then evaluates one of the other two operands based on the result of the first.
 ```C
+// if-else statement
 if (expression == true) {
   ret = (val1);
 } else {
@@ -50,7 +58,7 @@ if (expression == true) {
 ret = (expression) ? (val1):(val2) ;
 ```
 
-Example:
+**Example:**
 ```C
 int a = (x < y) ? x : y; // a = min(x, y)
 ```
@@ -72,13 +80,13 @@ if (x == 100) {
 if (x == 100)
   cout << "x is 100";
 
-// inline
+// in-line
 if(x == 100) cout << "x is 100";
 ```
-Note that for inline conditionals, the first expression is only subject to the conditional.  
+Note that **for in-line conditionals, the first expression is only subject to the conditional.**  
 In the following example, only `free(my_ptr)` is subject to the conditional statement, and `my_ptr = NULL;` is **always** executed.
 ```C
-if(my_ptr != NULL) free(my_ptr); my_ptr = NULL;
+if(my_ptr != NULL) free(my_ptr); my_ptr = NULL; // only free(my_ptr) is in the conditional evaluation
 ```
 </p>
 </details>
@@ -123,7 +131,7 @@ switch (expression) {
 Notice the use of `break;` statements within the `case` options.  
 If we don't include the `break`, it will execute that case **and** the next case, resulting in *fall-through*.  
 
-Example:
+**Example:**
 ```C
 switch (x) {
   case 1: group of statements 1; // fall-through to also execute case 2.
@@ -143,11 +151,12 @@ If `x = 1`, then the statements for `case 1` **and** `case 2` are executed.
 **<details><summary>The `for` Loop</summary>**
 <p>
   
-Format:
+**Format:**
 ```C
 for (initialization; condition; increase) statement;
 ```
-Example:
+
+**Example:**
 ```C++
 for (int i = 0; i < 100; ++i) {
   i *= 10;
@@ -167,11 +176,12 @@ for (n = 0, i = 100; n != i; n++, i--) {
 **<details><summary>The `while` Loop</summary>**
 <p>
   
-Format:
+**Format:**
 ```C
 while (expression) statement
 ```
-Example:
+
+**Example:**
 ```C++
 #include <iostream>
 using namespace std;
@@ -197,11 +207,12 @@ int main(void){
 **<details><summary>The `do-while` Loop</summary>**
 <p>
   
-Format:
+**Format:**
 ```C
 do statement while (condition);
 ```
-Example:
+
+**Example:**
 ```C++
 #include <iostream>
 using namespace std;
@@ -224,8 +235,10 @@ int main(void){
 **<details><summary>The `break` Statement</summary>**
 <p>
   
-Using `break` we can leave a loop even if the condition for its end is not fulfilled.  
+Using the `break` statement, we can leave a loop even if the condition for its end is not fulfilled.  
 It can be used to end an infinite loop, or to force it to end before its natural end.  
+
+**Example:**
 ```C++
 #include <iostream>
 using namespace std;
@@ -241,7 +254,7 @@ int main(void){
   return 0;
 }
 ```
-Result: `10, 9, 8, 7, 6, 5, 4, 3, countdown aborted!`  
+**Result:** `10, 9, 8, 7, 6, 5, 4, 3, countdown aborted!`  
 </p>
 </details>
 
@@ -250,6 +263,8 @@ Result: `10, 9, 8, 7, 6, 5, 4, 3, countdown aborted!`
 <p>
   
 The `continue` statement causes the program to skip the rest of the loop in the current iteration as if the end of the statement block had been reached, causing it to jump to the start of the following iteration.
+
+**Example:**
 ```C++
 // continue loop example
 #include <iostream>
@@ -264,7 +279,7 @@ int main(void){
   return 0;
 }
 ```
-Result: `10, 9, 8, 7, 6, 4, 3, 2, 1, FIRE!`  
+**Result:** `10, 9, 8, 7, 6, 4, 3, 2, 1, FIRE!`  
 </p>
 </details>
 
@@ -272,10 +287,21 @@ Result: `10, 9, 8, 7, 6, 4, 3, 2, 1, FIRE!`
 # Functions
 **<details><summary>Function Template</summary>**
 <p>
-  
+
+- C: function names must be unique (*no overloading*)  
+- C++: function names may be the same but the input arguments must differ  
+
+**Format:**
 ```C
 return_type function_name (argument list){
     Set of statements – Block of code
+}
+```
+
+**Example:**
+```C
+double my_awesome_function(int ia, double db, char name){
+  // body of function
 }
 ```
 </p>
@@ -284,11 +310,12 @@ return_type function_name (argument list){
 **<details><summary>Variadic Functions</summary>**
 <p>
 
-Variadic functions are functions (e.g. printf) which take a variable number of arguments.
+- Variadic functions are functions (e.g. printf) which take a variable number of arguments.
 ```C
 #include <stdio.h>
 #include <stdarg.h>
 
+// Note: the ... in the input arguments is really ...
 void simple_printf(const char* fmt, ...){
     va_list args;
     va_start(args, fmt);
@@ -319,4 +346,4 @@ int main(void){
 </details>
 
 ---
-[**Next**: Arrays, Pointers, Memory, References](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-5-Memory.md)
+[**Next**: Arrays, Pointers, Memory, References]({filename}C-5-Memory.md)
