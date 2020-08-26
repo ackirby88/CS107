@@ -123,9 +123,9 @@ As soon as any constructor is declared in the class definition, then the compile
 But remember that we can have multiple constructors through function polymorphism.
 
 ### Deconstructor
-Destructors are responsible for the necessary cleanup needed by a class when its lifetime ends.  
-A destructor is a member function very similar to a default constructor: it takes no arguments and returns nothing. 
-It also uses the class name as its own name, but preceded with a tilde sign `~`.
+- Destructors are responsible for the necessary cleanup needed by a class when its lifetime ends
+- A destructor is a member function very similar to a default constructor: it takes no arguments and returns nothing
+- It also uses the class name as its own name, but preceded with a tilde sign `~`
 
 **<details><summary>:large_orange_diamond: Deconstructor Example:</summary>**
 <p>
