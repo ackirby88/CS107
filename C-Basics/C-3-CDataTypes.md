@@ -1,11 +1,17 @@
+Title: C/C++ Data Types
+Category: lectures
+Date: 2020-9-22
+Slug: lecture5-C++/C3
+Author: Andrew Kirby
+Tags: C, C++, data types
 
 ---
 **Key:** 
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[**Previous**: C Preprocessor](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-2-Prepocessor.md)  
-[**Next**: Operators, Loops, Functions](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-4-OpsLoopsFunctions.md)
+[**Previous**: C Preprocessor]({filename}C-2-Prepocessor.md)  
+[**Next**: Operators, Loops, Functions]({filename}../../lecture6/C++/C-4-OpsLoopsFunctions.md)
 
 ---
 # C Data Types
@@ -479,23 +485,27 @@ Later in the semester when we build libraries, we will see be utilized to preven
 </details>
 
 ---
-## Declaration and Assignment
-To use variables in C/C++, they first must be declared.  
+## Declaration and Variable Assignment
+**To use variables in C/C++, they first must be declared.** 
+
 ```C
 int a;
 double var;
 double *p = NULL;
 ```
+
 We can also declare variables in a single line:
 ```C
 int a, b, c;
 ```
+
 :red_circle: But be careful with assigning pointers on a single line! The `*` needs to be placed on **each** variable. :red_circle:
 ```C
 int *a_ptr, *b_ptr;
 int* c_ptr, c; // c_ptr is a pointer to an integer address, c is actually an integer!
-````
-My personal preference is to place the `*` next to the variable rather than next to the type (but either is okay).
+```
+My personal preference is to place the `*` next to the variable rather than next to the type (but either is okay).  
+
 
 ### C++ Initialization
 In C++, we can initialize variables using a *constructor initialization* by enclosing the initial value between parenntheses `()`.
@@ -548,4 +558,4 @@ sizeof var
 ```
 
 ---
-[**Next**: Operators, Loops, Functions](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-4-OpsLoopsFunctions.md)
+[**Next**: Operators, Loops, Functions]({filename}../../lecture6/C++/C-4-OpsLoopsFunctions.md)
