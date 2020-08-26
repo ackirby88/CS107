@@ -298,7 +298,7 @@ int main(void){
 ---
 #### Double, Triple, and Beyond Pointers
 Recall that we call have double pointers (pointers containing pointers), triple pointers, and more.  
-Note that when do allocate pointers containing pointers, the data is only contiguous within their individual memory blocks and the momory block containing the pointer addresses.
+Note that when we do allocate pointers containing pointers, the data is only contiguous within their individual memory blocks and the momory block containing the pointer addresses.
 
 **<details><summary><b>:large_orange_diamond: Double Pointers Example (Pointers Containing Pointers)</b></summary>**
 <p>
