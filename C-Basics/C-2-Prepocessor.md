@@ -23,7 +23,7 @@ The C Preprocessor can perform multiple functions:
 - Directives can expand over multiple lines by using the character `\`
  
 **Example:**  
-**<details><summary> :large_orange_diamond: Macro Define: cubeThreads</summary>**
+**<details><summary>:large_orange_diamond: Macro Define: cubeThreads</summary>**
 <p>
   
 ```C
@@ -48,35 +48,17 @@ cubeThreads {
 
 ---
 ### **`#include`**
-Both user and system header files are included using the preprocessing directive `#include`.
-- [x] `#include <file>`: **include system header files**  
-The preprocessor searches for a file named *file* in a list of directories specified by you, then in a standard list of system directories. 
-You specify directories to search for header files with the command option `-I`.  
-**To see which directories the C Preprocessor searches, we can execute `cpp -v`.**
+Both user and system header files are included using the preprocessing directive `#include`.  
 
-**<details><summary>:large_orange_diamond: C Preprocessor Search Locations: `cpp -v`</summary>**
-<p>
-  
-> ```bash
-> $ cpp -v
-> ...
-> #include "..." search starts here:
-> #include <...> search starts here:
-> /usr/lib/gcc/x86_64-linux-gnu/7/include
-> /usr/local/include
-> /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed
-> /usr/include/x86_64-linux-gnu
-> /usr/include
-> End of search list.
-> ```
-</p>
-</details>
+- [x] `#include <file>:` **include system header file**  
+The preprocessor searches for *file* in system directories (see the directory seearch list: `cpp -v`).  
 
 - [x] `#include "file"`: **include header files of your own program**  
-The preprocessor searches for a file named *file* first in the current directory, then in the same directories used for system header files.  
+The preprocessor searches for *file* first in the current directory, then in the same directories used for system header files.  
 
-- [x] `#include` *`anything else`*:   
-This is known as a *computed #include* directive where *anything else* can be other macros, which are expanded. After the expansion, it must conform one of the first two variants: `<file>` or `"file"`.
+- [x] `#include` *`anything else`*: where `anything else` expands to `<file>` or `"file"`  
+This is known as a *computed #include* directive where *anything else* can be other macros, which are expanded.  
+After the expansion, it must conform one of the first two variants: `<file>` or `"file"`.  
 
 #### How `#include` Works
 Looking at **Example 1**, the C Proprocessor generates the following from **hello_1.h** to **hello_1.c**: 
