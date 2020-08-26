@@ -340,7 +340,7 @@ j = 3
 If caution is taken, macros with arguments can be combined to make useful programming options.  
 
 ---
-#### Exercise: Macros With Arguments
+### Exercise: Macros With Arguments
 **Build a program that depends on physical space dimensions: 2D or 3D**
 
 - (a) Write a function to take additional arguments without having to make a new function
