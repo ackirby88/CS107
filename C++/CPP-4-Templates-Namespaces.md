@@ -201,7 +201,7 @@ int main () {
 </details>
 
 ---
-### `using` Keyword
+### The `using` Keyword
 The keyword `using` is used to introduce a name from a namespace into the current declarative region.
 
 **<details><summary>:large_orange_diamond: `using` Example 1</summary>**
