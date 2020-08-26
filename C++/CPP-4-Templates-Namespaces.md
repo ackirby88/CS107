@@ -1,16 +1,23 @@
+Title: C++ Templating and Namespaces
+Category: lectures
+Date: 2020-10-1
+Slug: lecture8-C++/CPP4
+Author: Andrew Kirby
+Tags: C++, Polymorphism, Namespaces
 
 ---
 **Key:** 
 :large_orange_diamond: - **Code Example** 
 :large_blue_diamond: - **Code Exercise** 
 :red_circle: - **Code Warning**  
-[**Previous**: C++ Polymorphism](https://github.com/ackirby88/CS107/blob/master/C++/CPP-3-Polymorphism.md)  
+[**Previous**: C++ Polymorphism]({filename}CPP-3-Polymorphism.md)  
 
 ---
 # Templating
-Templates are the foundation of generic programming, which involves writing code in a way that is independent of any particular type.  
-A **template** is a blueprint for creating a generic class or a function.
+- **Templates are the foundation of generic programming**, which involves writing code in a way that is independent of any particular type.
+- A **template** is a blueprint for creating a generic class or a function.
 
+---
 ## Function Template
 The general form of a template function definition is as follows:
 ```C++
@@ -24,6 +31,7 @@ template <typename T> ret_type func_name(parameter_list) {
 } 
 ```
 
+---
 ## Class Template
 ```C++
 template <class type> class class_name {
@@ -156,10 +164,10 @@ int main () {
 
 ---
 # Namespaces
-**Namespaces** allow grouping of entities like classes, objects, and functions under a name.  
-This way the global scope can be divided in "sub-scopes", each one with its own name.
+- **Namespaces** allow grouping of entities like classes, objects, and functions under a name.  
+- Global scope can be divided in "sub-scopes", each one with its own name.
 
-## Namespace Format
+**Namespace Format:**
 ```C++
 namespace identifier {
   //entities
@@ -168,12 +176,17 @@ namespace identifier {
 
 ---
 ### Scope Operator `::`
-Recall the scope operator `::` which allows us to access entities from namespaces or specifies class functions when we are outside of the namespace scope:  
+Recall the scope operator `::`:
+
+- Allows access entities from namespaces or specifies class functions when we are outside of the namespace scope
+
+**Example:**
 ```C++
 myNameSpace::a 
 myNameSpace::b
 ```
 
+---
 ## Namespace Examples
 **<details><summary>:large_orange_diamond: Namespace Example</summary>**
 <p>
@@ -201,8 +214,8 @@ int main () {
 </details>
 
 ---
-### `using` Keyword
-The keyword `using` is used to introduce a name from a namespace into the current declarative region.
+### The `using` Keyword
+- The keyword `using` is used to introduce a name from a namespace into the current declarative region
 
 **<details><summary>:large_orange_diamond: `using` Example 1</summary>**
 <p>
@@ -268,6 +281,7 @@ int main(){
 </p>
 </details>
 
+---
 # C++ Standard Template Library (STL)
 The C++ STL is a powerful set of C++ template classes to provide general-purpose classes and functions with templates that implement many popular and commonly used algorithms and data structures like vectors, lists, queues, and stacks.
 
