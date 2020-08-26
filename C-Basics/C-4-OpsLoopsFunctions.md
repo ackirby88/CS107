@@ -281,7 +281,7 @@ int main(void){
 # Functions
 **<details><summary>Function Template</summary>**
 <p>
-  
+
 - C: function names must be unique (*no overloading*)  
 - C++: function names may be the same but the input arguments must differ  
 
@@ -295,7 +295,7 @@ return_type function_name (argument list){
 **Example:**
 ```C
 double my_awesome_function(int ia, double db, char name){
-  ...
+  // body of function
 }
 ```
 </p>
@@ -309,6 +309,7 @@ double my_awesome_function(int ia, double db, char name){
 #include <stdio.h>
 #include <stdarg.h>
 
+// Note: the ... in the input arguments is really ...
 void simple_printf(const char* fmt, ...){
     va_list args;
     va_start(args, fmt);
@@ -337,6 +338,7 @@ int main(void){
 ```
 </p>
 </details>
+
 
 ---
 [**Next**: Arrays, Pointers, Memory, References](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-5-Memory.md)
