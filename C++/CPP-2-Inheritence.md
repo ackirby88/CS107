@@ -193,7 +193,7 @@ Circle default contructor called!
 </details>
 
 
-:large_orange_diamond: [Deepnote: Constructor Inheritance](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
+:large_orange_diamond: [Deepnote: Constructor Inheritance](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC%2B%2B%2FClassInheritance%2Finheritance.cxx)  
 
 ---
 ## Multiple Inheritance
