@@ -136,7 +136,7 @@ switch (x) {
 }
 ```
 If `x = 1`, then the statements for `case 1` **and** `case 2` are executed.  
-:large_orange_diamond: [Deepnote: Switch Case Demo](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
+:large_orange_diamond: [Deepnote: Switch Case Demo](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FSwitchCase%2Fswitch.c)
 </p>
 </details>
 
