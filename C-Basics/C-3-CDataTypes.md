@@ -27,7 +27,7 @@ int o = 023;       // octal
 int h = 0xC05FEFE; // hexadecimal
 ```
 :red_circle: Be careful with leading zeros! Leading zeros indicate octal numbers. :red_circle:  
-:large_orange_diamond: [Deepnote: Literals Sandbox](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
+:large_orange_diamond: [Deepnote: Literals Sandbox](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FLiterals%2Fmain.c)
 
 ---
 ## Derived Types
@@ -156,7 +156,7 @@ struct student andrew, ed, mary;
 // access member
 andrew.age = 21;
 ```
-:large_orange_diamond: [Deepnote: Structs - Pass-by-Value/Address/Reference](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
+:large_orange_diamond: [Deepnote: Structs - Pass-by-Value/Address/Reference](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FStructsPassByMemory%2Fstructs.cpp)
 </p>
 </details>
 
@@ -330,7 +330,7 @@ error: assignment of read-only location ‘*ptr’
 </p>
 </details>
 
-:large_orange_diamond: [Deepnote: Pointer To Constant Bug](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
+:large_orange_diamond: [Deepnote: Pointer To Constant Bug](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FPointerToConstantBugExample%2Fconst.c)
 </p>
 </details>
 
@@ -474,7 +474,7 @@ Count = 2
 - If the file does not include the file provides the compiler with sufficient information to access a variable declared in another file. 
 
 Later in the semester when we build libraries, we will see be utilized to prevent *name mangling* with `extern "C"{...}`.  
-:large_orange_diamond: [Deepnote: Name Mangling](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
+:large_orange_diamond: [Deepnote: Name Mangling](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FHelloWorldNameMangle%2Fhello_1.c)
 </p>
 </details>
 
