@@ -288,7 +288,7 @@ We can even add the vectors directly calling the operator using member access:
 ```C++
 CVector vec_c = vec_a.operator+ vec_b;
 ```
-:large_orange_diamond: [Deepnote: Vectors Addition Source](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
+:large_orange_diamond: [Deepnote: Vectors Addition Source](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC%2B%2B%2FCVectorClass%2Fcvectors.cxx)
 
 ### Operator Overloading Expressions
 The operator overloads are just regular functions which can have any behavior!  
