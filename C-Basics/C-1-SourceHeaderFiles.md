@@ -82,7 +82,7 @@ void print_hello_world(void){
 Luckily for us, **the C Preprocessor replaces the `#include "hello_1.h"` line** with all of the code found in **hello_1.h**.  
 
 ---
-:large_orange_diamond: [Hello World Header Files!](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
+:large_orange_diamond: [Hello World Header Files!](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FHelloWorldNameMangle%2Fhello_1.c)  
 This example also introduces *name mangling* which we will learn more later in the semester.
 
 ---
