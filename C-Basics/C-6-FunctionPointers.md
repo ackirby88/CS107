@@ -44,7 +44,7 @@ int main(void){
 </p>
 </details>
 
-:large_orange_diamond: [Deepnote: Function Pointers](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
+:large_orange_diamond: [Deepnote: Function Pointers](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FFunctionPointers%2Ffunction_pointers.c)
 
 ---
 ### Reading Function Pointer Declarations
@@ -91,7 +91,7 @@ Return value meaning
 </p>
 </details>
 
-:large_orange_diamond: [Deepnote: Sorting Structs](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
+:large_orange_diamond: [Deepnote: Sorting Structs](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FSortingFunction%2Fsort.c)
 
 ---
 ## Callback Functions
@@ -131,7 +131,7 @@ int main(void){
 </p>
 </details>
 
-:large_orange_diamond: [Deepnote: Callback Functions](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
+:large_orange_diamond: [Deepnote: Callback Functions](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FCallbackFunctions%2FCallbackFunctions.c)  
 :large_orange_diamond: [Sandbox: Callback Functions Shared Library](https://bit.ly/2ZXsZuG)
 
 ---
@@ -146,7 +146,7 @@ typedef struct {
     custom_print_func_t my_print;
 } func_t;
 ```
-:large_orange_diamond: [Deepnote: Function Pointers in Structs!](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
+:large_orange_diamond: [Deepnote: Function Pointers in Structs!](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FFunctionPointersStructs%2Ffunction-pointer-demo.c)  
 
 ---
 [**Next**: C++ Classes & Objects](https://github.com/ackirby88/CS107/blob/master/C++/CPP-0-ClassesObjects.md)
