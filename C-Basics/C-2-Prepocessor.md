@@ -162,7 +162,7 @@ void print_hello_world(void){
 - Widely used directive designed to cause the current source file to be included only once in a single compilation
 - **`#pragma once` is now obsolete and should not be used!**  
 
-:large_orange_diamond: [Deepnote: Header File Collision](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FIncludeGuardsExample%2Fmain.c)
+:large_orange_diamond: [Deepnote: Header File Collision](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FIncludeGuardsExample%2Freadme.md)
 
 ---
 ## Simple Macros
@@ -346,7 +346,7 @@ If caution is taken, macros with arguments can be combined to make useful progra
 - (a) Write a function to take additional arguments without having to make a new function
 - (b) Have the function change via compile-time defined variables on the command line
 
-:large_orange_diamond: [Deepnote: 3D Function Arguments](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
+:large_orange_diamond: [Deepnote: 3D Function Arguments](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FPreprocessor3D%2FREADME.md)  
 
 ---
 ## Some Useful System Macros  
@@ -357,11 +357,11 @@ If caution is taken, macros with arguments can be combined to make useful progra
 - `__cplusplus` Undefined for C code compiled by a C compiler; `199711L` C code is compiled by a C++ compiler (98 C++ standard)  
 - `__func__` Current function name of the source file, as a string (part of C99)  
 
-:large_orange_diamond: [Deepnote: System Macros](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)
+:large_orange_diamond: [Deepnote: System Macros](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FSystemMacros%2Fmacros.cpp)
 
 ---
 ## C Preprocessor Exercises
-:large_blue_diamond: [Deepnote: Fix Max Define Bug](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee)  
+:large_blue_diamond: [Deepnote: Fix Max Define Bug](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FBuggyMacroArgsExamples%2Fmax-macro.c)  
 :large_blue_diamond: Build a program that uses `float` when the macro `SINGLE_PRECISION` is defined, otherwise uses `double` as the floating pointing representation by defining a macro.  
 
 ---
