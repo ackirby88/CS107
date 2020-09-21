@@ -75,7 +75,7 @@ make hello
 </details>
 
 ---
-:large_orange_diamond: Sandbox Example: [Hello World!](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FHelloWorld%2FHelloWorld.c)
+:large_orange_diamond: Sandbox Example: [Hello World!](https://deepnote.com/project/fdeed75f-9b4a-428c-8bb7-3766103008ee#%2FC-Basics%2FHelloWorldExample%2FHelloWorld.c)
 
 ---
 [**Next**: Source & Header Files](https://github.com/ackirby88/CS107/blob/master/C-Basics/C-1-SourceHeaderFiles.md)
