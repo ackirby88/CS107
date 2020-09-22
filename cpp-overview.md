@@ -42,6 +42,7 @@ class CppTrack: public CS107 {
 
 ## Supplemental Information  
 [C++ Tutorial](http://www.cplusplus.com/doc/tutorial/): Reference tutorial for C++.   
+[C++ Cheatsheet](https://github.com/mortennobel/cpp-cheatsheet): Summary of C++ functionality  
 [Deepnote](https://harvard-iacs.github.io/2020-CS107/pages/deepnote.com): Excercises will be hosted in Deepnote as done with the python track.  
 [CS50 IDE](https://ide.cs50.io/): Easy collaboration space for C++ and python. Documentation found [here](https://cs50.readthedocs.io/lab/).  
 [CS50 Sandbox](https://sandbox.cs50.io/): Some of the lecture content may hosted in a CS50 Sandbox.  
