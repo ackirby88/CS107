@@ -1,5 +1,5 @@
 Title: C/C++ Preprocessor
-Category: lectures
+Category: 
 Date: 2020-9-22
 Slug: lecture5-C++/C2
 Author: Andrew Kirby
