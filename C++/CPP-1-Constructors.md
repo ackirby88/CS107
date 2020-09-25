@@ -1,5 +1,5 @@
 Title: C++ Constructors
-Category: lectures
+Category: 
 Date: 2020-9-29
 Slug: lecture7-C++/CPP1
 Author: Andrew Kirby
