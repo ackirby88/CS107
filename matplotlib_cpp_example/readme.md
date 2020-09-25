@@ -12,8 +12,8 @@
 ## Quick Start
 - `./config.sh`
 - `cd bin`
-- `./example`
-
+- `./example`  
+**NOTE:** These examples do not display to figures to the screen, but they do plot the figures to pdf files.
 ---
 
 #### Configuring
@@ -34,3 +34,5 @@ This is rebuild the code and place the new executable into the `bin` directory.
 #### Executing
 Go to the `bin` directory.  
 Execute via `./example`.
+
+**NOTE:** The examples do not display to figures to the screen, but they do plot the figures to pdf files.
