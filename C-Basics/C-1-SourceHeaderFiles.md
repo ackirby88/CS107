@@ -1,5 +1,5 @@
 Title: C/C++ Source and Header Files
-Category: lectures
+Category: 
 Date: 2020-9-22
 Slug: lecture5-C++/C1
 Author: Andrew Kirby
