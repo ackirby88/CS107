@@ -34,12 +34,23 @@ ExternalProject_Add(matplotlibcpp_repo
 set(MATPLOTLIB_INCLUDE_DIR ${CMAKE_BINARY_DIR}/matplotlibcpp_repo-prefix/src/matplotlibcpp_repo)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+file(GLOB SRC_H src/*.h src/*.hpp)
+set(SRC_FILES
+    src/plot0.cpp
+    src/plot1.cpp
+    # add new source files here
+)
+
+# build shared library
+add_library(ex_lib SHARED ${SRC_FILES} ${SRC_H})
+target_include_directories(ex_lib PRIVATE ${PYTHON_INCLUDE_DIRS} ${MATPLOTLIB_INCLUDE_DIR})
+
 add_executable(example src/main.cpp)
 add_dependencies(example matplotlibcpp_repo)
 target_include_directories(example PRIVATE ${PYTHON_INCLUDE_DIRS} ${MATPLOTLIB_INCLUDE_DIR})
-target_link_libraries(example ${PYTHON_LIBRARIES})
+target_link_libraries(example ex_lib ${PYTHON_LIBRARIES})
 
-install(TARGETS example
+install(TARGETS example ex_lib
 	RUNTIME DESTINATION bin/
 	LIBRARY DESTINATION lib/
 	ARCHIVE DESTINATION lib/
