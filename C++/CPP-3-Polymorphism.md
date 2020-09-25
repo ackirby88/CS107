@@ -1,5 +1,5 @@
 Title: C++ Polymorphism
-Category: lectures
+Category: 
 Date: 2020-10-1
 Slug: lecture8-C++/CPP3
 Author: Andrew Kirby
