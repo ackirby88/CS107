@@ -1,5 +1,5 @@
 Title: C/C++ Operations, Loops, and Functions
-Category: lectures
+Category: 
 Date: 2020-9-24
 Slug: lecture6-C++/C6
 Author: Andrew Kirby
