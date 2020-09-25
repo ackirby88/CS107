@@ -4,7 +4,8 @@
 - CMake is preinstalled in the terminal environment on Deepnote.
 
 ---
-[Matplotlib for C++](https://matplotlib-cpp.readthedocs.io/en/latest/index.html): Documentation to Matplotlib for C++, a C++ wrapper for Python’s matplotlib (MPL) plotting library.
+[Matplotlib for C++](https://matplotlib-cpp.readthedocs.io/en/latest/index.html): Documentation to Matplotlib for C++, a C++ wrapper for Python’s matplotlib (MPL) plotting library.  
+[Examples](https://github.com/Cryoris/matplotlib-cpp/tree/master/examples): Lots of examples can be found in the source repo.
 
 ---
 
