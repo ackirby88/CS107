@@ -1,5 +1,5 @@
 Title: C++ Classes and Objects 
-Category: lectures
+Category: 
 Date: 2020-9-29
 Slug: lecture7-C++/CPP0
 Author: Andrew Kirby
