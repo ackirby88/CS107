@@ -1,5 +1,5 @@
 Title: C/C++ Data Types
-Category: lectures
+Category: 
 Date: 2020-9-22
 Slug: lecture5-C++/C3
 Author: Andrew Kirby
