@@ -1,5 +1,5 @@
 Title: C++ Templating and Namespaces
-Category: lectures
+Category: 
 Date: 2020-10-1
 Slug: lecture8-C++/CPP4
 Author: Andrew Kirby
