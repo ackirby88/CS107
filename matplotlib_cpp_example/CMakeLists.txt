@@ -18,8 +18,8 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 
 # for matplotlibcpp
-SET(PYTHON_INCLUDE_DIR "/usr/local/include/python3.7m")
-SET(PYTHON_LIBRARY "/usr/local/lib/libpython3.7m.so")
+set(PYTHON_INCLUDE_DIR "/usr/local/include/python3.7m")
+set(PYTHON_LIBRARY "/usr/local/lib/libpython3.7m.so")
 
 find_package(PythonLibs 3.7 REQUIRED)
 add_definitions(-DWITHOUT_NUMPY)
