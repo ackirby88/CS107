@@ -155,7 +155,7 @@ int *p3, *p4; // p3 is an integer pointer, p4 in an integer pointer
 ---
 ### Getting the Address and Value
 - If we wish to **assign the address to a variable** or **pass the variable by address**, we **use the `&` operator.**  
-- To **get the value from a pointer**, we can either **dereference the value by using `*pvar`** or **`var[0]`**.
+- To **get the value from a pointer**, we can either **dereference the value by using `*pvar`** or **`pvar[0]`**.
 
 **<details><summary><b>:large_orange_diamond: Assigning and Accessing Pointers </b></summary>**
 <p>
