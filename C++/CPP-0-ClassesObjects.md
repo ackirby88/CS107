@@ -72,7 +72,7 @@ class className {
 <p>
 
 ```C++
-class Rectangle{
+class Rectangle {
   public: 
     double length;
     double width;
