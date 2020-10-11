@@ -30,10 +30,10 @@ class CppTrack: public CS107 {
   - [Templating & Namespaces](https://github.com/ackirby88/CS107/blob/master/C++/CPP-4-Templates-Namespaces.md)
 
 **Tools and Documentation [Lectures 13-14]**
-  - Project Organization
   - Build Systems and Generators: Make, CMake
+  - Project Organization
   - Building and Linking Libraries: static/dynamic libraries, mixed-language programming (C++/F90, Python/C++)
-  - Doxygen, Sphinx
+  - Doxygen, Sphinx  
   - Testing: TravisCI, Google Test, CMake Tests, Code Coverage
 
 **Design Patterns, Data Structures, Algorithms [Lectures 16-20]**
