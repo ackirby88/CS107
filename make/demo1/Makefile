@@ -1,4 +1,4 @@
-message: main.o SampleClass.o
+all: main.o SampleClass.o
 	g++ main.o SampleClass.o -o message
 	@echo "  >> main.cpp and/or SampleClass.cpp changed! Recompiled!\n"
 
