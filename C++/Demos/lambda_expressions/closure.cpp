@@ -36,6 +36,8 @@ std::function<float(float)> make_withdrawal(float init_balance) {
 /** HW2 Problem 3 Bank Account Closure
  *
  * This solution utilizes a C++ Lambda Expression.
+ * Ref: https://en.cppreference.com/w/cpp/language/lambda
+ *
  * NOTE: "\x1B" is a bash escape character. 
  *       "[0;32m" is a the bash color green.
  *       "[0m" resets the bash escape coloring.
