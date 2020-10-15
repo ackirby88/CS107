@@ -1,10 +1,9 @@
-subroutine add_matrix_2d(nrow,ncol,A,B,C) &
-    bind(C,name="add_matrix_")
+subroutine add_matrix_2d(nrow,ncol,A,B,C) bind(C,name="add_matrix_")
     use iso_c_binding
     implicit none
 
-    integer*4, intent(in)   :: nrow
-    integer*4, intent(in)   :: ncol
+    integer*4, intent(in)  :: nrow
+    integer*4, intent(in)  :: ncol
     real*8,    intent(in)  :: A(nrow,ncol)
     real*8,    intent(in)  :: B(nrow,ncol)
     real*8,    intent(out) :: C(nrow,ncol)
