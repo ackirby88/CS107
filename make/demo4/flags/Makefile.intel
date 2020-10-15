@@ -1,0 +1,46 @@
+# ======================== #
+# Compiler Parallel/Serial #
+# ======================== #
+ifdef MPIPRG
+  CC = mpiicc
+  FC = mpiifort
+else
+  CC = icpc
+  FC = ifort
+endif
+
+# ============== #
+# Compiler Flags #
+# ============== #
+ifdef DEBUG
+  CFLAGS = -O0 -pg 
+  FFLAGS = -O0 -pg -traceback
+else
+  CFLAGS = -O2
+  FFLAGS = -O2 
+endif
+
+# ====== #
+# Linker #
+# ====== #
+LD = $(CC)
+
+# ======== #
+# Archiver #
+# ======== #
+AR = ar
+
+# ============= #
+# Linking flags #
+# ============= #
+LDFLAGS = $(FFLAGS)
+
+# ============== #
+# Archiver flags #
+# ============== #
+ARFLAGS = rv
+
+# ==================== #
+# Indexing the archive #
+# ==================== #
+RANLIB = ranlib

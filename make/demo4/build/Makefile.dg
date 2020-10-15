@@ -1,0 +1,68 @@
+SHELL   = /bin/sh
+DEFINE  =
+EXEPRG  = Sample
+EXEEXT  = .$(ARCH)
+FLGDIR  = ../flags
+BINDIR  = .
+VPATH   = ../src ../include
+INCLUDE = ../include
+
+ifdef DEBUG
+  RELEXT = .debug
+else
+  RELEXT = .release
+endif
+
+TARGET  = $(BINDIR)/$(EXEPRG)$(EXEEXT)$(RELEXT)
+
+# ================= #
+# List of src files #
+# ================= #
+ALL = SampleClass \
+
+# ==================== #
+# List of header files #
+# ==================== #
+# HDRS = SampleClass.h \
+
+# ================================= #
+# Main files (for multiple targets) #
+# ================================= #
+SRCS = main
+
+# ============= #
+# Ensemble List #
+# ============= #
+DEFS = $(foreach define, $(DEFINE),-D$(define))
+OBJS = $(foreach module, $(ALL) $(SRCS),$(module).o)
+LIBS =
+
+# ==================================== #
+# Load flags from "../flags" directory #
+# ==================================== #
+include $(FLGDIR)/Makefile.$(ARCH)
+
+
+%.o : %.c
+	$(CC) -I$(INCLUDE) -c $(CFLAGS) $(DEFS) $<
+
+%.o : %.cpp
+	$(CC) -I$(INCLUDE) -c $(CFLAGS) $(DEFS) $<
+
+%.o : %.cxx
+	$(CC) -I$(INCLUDE) -c $(CFLAGS) $(DEFS) $<
+
+%.o: %.f90
+	$(FC) -I$(INCLUDE) -c $(FFLAGS) $(DEFS) $<
+
+%.o: %.F90
+	$(FC) -I$(INCLUDE) -c $(FFLAGS) $(DEFS) $<
+
+$(TARGET): $(OBJS) $(HDRS)
+	@echo ""
+	@echo " >> Linking : $@ "
+	@echo ""
+	$(LD) $(LDFLAGS) $(OBJS) $(LIBS) -o $@
+	@echo ""
+	@echo " >> Status : ok! "
+	@echo ""

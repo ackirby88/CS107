@@ -38,7 +38,7 @@
 # project directory paths
 # ======================= #
 PROJECT_ROOT := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))/..
-
+rootdir = $(realpath .)
 ################################################################
 # Compiler specifications
 # VPATH : Is the list of directories to be searched for missing
@@ -74,7 +74,7 @@ LDFLAGS =
 
 INCLUDE := $(PROJECT_ROOT)/include
 FOR_SRCS = # Fortran Source Files
-CPP_SRCS = SampleClass.cpp  # C++ Source Files
+CPP_SRCS = SampleClass.cpp  # C++ Source Files; multi-line using "\"
 ALL_SRCS = $(CPP_SRCS) $(FOR_SRCS)
 
 CPP_EXE = main.cpp
