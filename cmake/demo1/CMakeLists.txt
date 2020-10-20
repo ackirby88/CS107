@@ -6,5 +6,5 @@ PROJECT(demo1)
 # location of header files
 include_directories(./include)
 
-# location of directory to search for next "CmakeLists.txt"
+# location of directory to search for next "CMakeLists.txt"
 add_subdirectory(./src)

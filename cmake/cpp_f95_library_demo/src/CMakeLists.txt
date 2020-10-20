@@ -21,8 +21,6 @@ add_library(matrixClass SHARED ${MATRIX_SRC} ${MATRIX_H})
 # Optional Fortran95 Math Library:
 #   NOTE: use ccmake or cmake-gui to enable library!
 # =================================================================== #
-OPTION(ENABLE_F95_KERNELS "Enable to use Fortran95 Math Kernels" OFF)
-
 if(ENABLE_F95_KERNELS) 
   # Fortran math kernels
   add_subdirectory(src-F95)
