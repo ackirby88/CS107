@@ -49,9 +49,20 @@ void MatrixClass::displayInitValue(){
 }
 
 double* MatrixClass::add(){
-  double *C = new double[nrow*ncol];
-  add_matrix_(&nrow,&ncol,A,B,C);
-  return C;
+    double *C = new double[nrow*ncol];
+
+#ifdef F95_MATH
+    std::cout << "[USING F95 Kernels!]\n";
+    add_matrix_(&nrow,&ncol,A,B,C);
+#else
+    std::cout << "[USING Default Matrix Add!]\n";
+    for (int i = 0; i < nrow; ++i) {
+	for (int j = 0; j < ncol; ++j) {
+	    C[i*ncol+j] = A[i*ncol+j] + B[i*ncol+j];
+	}
+    }
+#endif
+    return C;
 }
 
 void print_matrix(int nrow, int ncol, double *mat){
