@@ -34,4 +34,4 @@ It's also recommended to install ccmake or a cmake-gui. These tools enable easy 
 - [Demo 1](https://github.com/ackirby88/CS107/tree/master/cmake/demo1): Basic cmake example.
 - [Demo 2](https://github.com/ackirby88/CS107/tree/master/cmake/demo2): Construct a shared library and link it the executale.
 - [Mixed Language Matrix Addition](https://github.com/ackirby88/CS107/tree/master/cmake/cpp_f95_library_demo): Build a mixed language library.
-- [Parallel `ls` Example ](https://github.com/ackirby88/CS107/tree/master/cmake/AIO): Large example of cmake and GTest setup.
+- [AIO: Parallel `ls` Example ](https://github.com/ackirby88/CS107/tree/master/cmake/AIO): Large example of cmake and GTest setup.
