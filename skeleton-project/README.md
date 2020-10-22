@@ -3,7 +3,7 @@ This skeleton-project can serve as a foundation for developing your own custom l
 Applications codes will include your header file (`MyAwesomeLibrary.h`) and link against your library (`libMyAwesomeLibrary.so` or `libMyAwesomeLibrary.a`).
 
 ## Configuring
-Run `.config.sh`
+Run `./config.sh`.
 
 ## Building
 
