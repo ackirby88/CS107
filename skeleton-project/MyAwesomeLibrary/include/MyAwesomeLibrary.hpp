@@ -23,13 +23,13 @@ class AutoDiff {
 
   public:
 
-	/* constructors */
-	AutoDiff(){};
+    /* constructors */
+    AutoDiff(){};
     AutoDiff(T val,T dval) : v(val),dv(dval) {};
 
-	/* getters */
-	T val() const {return v;};
-	T dval() const {return dv;};
+    /* getters */
+    T val() const {return v;};
+    T dval() const {return dv;};
 
     /* setters */
     void setval(T val){v = val;}
