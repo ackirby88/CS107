@@ -10,7 +10,9 @@
 
 /* system header files */
 #ifndef DOXYGEN_IGNORE
+#  include <stdio.h>
 #endif
+
 
 /* =============== */
 /* Data Structures */
@@ -35,24 +37,14 @@ class AutoDiff {
     void setval(T val){v = val;}
     void setdval(T dval){dv = dval;}
 
-    /* ========= */
-    /* operators */
-    /* ========= */
-    inline const AutoDiff<T> operator+(const AutoDiff<T> &other) const {
-        return AutoDiff<T>(v + other.val(), dv + other.dval());
-    }
+    void print_hello() const;
 
-    inline AutoDiff& operator+=(const AutoDiff<T> &other) {
-        v += other.val();
-        dv += other.dval();
-        return *this;
-    }
+    /* ==================== */
+    /* overloaded operators */
+    /* ==================== */
+    const AutoDiff<T> operator+(const AutoDiff<T> &other) const;
 
+    AutoDiff<T>& operator+=(const AutoDiff<T> &other);
 };
-
-//template<typename T>
-//inline const AutoDiff<T> operator+(AutoDiff<T> &lhs, const AutoDiff<T> &rhs){
-//    return AutoDiff<T>(lhs.v + rhs.v, lhs.dv + rhs.dv);
-//}
 
 #endif /* MYAWESOMELIBRARY_H */

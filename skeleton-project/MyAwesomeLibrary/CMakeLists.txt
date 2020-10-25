@@ -16,6 +16,15 @@ else()
 endif()
 
 
+# Enable coverage profiling
+OPTION(COVERAGE "Enable Code Coverage Settings" OFF)
+if(COVERAGE)
+  if(CMAKE_C_COMPILER_ID MATCHES "GNU")
+    set(CMAKE_CXX_FLAGS "-g -O0 --coverage -fprofile-arcs -ftest-coverage --coverage -fno-inline -fno-inline-small-functions -fno-default-inline")
+    # set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)
+  endif()
+endif()
+
 # ======================== #
 # location of header files
 # ======================== #
