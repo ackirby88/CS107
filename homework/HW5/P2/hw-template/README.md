@@ -310,7 +310,7 @@ Marcel Proust is known for writing long sentences. The `swansway-chapter1.txt` c
 **Please implement `get_longest_sentence` and `main` which returns the number of words in the longest sentence.**  
 You can assume that anything delimited by a space is a word (see `longest_sentence.hpp`).
 
-**Note:** `getListOfSentences` reads text from swansway-chapter1.txt. You should have the text file in your HW5-final/ directory.
+**Note:** `getListOfSentences` reads text from swansway-chapter1.txt. You should have the text file in your HW5-final/ directory.  
 **Hint:** Use the `reduceRight` method that you implemented.
 
 ### Deliverables:
