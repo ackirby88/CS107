@@ -28,6 +28,9 @@ It's also recommended to install ccmake or a cmake-gui. These tools enable easy 
 
 ## CMake + Code Coverage
 - [C++ Code Coverage Tutorial](https://www.youtube.com/watch?v=0Pdl0oIwCgw): Youtube tutorial of building code coverage functionality with CMake and GCov/LCov.
+
+## CMake + Code Coverage + TravisCI
+- [Cove Coverage+TravisCI+CMake Tutorial](https://github.com/codecov/example-cpp11-cmake): **Amazing** Github repo demonstrating all the the pieces working together! 
 ---
 
 ## Harvard CS107 Examples
