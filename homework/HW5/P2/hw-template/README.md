@@ -1,9 +1,9 @@
 ## Problem 2: Linked List
 A singly linked list can be implemented by nodes. Each node has 2 properties: a head and a tail. The head is the element held by the first node in the list. The tail is the rest of the list, which is a reference to the next node.
 
-The code provided in [linked_list.hpp](https://github.com/ackirby88/CS107/homework/HW5/P2/hw-template/linked_list.hpp) is a partially implemented singly linked list. It consists of one class: LinkedList is a node that holds an element. In this problem, you will finish the implementation of this class. To name a node LinkedList is a bit confusing, but as we will see, although the LinkedList is implemented as a node, it behaves as if it is a whole list.
+The code provided in [linked_list.hpp](https://github.com/ackirby88/CS107/blob/master/homework/HW5/P2/hw-template/linked_list.hpp) is a partially implemented singly linked list. It consists of one class: LinkedList is a node that holds an element. In this problem, you will finish the implementation of this class. To name a node LinkedList is a bit confusing, but as we will see, although the LinkedList is implemented as a node, it behaves as if it is a whole list.
 
-Start by copying the template code [linked_list.hpp](https://github.com/ackirby88/CS107/homework/HW5/P2/hw-template/linked_list.hpp).
+Start by copying the template code [linked_list.hpp]https://github.com/ackirby88/CS107/blob/master/homework/HW5/P2/hw-template/linked_list.hpp).
 For this exercise, you will implement all the sections with comments:  
 ```C++
 #ifndef LINKED_LIST_HPP
@@ -155,7 +155,7 @@ void LinkedList<T>::printList(){
 
 **Hint**: It's recursive. We recursively invoke the append on the tail, the tail of the tail, and so on. While implementing, try to draw a schematic of what's going on step-by-step for each tail creation. This will give a clearer picture.
 
-Contrast to the Python version, we are making this linked list mutable such that we keep track of the head of the list through reference. When we `prepend` and node, we update the `LinkedList` head pointer. To see a demonstration of the expected behavior, see [demo.cpp](https://github.com/ackirby88/CS107/homework/HW5/P2/hw-template/demo.cpp). 
+Contrast to the Python version, we are making this linked list mutable such that we keep track of the head of the list through reference. When we `prepend` and node, we update the `LinkedList` head pointer. To see a demonstration of the expected behavior, see [demo.cpp](https://github.com/ackirby88/CS107/blob/master/homework/HW5/P2/hw-template/demo.cpp). 
 
 **Please implement the `prepend` method in the LinkedList class.** 
 
@@ -253,7 +253,7 @@ Reduced  List: 1
 ```
 
 ### Part D [10 points]:
-For this problem, copy the following code [longest_sentence.cpp](https://github.com/ackirby88/CS107/homework/HW5/P2/hw-template/longest_sentence.cpp):  
+For this problem, copy the following code [longest_sentence.cpp](https://github.com/ackirby88/CS107/blob/master/homework/HW5/P2/hw-template/longest_sentence.cpp):  
 ```C++
 /* header files */
 #include "longest_sentence.hpp"
@@ -282,7 +282,6 @@ LinkedList<std::string> *getListOfSentences(const char *filename){
     }
     return list;
 }
-
 
 template <typename T>
 LinkedList<T>* get_longest_sentence(LinkedList<T> *a, LinkedList<T> *b){
