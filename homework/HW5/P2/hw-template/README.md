@@ -3,7 +3,7 @@ A singly linked list can be implemented by nodes. Each node has 2 properties: a 
 
 The code provided in [linked_list.hpp](https://github.com/ackirby88/CS107/blob/master/homework/HW5/P2/hw-template/linked_list.hpp) is a partially implemented singly linked list. It consists of one class: LinkedList is a node that holds an element. In this problem, you will finish the implementation of this class. To name a node LinkedList is a bit confusing, but as we will see, although the LinkedList is implemented as a node, it behaves as if it is a whole list.
 
-Start by copying the template code [linked_list.hpp]https://github.com/ackirby88/CS107/blob/master/homework/HW5/P2/hw-template/linked_list.hpp).
+Start by copying the template code [linked_list.hpp](https://github.com/ackirby88/CS107/blob/master/homework/HW5/P2/hw-template/linked_list.hpp).
 For this exercise, you will implement all the sections with comments:  
 ```C++
 #ifndef LINKED_LIST_HPP
@@ -150,14 +150,18 @@ void LinkedList<T>::printList(){
 ```
 
 ### Part A [15 points]:
-**Please implement the constructor, getter, and setter methods.** This functions save or return the private stored in the class: `T data; LinkedList *next`.  
-**Please implement the `append` method in the LinkedList class.** It returns a LinkedList where a node holding the object val is appended.
+**Please implement the constructor, getter, and setter methods.**  
+This functions save or return the private stored in the class: `T data; LinkedList *next`.  
+
+**Please implement the `append` method in the LinkedList class.**  
+It returns a LinkedList where a node holding the object val is appended.
 
 **Hint**: It's recursive. We recursively invoke the append on the tail, the tail of the tail, and so on. While implementing, try to draw a schematic of what's going on step-by-step for each tail creation. This will give a clearer picture.
 
 Contrast to the Python version, we are making this linked list mutable such that we keep track of the head of the list through reference. When we `prepend` and node, we update the `LinkedList` head pointer. To see a demonstration of the expected behavior, see [demo.cpp](https://github.com/ackirby88/CS107/blob/master/homework/HW5/P2/hw-template/demo.cpp). 
 
-**Please implement the `prepend` method in the LinkedList class.** 
+**Please implement the `prepend` method in the LinkedList class.**  
+This method is similar to the `append` method but is more efficient since we do not need to traverse the list to update the `head` reference.
 
 ### Part B [5 points]:
 We want to be able to conveniently apply a function to all elements in this list.  
@@ -303,8 +307,9 @@ int main(void){
 
 Marcel Proust is known for writing long sentences. The `swansway-chapter1.txt` contains the first chapter of *Remembrance of Things Past*. The function `getListOfSentences` will preprocess this file and return a `LinkedList` of all sentences in this chapter.  
 
-**Please implement `longest_sentence` which returns the number of words in the longest sentence.** You can assume that anything delimited by a space is a word.
+**Please implement `get_longest_sentence` and `main` which returns the number of words in the longest sentence.**  
+You can assume that anything delimited by a space is a word (see `longest_sentence.hpp`).
 
-Note: getListOfSentences reads text from swansway-chapter1.txt. You should have the text file in your HW5-final/ directory.
+Note: `getListOfSentences` reads text from swansway-chapter1.txt. You should have the text file in your HW5-final/ directory.
 
 Hint: Use the `reduceRight` method that you implemented.
