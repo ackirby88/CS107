@@ -151,23 +151,22 @@ void LinkedList<T>::printList(){
 
 ### Part A [15 points]:
 **Please implement the constructor, getter, and setter methods.**  
-This functions save or return the private stored in the class: `T data; LinkedList *next`.  
+These functions save or return the private data stored in the class: `T data; LinkedList *next`.  
 
 **Please implement the `append` method in the LinkedList class.**  
 It returns a LinkedList where a node holding the object val is appended.
 
-**Hint**: It's recursive. We recursively invoke the append on the tail, the tail of the tail, and so on. While implementing, try to draw a schematic of what's going on step-by-step for each tail creation. This will give a clearer picture.
-
+**Hint:** This function is **not** recursive. You will make a new node, updating its `data` and `next` pointer, and resetting the previous node's `next` pointer.  
 Contrast to the Python version, we are making this linked list mutable such that we keep track of the head of the list through reference. When we `prepend` and node, we update the `LinkedList` head pointer. To see a demonstration of the expected behavior, see [demo.cpp](https://github.com/ackirby88/CS107/blob/master/homework/HW5/P2/hw-template/demo.cpp). 
 
 **Please implement the `prepend` method in the LinkedList class.**  
-This method is similar to the `append` method but is more efficient since we do not need to traverse the list to update the `head` reference.
+This method is similar to the `append` method but is more efficient since we do not need to traverse the list to update the `next` reference of the penultimate node.
 
 ### Part B [5 points]:
 We want to be able to conveniently apply a function to all elements in this list.  
 
 **Please implement the `forEach` method in the LinkedList class.**  
-The `forEach` method takes a function `FUNC f` as an argument, and returns a LinkedList (or `nullptr`) in which the element e in the list is mapped to fun(e). For example:  
+The `forEach` method takes a function `FUNC f` as an argument (`FUNC` is simply the implicit type used for the C++ template type), and returns a *new* LinkedList (or `nullptr`) in which the element e in the list is mapped to `f(e)`. For example:  
 ```C++
 /* header files */
 #include "linked_list.hpp"
@@ -198,7 +197,7 @@ Original List: 3 2 5 1 7
 forEach  List: 9 4 25 1 49
 ```
 
-**Note:** In the above example, `forEach` is **not** modifying the values in the LinkedList `list`. It is returning a new LinkedList `new_list`.
+**Note:** In the above example, `forEach` is **not** modifying the values in the LinkedList `list`. It is returning a **new** LinkedList `new_list`.
 
 ### Part C [10 points]:
 If we look at the logic of `summation` and `minimum`, we will notice that they are quite similar. Both are first reducing the tail of the list into an intermediate result and then combining the head with the intermediate result. The difference between summation and minimum lies in what this *combining* function is. For summation, two elements are combined by the function:  
@@ -217,7 +216,7 @@ int combine(int a,int b){
 ```
 
 **Please implement the `reduceRight` method in the LinkedList class.**
-This method requires a function `FUNC f` as an argument. `reduceRight` will first reduce the tail of the list into an intermediate result by applying `f` to the tail nodes. Then, `f` should be applied to the head and the intermediate result to combine them.  
+This method requires a function `FUNC f` as an argument (`FUNC` is simply the implicit type used for the C++ template type). `reduceRight` will first reduce the tail of the list into an intermediate result by applying `f` to the tail nodes. Then, `f` should be applied to the head and the intermediate result to combine them.  
 
 For Example:  
 ```C++
@@ -227,11 +226,6 @@ For Example:
 template <typename T>
 LinkedList<T>* smaller(LinkedList<T> *a, LinkedList<T> *b){
     return (a->getData() < b->getData()) ? a:b;
-}
-
-template<typename T>
-T square(T a){
-    return a*a;
 }
 
 int main(){
@@ -249,12 +243,12 @@ int main(){
     return 0;
 }
 ```
-
 **Output:**
 ```C++
 Original List: 5 2 3 1 7
 Reduced  List: 1
 ```
+**Hint:** `reduceRight` is a recurvise function.
 
 ### Part D [10 points]:
 For this problem, copy the following code [longest_sentence.cpp](https://github.com/ackirby88/CS107/blob/master/homework/HW5/P2/hw-template/longest_sentence.cpp):  
@@ -308,7 +302,7 @@ int main(void){
 Marcel Proust is known for writing long sentences. The `swansway-chapter1.txt` contains the first chapter of *Remembrance of Things Past*. The function `getListOfSentences` will preprocess this file and return a `LinkedList` of all sentences in this chapter.  
 
 **Please implement `get_longest_sentence` and `main` which returns the number of words in the longest sentence.**  
-You can assume that anything delimited by a space is a word (see `longest_sentence.hpp`).
+You can assume that anything delimited by a space is a word (see [longest_sentence.hpp](https://github.com/ackirby88/CS107/blob/master/homework/HW5/P2/hw-template/longest_sentence.hpp) for the helper function `countWords`).
 
 **Note:** `getListOfSentences` reads text from swansway-chapter1.txt. You should have the text file in your HW5-final/ directory.  
 **Hint:** Use the `reduceRight` method that you implemented.
