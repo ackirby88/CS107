@@ -225,8 +225,7 @@ COMPILE_BUILD_MAL_DIRECTORY="${BUILD_MAL_DIRECTORY}"
 echo "Here 2"
 # ============== 
 # compiler paths
-# ============== 
-FC_PATH="`which $FC`"
+# ==============
 CC_PATH="`which $CC`"
 CXX_PATH="`which $CXX`"
 echo "Here 3"
@@ -301,11 +300,9 @@ if [ $BUILD_MAL == 1 ]; then
   echo " "
   echo "                  CC: ${CC}"
   echo "                 CXX: ${CXX}"
-  echo "                  FC: ${FC}"
   echo " "
   echo "             C Flags: ${C_FLAGS}"
   echo "           CXX Flags: ${CXX_FLAGS}"
-  echo "            FC Flags: ${FC_FLAGS}"
   echo -e "${mC} ============================================== ${eC}"
   echo " "
 echo "Here 9"
@@ -319,10 +316,8 @@ echo "Here 9"
 echo "Here 10"
   cmake -D CMAKE_C_COMPILER=${CC_PATH}                              \
         -D CMAKE_CXX_COMPILER=${CXX_PATH}                           \
-        -D CMAKE_Fortran_COMPILER=${FC_PATH}                        \
         -D CMAKE_C_FLAGS=${C_FLAGS}                                 \
         -D CMAKE_CXX_FLAGS=${CXX_FLAGS}                             \
-        -D CMAKE_FC_FLAGS=${FC_FLAGS}                               \
         -D CMAKE_INSTALL_PREFIX=${COMPILE_INSTALL_MAL_DIRECTORY}    \
         -D CMAKE_BUILD_TYPE=${BUILD_TYPE}                           \
         -D gtest_dir=${GTEST_DIRECTORY}                             \
@@ -351,11 +346,9 @@ echo "Here 12"
     echo    " "
     echo    "                  CC: ${CC}"
     echo    "                 CXX: ${CXX}"
-    echo    "                  FC: ${FC}"
     echo    " "
     echo    "            CC Flags: ${C_FLAGS}"
     echo    "           CXX Flags: ${CXX_FLAGS}"
-    echo    "            FC Flags: ${FC_FLAGS}"
     echo    " ============================================================ "
     echo    " "
   else
