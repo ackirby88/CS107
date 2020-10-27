@@ -6,7 +6,6 @@ addons:
   apt:
     packages:
     - lcov
-    - gcov
 
 script: ./skeleton-project/config.sh
 
