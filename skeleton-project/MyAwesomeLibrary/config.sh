@@ -6,6 +6,7 @@
 #   MyAwesomeLibrary   # source code
 #     core             # location of source code
 
+set -euo pipefail
 
 # ======================= #
 # project directory paths

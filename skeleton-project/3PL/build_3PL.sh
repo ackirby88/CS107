@@ -50,17 +50,6 @@ F77=mpif90
 # DO NOT USE -O3
 CFLAGS="-fPIC -O2"
 
-# ============ #
-# BLAS library
-# ============ #
-INSTALL_BLAS_DIRECTORY="${MKLROOT}"
-BLAS_PATH="-Wl,--start-group \
-${MKLROOT}/lib/intel64/libmkl_intel_lp64.a \
-${MKLROOT}/lib/intel64/libmkl_core.a \
-${MKLROOT}/lib/intel64/libmkl_sequential.a \
--Wl,--end-group -lpthread -lm"
-
-
 # ======================== #
 # compiler option defaults
 # ======================== #
