@@ -7,10 +7,12 @@ addons:
     packages:
     - lcov
 
-script: ./skeleton-project/config.sh
+before_script: cd skeleton-project
+
+script: ./config.sh
 
 after_success:
-- ./skeleton-project/MyAwesomeLibrary/get_converage.sh
+- ./MyAwesomeLibrary/get_converage.sh
 
 # Uploading to CodeCov
 # '-f' specifies file(s) to use and disables manual coverage gathering and file search which has already been done above
