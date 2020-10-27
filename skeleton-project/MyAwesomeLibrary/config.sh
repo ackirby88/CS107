@@ -229,7 +229,6 @@ COMPILE_BUILD_MAL_DIRECTORY="${BUILD_MAL_DIRECTORY}"
 FC_PATH="`which $FC`"
 CC_PATH="`which $CC`"
 CXX_PATH="`which $CXX`"
-LD_PATH="`which ld`"
 
 # ====================== 
 # check source directory
@@ -323,7 +322,6 @@ if [ $BUILD_MAL == 1 ]; then
         -D CMAKE_C_FLAGS=${C_FLAGS}                                 \
         -D CMAKE_CXX_FLAGS=${CXX_FLAGS}                             \
         -D CMAKE_FC_FLAGS=${FC_FLAGS}                               \
-        -D CMAKE_LINKER=${LD_PATH}                                  \
         -D CMAKE_INSTALL_PREFIX=${COMPILE_INSTALL_MAL_DIRECTORY}    \
         -D CMAKE_BUILD_TYPE=${BUILD_TYPE}                           \
         -D gtest_dir=${GTEST_DIRECTORY}                             \
