@@ -212,7 +212,7 @@ done
 # ========================= 
 echo " "
 echo "$0 $@"
-echo "Here 1"
+
 # ----------------------------------------------------- #
 # After reading in cmd arg options, set remaining paths #
 # ----------------------------------------------------- #
@@ -222,13 +222,13 @@ echo "Here 1"
 # ====================================== 
 COMPILE_INSTALL_MAL_DIRECTORY="${INSTALL_MAL_DIRECTORY}"
 COMPILE_BUILD_MAL_DIRECTORY="${BUILD_MAL_DIRECTORY}"
-echo "Here 2"
+
 # ============== 
 # compiler paths
 # ==============
 CC_PATH="`which $CC`"
 CXX_PATH="`which $CXX`"
-echo "Here 3"
+
 # ====================== 
 # check source directory
 # ====================== 
@@ -238,7 +238,7 @@ if [ ! -d "${MAL_DIRECTORY}" ]; then
   echo "${MAL_DIRECTORY} does not exist."
   exit 1
 fi
-echo "Here 4"
+
 # ======================= 
 # check install directory 
 # ======================= 
@@ -246,7 +246,7 @@ if [ ! -d "${INSTALL_DIRECTORY}" ]; then
   echo  "${INSTALL_DIRECTORY} does not exist. Making it..."
   mkdir "${INSTALL_DIRECTORY}"
 fi
-echo "Here 5"
+
 # ====================== 
 # check builds directory 
 # ====================== 
@@ -254,7 +254,7 @@ if [ ! -d "${BUILD_DIRECTORY}" ]; then
   echo  "${BUILD_DIRECTORY} does not exist. Making it..."
   mkdir "${BUILD_DIRECTORY}"
 fi
-echo "Here 6"
+
 UNIT_TEST="OFF"
 if [ ${BUILD_TEST} == 1 ]; then
   UNIT_TEST="ON"
@@ -275,7 +275,7 @@ if [ ${BUILD_TEST} == 1 ]; then
     echo "==============================="
   fi
 fi
-echo "Here 7"
+
 # =================================================================== 
 if [ $BUILD_CLEAN == 1 ]; then
   echo " "
@@ -287,7 +287,7 @@ if [ $BUILD_CLEAN == 1 ]; then
   rm -rf $COMPILE_INSTALL_MAL_DIRECTORY
   rm -rf coverage
 fi
-echo "Here 8"
+
 # =================================================================== 
 COMPILE_FAIL=0
 if [ $BUILD_MAL == 1 ]; then
@@ -305,7 +305,7 @@ if [ $BUILD_MAL == 1 ]; then
   echo "           CXX Flags: ${CXX_FLAGS}"
   echo -e "${mC} ============================================== ${eC}"
   echo " "
-echo "Here 9"
+
   # move to the build directory
   cd $BUILD_DIRECTORY
 
@@ -313,7 +313,7 @@ echo "Here 9"
     mkdir $COMPILE_BUILD_MAL_DIRECTORY
   fi
   cd $COMPILE_BUILD_MAL_DIRECTORY
-echo "Here 10"
+
   cmake -D CMAKE_C_COMPILER=${CC_PATH}                              \
         -D CMAKE_CXX_COMPILER=${CXX_PATH}                           \
         -D CMAKE_C_FLAGS=${C_FLAGS}                                 \
@@ -324,10 +324,10 @@ echo "Here 10"
         -D UNIT_TEST=${UNIT_TEST}                                   \
         -D COVERAGE=${COVERAGE}                                     \
         -G "Unix Makefiles" ${MAL_DIRECTORY} | tee cmake_config.out
-echo "Here 11"
+
   ${MAKE_CMD}
   cd ${CURRENT_PATH}
-echo "Here 12"
+
   if [ ! -d "${COMPILE_INSTALL_MAL_DIRECTORY}" ]; then
     echo "ERROR:"
     echo "${COMPILE_INSTALL_MAL_DIRECTORY} does not exist."
@@ -360,11 +360,10 @@ echo "Here 12"
     exit 1
   fi
 fi
-echo "Here 13"
+
 if [ ${COVERAGE} == "ON" ]; then
     echo "Building code coverage..."
     ./coverage.sh
 fi
-echo "Here 14"
 # =================================================================== 
 echo -e " ${gC}Build Script Completed Successfully!${eC}"
