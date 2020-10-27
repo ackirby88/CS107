@@ -168,7 +168,6 @@ echo "$0 $@"
 # install/build location compiled source
 # ====================================== #
 COMPILE_INSTALL_3PL_DIRECTORY="${INSTALL_3PL_DIRECTORY}${BUILD_SUFFIX}"
-COMPILE_BUILD_3PL_DIRECTORY="${BUILD_3PL_DIRECTORY}${BUILD_SUFFIX}"
 
 # ============== #
 # compiler paths

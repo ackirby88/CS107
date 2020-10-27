@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 SRCPATH=build/core/src/CMakeFiles/MyAwesomeLibrary.dir
 TESTPATH=build/core/tests/src/CMakeFiles/MALTest.dir
 BUILD_COV_DIRECTORY=coverage
