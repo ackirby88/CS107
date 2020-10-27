@@ -37,7 +37,7 @@ LinkedList<T>* get_longest_sentence(LinkedList<T> *a, LinkedList<T> *b){
 int main(void){
     LinkedList<std::string> *list_of_sentences = getListOfSentences("swansway-chapter1.txt");
 
-    //TODO: Use reduceRight method -- pass in count_words function
+    //TODO: Use reduceRight method -- pass in get_longest_sentence function
 
     //TODO: Output longest sentence and length
 
