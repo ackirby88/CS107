@@ -144,6 +144,7 @@ do
          "${var:0:11}" == "solver_dir=" -o \
          "$var" == "--ALL3PL" -o "$var" == "--all3pl" -o "$var" == "-all3pl" -o \
          "$var" == "--GTEST" -o "$var" == "-gtest" -o \
+         "$var" == "--Coverage" -o "$var" == "-coverage" -o "$var" == "-cov" -o \
          "${var}" == "-go" ]; then
     echo -e "Found known argument: ${gC}$var${eC}"
 
@@ -235,10 +236,11 @@ if [ $BUILD_APP == 1 ]; then
   cd App
   ./config.sh $cmd_args
   cd ..
-
-  echo
-  echo "======================================"
-  echo -e "${gC} Finished Successfully...${eC}"
-  echo "======================================"
-  exit 0
 fi
+
+echo
+echo "======================================"
+echo -e "${gC} Finished Successfully...${eC}"
+echo "======================================"
+exit 0
+

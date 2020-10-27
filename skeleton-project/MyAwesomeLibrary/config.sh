@@ -8,67 +8,75 @@
 
 set -euo pipefail
 
-# ======================= #
+# ======================= 
 # project directory paths
-# ======================= #
+# ======================= 
 CURRENT_PATH="$(pwd)"
-MY_PATH="$( cd "$( dirname "$0" )" && pwd )"
-PROJECT_ROOT=${MY_PATH}/..
 
-# =============== #
+cd ..
+PROJECT_ROOT="$(pwd)"
+cd ${CURRENT_PATH}
+
+# =============== 
 # library sources
-# =============== #
+# =============== 
 MAL_DIRECTORY=${PROJECT_ROOT}/MyAwesomeLibrary
 MAL_SO_NAME=MyAwesomeLibrary
 
-# ====================== #
+# ====================== 
 # folder directory paths
-# ====================== #
+# ====================== 
 INSTALL_DIRECTORY=${MAL_DIRECTORY}/install
 INSTALL_MAL_DIRECTORY=${INSTALL_DIRECTORY}
 
 BUILD_DIRECTORY=${MAL_DIRECTORY}/build
 BUILD_MAL_DIRECTORY=${BUILD_DIRECTORY}
 
-# ========================= #
+# ========================= 
 # third party library paths
-# ========================= #
+# ========================= 
 INSTALL_3RD_PARTY_PATH=${PROJECT_ROOT}/install/3PL
 
 # google test path
 GTEST_DIRECTORY=${INSTALL_3RD_PARTY_PATH}/googletest
 
-# ================== #
+# ================== 
 # compiling defaults
-# ================== #
+# ================== 
 BUILD_MAL=1
 BUILD_CLEAN=0
 BUILD_TEST=1
 
-# ================= #
+# ================= 
 # compiler defaults
-# ================= #
+# ================= 
 FC=gfortran
 CC=gcc
 CXX=g++
 
 C_FLAGS=
 CXX_FLAGS=
-Fortran_FLAGS=
+FC_FLAGS=
 
-# ======================== #
+# =========================
+# Coverage Flag
+# - turns off optimizations
+# =========================
+COVERAGE=OFF
+
+# ======================== 
 # compiler option defaults
-# ======================== #
+# ======================== 
 BUILD_TYPE="Release"
 
-# ======================== #
+# ======================== 
 # make and install command
-# ======================== #
+# ======================== 
 MAKE_CMD="make install"
 
-# ============== #
+# ============== 
 # print strings
-# ============== #
+# ============== 
 opt_str="[OPTION] "
 
 eC="\x1B[0m"
@@ -115,9 +123,9 @@ help() {
 # ----------------------------- #
 cd $PROJECT_ROOT
 
-# ============ #
+# ============ 
 # parse inputs
-# ============ #
+# ============ 
 for var in "$@"
 do
   if [ "$var" == "--help" -o "$var" == "-help" -o "$var" == "-h" ]; then
@@ -165,8 +173,8 @@ do
     echo -e "[OPTION]     CXX Compiler Flags: $yC$CXX_FLAGS$eC"
 
   elif [ "${var:0:9}" == "FC_FLAGS=" -o "${var:0:9}" == "fc_flags=" ]; then
-    FC=${var:9}
-    echo -e "[OPTION] Fortran Compiler Flags: $yC$FC_FLAGS$eC"
+    FC_FLAGS=${var:9}
+    echo -e "[OPTION] Fortran Compiler Flags: $yC$F_FLAGS$eC"
 
   elif [ "$var" == "--AVX" -o "$var" == "-avx" ]; then
     C_FLAGS="${C_FLAGS} -xCore-AVX"
@@ -183,6 +191,9 @@ do
     CXX_FLAGS="${CXX_FLAGS} -xCore-AVX512"
     FC_FLAGS="${FC_FLAGS} -xCore-AVX512"
 
+  elif [ "$var" == "--coverage" -o "$var" == "-coverage" -o "$var" == "-cov" ]; then
+    COVERAGE=ON
+  
   elif [ "$var" == "-go" ]; then
     CC=gcc
     CXX=g++
@@ -196,9 +207,9 @@ do
   fi
 done
 
-# ========================= #
+# ========================= 
 # display command line args
-# ========================= #
+# ========================= 
 echo " "
 echo "$0 $@"
 
@@ -206,23 +217,23 @@ echo "$0 $@"
 # After reading in cmd arg options, set remaining paths #
 # ----------------------------------------------------- #
 
-# ====================================== #
+# ====================================== 
 # install/build location compiled source
-# ====================================== #
+# ====================================== 
 COMPILE_INSTALL_MAL_DIRECTORY="${INSTALL_MAL_DIRECTORY}"
 COMPILE_BUILD_MAL_DIRECTORY="${BUILD_MAL_DIRECTORY}"
 
-# ============== #
+# ============== 
 # compiler paths
-# ============== #
+# ============== 
 FC_PATH="`which $FC`"
 CC_PATH="`which $CC`"
 CXX_PATH="`which $CXX`"
 LD_PATH="`which ld`"
 
-# ====================== #
+# ====================== 
 # check source directory
-# ====================== #
+# ====================== 
 if [ ! -d "${MAL_DIRECTORY}" ]; then
   echo " "
   echo "Error:"
@@ -230,17 +241,17 @@ if [ ! -d "${MAL_DIRECTORY}" ]; then
   exit 1
 fi
 
-# ======================= #
+# ======================= 
 # check install directory 
-# ======================= #
+# ======================= 
 if [ ! -d "${INSTALL_DIRECTORY}" ]; then
   echo  "${INSTALL_DIRECTORY} does not exist. Making it..."
   mkdir "${INSTALL_DIRECTORY}"
 fi
 
-# ====================== #
+# ====================== 
 # check builds directory 
-# ====================== #
+# ====================== 
 if [ ! -d "${BUILD_DIRECTORY}" ]; then
   echo  "${BUILD_DIRECTORY} does not exist. Making it..."
   mkdir "${BUILD_DIRECTORY}"
@@ -267,16 +278,18 @@ if [ ${BUILD_TEST} == 1 ]; then
   fi
 fi
 
-# =================================================================== #
+# =================================================================== 
 if [ $BUILD_CLEAN == 1 ]; then
   echo " "
-  echo "Clean: removing ${COMPILE_BUILD_MAL_DIRECTORY}..."
-  echo "Clean: removing ${COMPILE_INSTALL_MAL_DIRECTORY}..."
+  echo "Clean: removing ${COMPILE_BUILD_MAL_DIRECTORY}"
+  echo "Clean: removing ${COMPILE_INSTALL_MAL_DIRECTORY}"
+  echo "Clean: removing coverage"
   echo " "
   rm -rf $COMPILE_BUILD_MAL_DIRECTORY
   rm -rf $COMPILE_INSTALL_MAL_DIRECTORY
+  rm -rf coverage
 fi
-# =================================================================== #
+# =================================================================== 
 COMPILE_FAIL=0
 if [ $BUILD_MAL == 1 ]; then
   echo " "
@@ -309,12 +322,13 @@ if [ $BUILD_MAL == 1 ]; then
         -D CMAKE_Fortran_COMPILER=${FC_PATH}                        \
         -D CMAKE_C_FLAGS=${C_FLAGS}                                 \
         -D CMAKE_CXX_FLAGS=${CXX_FLAGS}                             \
-        -D CMAKE_Fortran_FLAGS=${Fortran_FLAGS}                     \
+        -D CMAKE_FC_FLAGS=${FC_FLAGS}                               \
         -D CMAKE_LINKER=${LD_PATH}                                  \
         -D CMAKE_INSTALL_PREFIX=${COMPILE_INSTALL_MAL_DIRECTORY}    \
         -D CMAKE_BUILD_TYPE=${BUILD_TYPE}                           \
         -D gtest_dir=${GTEST_DIRECTORY}                             \
         -D UNIT_TEST=${UNIT_TEST}                                   \
+        -D COVERAGE=${COVERAGE}                                     \
         -G "Unix Makefiles" ${MAL_DIRECTORY} | tee cmake_config.out
 
   ${MAKE_CMD}
@@ -355,5 +369,9 @@ if [ $BUILD_MAL == 1 ]; then
   fi
 fi
 
-# =================================================================== #
+if [ ${COVERAGE} == "ON" ]; then
+    echo "Building code coverage..."
+    ./coverage.sh
+fi
+# =================================================================== 
 echo -e " ${gC}Build Script Completed Successfully!${eC}"

@@ -15,16 +15,16 @@ set -euo pipefail
 # project directory paths
 # ======================= #
 CURRENT_PATH="$(pwd)"
-MY_PATH="$( cd "$( dirname "$0" )" && pwd )"
-PROJECT_ROOT=${MY_PATH}/..
+
+cd ..
+PROJECT_ROOT="$(pwd)"
+cd ${CURRENT_PATH}
 
 # ====================== #
 # folder directory paths
 # ====================== #
 INSTALL_DIRECTORY=${PROJECT_ROOT}/install
 INSTALL_3PL_DIRECTORY=${INSTALL_DIRECTORY}/3PL
-BUILD_DIRECTORY=${PROJECT_ROOT}/builds
-BUILD_SOLVER_DIRECTORY=${BUILD_DIRECTORY}/3PL
 
 # ============== #
 # 3PL sources
@@ -192,15 +192,6 @@ if [ ! -d "${INSTALL_DIRECTORY}" ]; then
   echo  "${INSTALL_DIRECTORY} does not exist. Making it..."
   mkdir "${INSTALL_DIRECTORY}"
 fi
-
-# ====================== #
-# check builds directory
-# ====================== #
-if [ ! -d "${BUILD_DIRECTORY}" ]; then
-  echo  "${BUILD_DIRECTORY} does not exist. Making it..."
-  mkdir "${BUILD_DIRECTORY}"
-fi
-
 
 # =================================================================== #
 COMPILE_FAIL=0

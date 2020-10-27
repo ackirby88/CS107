@@ -12,8 +12,10 @@ set -euo pipefail
 # project directory paths
 # ======================= #
 CURRENT_PATH="$(pwd)"
-MY_PATH="$( cd "$( dirname "$0" )" && pwd )"
-PROJECT_ROOT=${MY_PATH}/..
+
+cd ..
+PROJECT_ROOT="$(pwd)"
+cd ${CURRENT_PATH}
 
 # =============== #
 # library sources
@@ -56,7 +58,7 @@ CXX=g++
 
 C_FLAGS=
 CXX_FLAGS=
-Fortran_FLAGS=
+FC_FLAGS=
 
 # ======================== #
 # compiler option defaults
@@ -222,16 +224,6 @@ CC_PATH="`which $CC`"
 CXX_PATH="`which $CXX`"
 LD_PATH="`which ld`"
 
-# ====================== #
-# check source directory
-# ====================== #
-if [ ! -d "${MAL_DIRECTORY}" ]; then
-  echo " "
-  echo "Error:"
-  echo "${MAL_DIRECTORY} does not exist."
-  exit 1
-fi
-
 # ======================= #
 # check install directory 
 # ======================= #
@@ -272,12 +264,24 @@ fi
 # =================================================================== #
 if [ $BUILD_CLEAN == 1 ]; then
   echo " "
-  echo "Clean: removing ${COMPILE_BUILD_DIRECTORY}..."
-  echo "Clean: removing ${COMPILE_INSTALL_DIRECTORY}..."
+  echo "Clean: removing ${COMPILE_BUILD_DIRECTORY}"
+  echo "Clean: removing ${COMPILE_INSTALL_DIRECTORY}"
   echo " "
   rm -rf $COMPILE_BUILD_DIRECTORY
   rm -rf $COMPILE_INSTALL_DIRECTORY
+  exit 0
 fi
+# =================================================================== #
+
+# ====================== #
+# check source directory
+# ====================== #
+if [ ! -d "${MAL_DIRECTORY}" ]; then
+  echo " "
+  echo -e "${rC}Error:${eC} ${MAL_DIRECTORY} does not exist. Please build MyAwesomeLibrary First!"
+  exit 1
+fi
+
 # =================================================================== #
 COMPILE_FAIL=0
 if [ $BUILD_MAL == 1 ]; then
@@ -311,7 +315,7 @@ if [ $BUILD_MAL == 1 ]; then
         -D CMAKE_Fortran_COMPILER=${FC_PATH}                        \
         -D CMAKE_C_FLAGS=${C_FLAGS}                                 \
         -D CMAKE_CXX_FLAGS=${CXX_FLAGS}                             \
-        -D CMAKE_Fortran_FLAGS=${Fortran_FLAGS}                     \
+        -D CMAKE_FC_FLAGS=${FC_FLAGS}                               \
         -D CMAKE_LINKER=${LD_PATH}                                  \
         -D CMAKE_INSTALL_PREFIX=${COMPILE_INSTALL_DIRECTORY}        \
         -D CMAKE_BUILD_TYPE=${BUILD_TYPE}                           \
@@ -325,7 +329,7 @@ if [ $BUILD_MAL == 1 ]; then
   cd ${CURRENT_PATH}
 
   if [ ! -d "${COMPILE_INSTALL_DIRECTORY}" ]; then
-    echo "ERROR:"
+    echo -e "${rC}ERROR:${eC}"
     echo "${COMPILE_INSTALL_DIRECTORY} does not exist."
     COMPILE_FAIL=1
   fi
