@@ -4,17 +4,18 @@ compiler: gcc
 
 addons:
   apt:
-    packages: lcov gcov
+    packages:
+    - lcov
+    - gcov
 
 script: ./skeleton-project/config.sh
 
 after_success:
-# Create lcov report
-./skeleton-project/MyAwesomeLibrary/get_converage.sh
+- ./skeleton-project/MyAwesomeLibrary/get_converage.sh
 
 # Uploading to CodeCov
 # '-f' specifies file(s) to use and disables manual coverage gathering and file search which has already been done above
-- bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
+- bash <(curl -s https://codecov.io/bash) -f ./skeleton-project/MyAwesomeLibrary/coverage/AWESOME_COV.info || echo "Codecov did not collect coverage reports"
 
 notifications:
   email:
