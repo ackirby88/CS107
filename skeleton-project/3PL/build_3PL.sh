@@ -11,64 +11,65 @@
 
 set -euo pipefail
 
+echo ">> here 1"
 # ======================= #
 # project directory paths
 # ======================= #
 CURRENT_PATH="$(pwd)"
-
+echo ">> here 2"
 cd ..
 PROJECT_ROOT="$(pwd)"
 cd ${CURRENT_PATH}
-
+echo ">> here 3"
 # ====================== #
 # folder directory paths
 # ====================== #
 INSTALL_DIRECTORY=${PROJECT_ROOT}/install
 INSTALL_3PL_DIRECTORY=${INSTALL_DIRECTORY}/3PL
-
+echo ">> here 4"
 # ============== #
 # 3PL sources
 # ============== #
 SOURCES_DIRECTORY=${PROJECT_ROOT}/src
 SOURCES_3PL_DIRECTORY=${PROJECT_ROOT}/3PL
-
+echo ">> here 5"
 # ================== #
 # compiling defaults
 # ================== #
 BUILD_GTEST=0
 BUILD_CLEAN=0
-
+echo ">> here 6"
 # ================= #
 # compiler defaults
 # ================= #
 CC=gcc
 CXX=g++
 FC=gfortran
-
+echo ">> here 7"
 CFLAGS="-fPIC -O2"
-
+echo ">> here 8"
 # ======================== #
 # compiler option defaults
 # ======================== #
 BUILD_SUFFIX="_release"
 BUILD_TYPE="Release"
-
+echo ">> here 9"
 # ======================== #
 # make and install command
 # ======================== #
-MAKE_CMD="make -j4 install"
-
+MAKE_CMD="make install"
+echo ">> here 10"
 # ============== #
 # print strings
 # ============== #
 opt_str="[OPTION] "
-
+echo ">> here 11"
 eC="\x1B[0m"
 rC="\x1B[0;41m"
 gC="\x1B[0;42m"
 yC="\x1B[0;33m"
 mC="\x1B[0;43m"
-
+echo ">> here 12"
 help() {
     echo "Usage: $0 [OPTION]...[COMPILER OPTIONS]...[3PL OPTIONS]"
     echo " "
@@ -97,12 +98,12 @@ help() {
     echo -e "  ${aC}Easy Build:${eC}"
     echo -e "  Default: ${yC}./build_3PL.sh -go${eC}"
 }
-
+echo ">> here 13"
 # ----------------------------- #
 # Start the compilation process #
 # ----------------------------- #
 cd $PROJECT_ROOT
-
+echo ">> here 14"
 # ============ #
 # parse inputs
 # ============ #
@@ -143,18 +144,18 @@ do
     BUILD_GTEST=1
   fi
 done
-
+echo ">> here 15"
 # if no 3PL are selected, compile all of them
 if [ $BUILD_GTEST == 0 ]; then
   BUILD_GTEST=1
 fi
-
+echo ">> here 16"
 # ========================= #
 # display command line args
 # ========================= #
 echo " "
 echo "$0 $@"
-
+echo ">> here 17"
 # ----------------------------------------------------- #
 # After reading in cmd arg options, set remaining paths #
 # ----------------------------------------------------- #
@@ -163,7 +164,7 @@ echo "$0 $@"
 # install/build location compiled source
 # ====================================== #
 COMPILE_INSTALL_3PL_DIRECTORY="${INSTALL_3PL_DIRECTORY}${BUILD_SUFFIX}"
-
+echo ">> here 18"
 # ============== #
 # compiler paths
 # ============== #
@@ -171,7 +172,7 @@ FC_PATH="`which $FC`"
 CC_PATH="`which $CC`"
 CXX_PATH="`which $CXX`"
 LD_PATH="`which ld`"
-
+echo ">> here 19"
 # ====================== #
 # check source directory
 # ====================== #
@@ -179,7 +180,7 @@ if [ ! -d "${SOURCES_3PL_DIRECTORY}" ]; then
   echo "${rC}ERROR: {SOURCES_3PL_DIRECTORY} does not exist.${eC}"
   exit 1
 fi
-
+echo ">> here 20"
 # ======================= #
 # check install directory
 # ======================= #
@@ -187,7 +188,7 @@ if [ ! -d "${INSTALL_DIRECTORY}" ]; then
   echo  "${INSTALL_DIRECTORY} does not exist. Making it..."
   mkdir "${INSTALL_DIRECTORY}"
 fi
-
+echo ">> here 21"
 # =================================================================== #
 COMPILE_FAIL=0
 INSTALL_GTEST_DIRECTORY=${INSTALL_3PL_DIRECTORY}/googletest
