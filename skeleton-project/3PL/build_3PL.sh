@@ -35,20 +35,16 @@ SOURCES_3PL_DIRECTORY=${PROJECT_ROOT}/3PL
 # ================== #
 # compiling defaults
 # ================== #
-BUILD_P4EST=0
-BUILD_METIS=0
 BUILD_GTEST=0
 BUILD_CLEAN=0
 
 # ================= #
 # compiler defaults
 # ================= #
-CC=mpicc
-CXX=mpicxx
-FC=mpif90
-F77=mpif90
+CC=gcc
+CXX=g++
+FC=gfortran
 
-# DO NOT USE -O3
 CFLAGS="-fPIC -O2"
 
 # ======================== #
@@ -139,7 +135,6 @@ do
 
   elif [ "${var:0:3}" == "FC=" -o "${var:0:3}" == "fc=" ]; then
     FC=${var:3}
-    F77=${FC}
     echo -e "[OPTION] Fortran Compiler: $yC$FC$eC"
 
   elif [ "$var" == "--GTEST" -o "$var" == "-gtest" ]; then
@@ -150,7 +145,7 @@ do
 done
 
 # if no 3PL are selected, compile all of them
-if [ $BUILD_METIS == 0 -a $BUILD_P4EST == 0 -a $BUILD_GTEST == 0 ]; then
+if [ $BUILD_GTEST == 0 ]; then
   BUILD_GTEST=1
 fi
 
@@ -245,8 +240,10 @@ if [ ${BUILD_GTEST} -eq 1 ]; then
     echo -e "${rC} Google Test build FAILED! ${eC}"
     echo         "==========================="
     echo " "
+    exit 1
   fi
 fi
 # =================================================================== #
 
 echo -e "${gC}Build Script Completed Successfully!${eC}"
+exit 0
