@@ -12,15 +12,15 @@ before_script:
 
 script:
 - cd 3PL
-- ./build_3PL.sh
+- bash build_3PL.sh
 - cd ..
   # - cd MyAwesomeLibrary
-  # - ./config.sh
+  # - bash config.sh
   # - cd ..
 
 after_success:
   # - cd MyAwesomeLibrary 
-  # - ./get_converage.sh
+  # - bash get_converage.sh
 
 # Uploading to CodeCov
 # '-f' specifies file(s) to use and disables manual coverage gathering and file search which has already been done above
