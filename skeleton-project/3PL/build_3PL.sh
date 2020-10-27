@@ -168,10 +168,9 @@ echo ">> here 18"
 # ============== #
 # compiler paths
 # ============== #
-FC_PATH="`which $FC`"
-CC_PATH="`which $CC`"
-CXX_PATH="`which $CXX`"
-LD_PATH="`which ld`"
+# FC_PATH="`which $FC`"
+# CC_PATH="`which $CC`"
+# CXX_PATH="`which $CXX`"
 echo ">> here 19"
 # ====================== #
 # check source directory
@@ -204,25 +203,25 @@ if [ ${BUILD_GTEST} -eq 1 ]; then
   echo "                FC: ${FC}"
   echo -e "${mC} ========================= ${eC}"
   echo " "
-
+echo ">> here 22"
   cd ${SOURCES_3PL_DIRECTORY}/googletest-release-1.8.1
   rm -rf buildW
   rm -rf ${INSTALL_GTEST_DIRECTORY}
   mkdir buildW
-
+echo ">> here 23"
   cd buildW
   cmake -D CMAKE_INSTALL_PREFIX:PATH=${INSTALL_GTEST_DIRECTORY} \
         -D CMAKE_BUILD_TYPE:STRING=${BUILD_TYPE}                \
         -D SHARED:BOOL=TRUE                                     \
-        -D CMAKE_C_COMPILER=${CC_PATH}                          \
-        -D CMAKE_CXX_COMPILER=${CXX_PATH}                       \
+        -D CMAKE_C_COMPILER=${CC_PATH}                          \      
         -G "Unix Makefiles" ../
-
+# -D CMAKE_CXX_COMPILER=${CXX_PATH}                       \
+echo ">> here 24"
   ${MAKE_CMD}
   cd ..
   rm -rf buildW
   cd ${CURRENT_PATH}
-
+echo ">> here 25"
   if [ ! -d "${INSTALL_GTEST_DIRECTORY}" ]; then
     echo "Warning:"
     echo "${INSTALL_GTEST_DIRECTORY} does not exist."
