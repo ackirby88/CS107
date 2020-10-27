@@ -9,6 +9,7 @@
 #     3PL           #location of 3rd party library source code
 #   scripts         #location of this script
 
+set -euo pipefail
 
 # ======================= #
 # project directory paths
