@@ -169,8 +169,8 @@ echo ">> here 18"
 # compiler paths
 # ============== #
 # FC_PATH="`which $FC`"
-# CC_PATH="`which $CC`"
-# CXX_PATH="`which $CXX`"
+CC_PATH="`which $CC`"
+CXX_PATH="`which $CXX`"
 echo ">> here 19"
 # ====================== #
 # check source directory
@@ -213,7 +213,8 @@ echo ">> here 23"
   cmake -D CMAKE_INSTALL_PREFIX:PATH=${INSTALL_GTEST_DIRECTORY} \
         -D CMAKE_BUILD_TYPE:STRING=${BUILD_TYPE}                \
         -D SHARED:BOOL=TRUE                                     \
-        -D CMAKE_C_COMPILER=${CC_PATH}                          \      
+        -D CMAKE_C_COMPILER=${CC_PATH}                          \
+        -D CMAKE_CXX_COMPILER=${CXX_PATH}                       \
         -G "Unix Makefiles" ../
 # -D CMAKE_CXX_COMPILER=${CXX_PATH}                       \
 echo ">> here 24"
