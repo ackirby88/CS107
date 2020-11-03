@@ -11,4 +11,6 @@ set(TEST_SRC
 )
 
 add_library(MALTest SHARED ${TEST_SRC} ${TEST_H})
-target_link_libraries(MALTest gtest gtest_main)
+if(APPLE)
+  target_link_libraries(MALTest gtest gtest_main)
+endif()
