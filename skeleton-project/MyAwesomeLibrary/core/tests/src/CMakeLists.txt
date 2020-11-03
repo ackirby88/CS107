@@ -2,7 +2,7 @@ enable_testing()
 include(CTest)
 
 include_directories(${gtest_dir}/include)
-link_directories(${gtest_dir}/lib/gtest)
+link_directories(${gtest_dir}/lib)
 
 file(GLOB TEST_H *.h *.hpp)
 
@@ -11,3 +11,4 @@ set(TEST_SRC
 )
 
 add_library(MALTest SHARED ${TEST_SRC} ${TEST_H})
+target_link_libraries(MALTest gtest gtest_main)

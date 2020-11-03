@@ -2,6 +2,8 @@ enable_testing()
 include(CTest)
 
 include_directories(${gtest_dir}/include)
+link_directories(${gtest_dir}/lib)
+
 find_library(gtest      NAMES gtest      gtestd      HINTS "${gtest_dir}/lib")
 find_library(gtest_main NAMES gtest_main gtest_maind HINTS "${gtest_dir}/lib")
 

@@ -42,9 +42,15 @@ class AutoDiff {
     /* ==================== */
     /* overloaded operators */
     /* ==================== */
-    const AutoDiff<T> operator+(const AutoDiff<T> &other) const;
+    const AutoDiff<T> operator+(const AutoDiff<T> &other) const{
+        return AutoDiff<T>(v + other.val(), dv + other.dval());
+    }
 
-    AutoDiff<T>& operator+=(const AutoDiff<T> &other);
+    AutoDiff<T>& operator+=(const AutoDiff<T> &other){
+        v += other.val();
+        dv += other.dval();
+        return *this;
+    }
 };
 
 #endif /* MYAWESOMELIBRARY_H */
