@@ -3,7 +3,7 @@
 ###############################
 MPICC  = mpicc
 MPICXX = mpicxx
-CFLAGS = -g -O0 -Wall
+CFLAGS = # -g -O0 -Wall
 
 
 #########################

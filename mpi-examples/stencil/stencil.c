@@ -116,11 +116,11 @@ int main(int argc, char **argv)
     offx = rx * bx;     /* offset in x */
     offy = ry * by;     /* offset in y */
 
-    printf("Rank[%i]\t (%i,%i) - ",rank,ry,rx);
-    (west < 0) ? printf("w: %i, ", west):printf("w:  %i, ",west);
-    (east < 0) ? printf("e: %i, ", east):printf("e:  %i, ",east);
-    (north< 0) ? printf("n: %i, ",north):printf("n:  %i, ",north);
-    (south< 0) ? printf("s: %i  ",south):printf("s:  %i  ",south);
+    printf("Rank[%2i]\t (%i,%i) - ",rank,ry,rx);
+    (west < 0) ? printf("[w]: %i, ", west):printf("[w]: %2i, ",west);
+    (east < 0) ? printf("[e]: %i, ", east):printf("[e]: %2i, ",east);
+    (north< 0) ? printf("[n]: %i, ",north):printf("[n]: %2i, ",north);
+    (south< 0) ? printf("[s]: %i  ",south):printf("[s]: %2i  ",south);
     printf("\n");
 
     /* initialize three heat sources */
@@ -357,7 +357,7 @@ void update_grid(int bx, int by, double *aold, double *anew, double *heat_ptr)
         for (j = 1; j < by + 1; ++j) {
             anew[ind(i, j)] =
                 anew[ind(i, j)] / 2.0 + (aold[ind(i - 1, j)] + aold[ind(i + 1, j)] +
-                                         aold[ind(i, j - 1)] + aold[ind(i, j + 1)]) / 4.0 / 2.0;
+                                         aold[ind(i, j - 1)] + aold[ind(i, j + 1)]) / 4.0 / 2.0 ;
             heat += anew[ind(i, j)];
         }
     }
