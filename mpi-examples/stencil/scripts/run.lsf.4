@@ -1,0 +1,11 @@
+#BSUB -L /bin/bash
+#BSUB -J "HEAT"
+#BSUB -o "out.mpi_stencil.%J"
+#BSUB -e "err.mpi_stencil.%J"
+#BSUB -n 4
+#BSUB -R "span[ptile=4]"
+#BSUB -q "normal"
+#BSUB -x
+
+mpirun -np 4 ./mpi_stencil 512 10 100000 2 2 > log.heat.4
+
