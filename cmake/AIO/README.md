@@ -1,9 +1,6 @@
 # AIO
-AIO is a distributed preprocessor and front-end data load interface to many common Machine Learning frameworks.
+AIO is an example code interfacing Python with C using CTypes.
 
-## Cloning AIO
-  git clone git@github.mit.edu:ackirby/AIO.git
-  
 ## Compilation
     To compile AIO and the 3rd party libraries (googletest):  
     ./compile.sh <options>
